@@ -1,3 +1,4 @@
+import { Cta, Footer } from "@/components/closing";
 import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
@@ -20,7 +21,9 @@ export default function Home() {
         <Features />
         <Platform />
         <Roadmap />
+        <Cta />
       </main>
+      <Footer />
     </>
   );
 }

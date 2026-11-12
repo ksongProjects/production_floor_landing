@@ -976,3 +976,27 @@ svg {
   color: var(--accent-text);
   font-size: 0.85rem;
 }
+
+.step-num {
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.step-num + .eyebrow {
+  vertical-align: middle;
+}
+
+.cta h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+@media (max-width: 480px) {
+  .matrix th,
+  .matrix td {
+    padding: 8px 4px;
+  }
+  .matrix thead th {
+    font-size: 0.68rem;
+    letter-spacing: 0;
+  }
+}
