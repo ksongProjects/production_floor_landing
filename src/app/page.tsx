@@ -1,3 +1,4 @@
+import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
 import { Roles } from "@/components/roles";
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Roles />
         <Workflow />
+        <Features />
       </main>
     </>
   );
