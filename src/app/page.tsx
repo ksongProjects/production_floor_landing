@@ -1,6 +1,7 @@
 import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
+import { Platform } from "@/components/platform";
 import { Roles } from "@/components/roles";
 import { Workflow } from "@/components/workflow";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <Roles />
         <Workflow />
         <Features />
+        <Platform />
       </main>
     </>
   );
