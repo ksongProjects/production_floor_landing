@@ -2,6 +2,7 @@ import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
 import { Platform } from "@/components/platform";
+import { Roadmap } from "@/components/roadmap";
 import { Roles } from "@/components/roles";
 import { Workflow } from "@/components/workflow";
 
@@ -18,6 +19,7 @@ export default function Home() {
         <Workflow />
         <Features />
         <Platform />
+        <Roadmap />
       </main>
     </>
   );
