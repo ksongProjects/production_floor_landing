@@ -285,12 +285,34 @@ svg {
 }
 
 .nav-links a {
+  position: relative;
+  padding: 6px 0;
   color: var(--hero-muted);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--hero-text);
+}
+
+/* Underline for the section in view. */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 2px;
+  background: #4c8dff;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
 }
 
 .nav-cta {
@@ -998,5 +1020,189 @@ svg {
   .matrix thead th {
     font-size: 0.68rem;
     letter-spacing: 0;
+  }
+}
+
+/* ---------- Step rail (fixed, right side, while "How it works" is in view) ---------- */
+
+.step-rail {
+  position: fixed;
+  right: clamp(8px, 2vw, 28px);
+  top: 50%;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  transform: translate(16px, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
+}
+
+.step-rail.show {
+  transform: translate(0, -50%);
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.step-rail ol {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  position: relative;
+}
+
+/* Track line behind the dots. */
+.step-rail ol::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  right: 15px;
+  width: 2px;
+  background: var(--border);
+}
+
+.step-rail a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.rail-dot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.step-rail a:hover .rail-dot,
+.step-rail a:focus-visible .rail-dot {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.step-rail a.active .rail-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  transform: scale(1.1);
+}
+
+/* Labels appear on hover/focus of the rail; the current one stays visible. */
+.rail-label {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.step-rail:hover .rail-label,
+.step-rail:focus-within .rail-label,
+.step-rail a.active .rail-label {
+  opacity: 1;
+  transform: none;
+}
+
+.step-rail a.active .rail-label {
+  color: var(--accent);
+}
+
+.rail-arrow {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.rail-arrow svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rail-arrow:hover:not(:disabled),
+.rail-arrow:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.rail-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Small screens: dots only, labels hidden unless active, smaller footprint. */
+@media (max-width: 860px) {
+  .step-rail:hover .rail-label,
+  .step-rail:focus-within .rail-label {
+    opacity: 0;
+  }
+  .step-rail a.active .rail-label {
+    opacity: 0;
+  }
+  .rail-dot,
+  .rail-arrow {
+    width: 26px;
+    height: 26px;
+    font-size: 0.72rem;
+  }
+  .step-rail ol::before {
+    right: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .step-rail {
+    display: none;
   }
 }

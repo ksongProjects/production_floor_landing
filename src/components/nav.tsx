@@ -1,11 +1,12 @@
 import { contactHref, SITE } from "@/site";
 import { Brand } from "./brand";
+import { NavLinks } from "./scroll-spy";
 
 const LINKS = [
-  { href: "#workflow", label: "How it works" },
-  { href: "#features", label: "Features" },
-  { href: "#platform", label: "Platform" },
-  { href: "#roadmap", label: "Roadmap" },
+  { id: "workflow", label: "How it works" },
+  { id: "features", label: "Features" },
+  { id: "platform", label: "Platform" },
+  { id: "roadmap", label: "Roadmap" },
 ];
 
 export function Nav() {
@@ -13,13 +14,7 @@ export function Nav() {
     <header className="nav">
       <div className="wrap">
         <Brand />
-        <nav className="nav-links" aria-label="Sections">
-          {LINKS.map((l) => (
-            <a key={l.href} href={l.href}>
-              {l.label}
-            </a>
-          ))}
-        </nav>
+        <NavLinks links={LINKS} />
         <div className="nav-cta">
           <a className="btn ghost small contact-link" href={contactHref}>
             Contact us

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { StepRail } from "./scroll-spy";
 import { BuilderArt } from "./visuals/builder";
 import { LiveArt } from "./visuals/live";
 import { PermissionsArt } from "./visuals/permissions";
@@ -93,6 +94,7 @@ const STEPS: Step[] = [
 export function Workflow() {
   return (
     <div id="workflow">
+      <StepRail group="workflow" steps={STEPS.map((s) => ({ id: s.id, label: s.eyebrow }))} />
       <section className="screen alt">
         <div className="wrap">
           <div className="section-head reveal" style={{ marginBottom: 0 }}>
