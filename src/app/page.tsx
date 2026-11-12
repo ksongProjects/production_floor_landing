@@ -1,9 +1,16 @@
-import { SITE } from "@/site";
+import { Hero } from "@/components/hero";
+import { Nav } from "@/components/nav";
 
 export default function Home() {
   return (
-    <main>
-      <h1>{SITE.name}</h1>
-    </main>
+    <>
+      <a className="skip" href="#main">
+        Skip to content
+      </a>
+      <Nav />
+      <main id="main">
+        <Hero />
+      </main>
+    </>
   );
 }
