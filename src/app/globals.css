@@ -922,3 +922,57 @@ svg {
     transform: none;
   }
 }
+
+/* ---------- Additions ---------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.art.bare {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.step-index {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.step-index a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.step-index a:hover {
+  border-color: var(--accent);
+}
+
+.step-index span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 0.85rem;
+}
