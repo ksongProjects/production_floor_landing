@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { SITE } from "@/site";
+import { siteUrl } from "@/site-url";
 import "./globals.css";
 
 // Display font, self-hosted by Next at build time (no request to Google at runtime).
@@ -11,9 +12,6 @@ const grotesk = Space_Grotesk({
   variable: "--font-grotesk",
   display: "swap",
 });
-
-// Public URL of this site, used for absolute social-card links. Set on Vercel.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3400";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
