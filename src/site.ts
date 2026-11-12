@@ -9,8 +9,7 @@ export const SITE = {
   signInUrl: "https://production-floor-prod.up.railway.app/login",
   androidAppUrl:
     "https://github.com/ksongProjects/production-floor-android/releases/latest/download/production-floor.apk",
-  // TODO: replace with the real contact address before launch.
-  contactEmail: "hello@example.com",
+  contactEmail: "ksongprojects@gmail.com",
 } as const;
 
 export const contactHref = `mailto:${SITE.contactEmail}?subject=${encodeURIComponent(
