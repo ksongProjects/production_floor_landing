@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
-// Two phone screens: scan a station QR code, then the work screen it opens.
+// Two phone screens: scan a station QR code, then the work screen it opens, with the step's
+// instructions and a photo the step asks for.
 
 function Qr() {
   // A fixed, decorative pattern that reads as a QR code. Not scannable.
@@ -73,8 +74,12 @@ export function PhoneArt() {
           the station
         </text>
       </Frame>
-      <Frame label="Work screen with a running task, units and pause and end buttons">
-        <text x="24" y="58" fontSize="10" fill="var(--muted)" {...T}>
+      <Frame label="Work screen with the step's instructions, a required photo, units, and pause and end buttons">
+        <rect x="120" y="44" width="58" height="16" rx="8" fill="var(--bg-alt)" />
+        <text x="149" y="55" textAnchor="middle" fontSize="8" fill="var(--muted)" {...T}>
+          Offline · 3
+        </text>
+        <text x="24" y="56" fontSize="10" fill="var(--muted)" {...T}>
           Assembly 2 · 09:41
         </text>
         <text x="24" y="78" fontSize="14" fontWeight="700" fill="var(--text)" {...T}>
@@ -85,28 +90,20 @@ export function PhoneArt() {
         </text>
         <rect
           x="24"
-          y="112"
+          y="106"
           width="152"
-          height="74"
+          height="44"
           rx="12"
           fill="var(--surface)"
           stroke="var(--border)"
         />
-        <text
-          x="100"
-          y="146"
-          textAnchor="middle"
-          fontSize="24"
-          fontWeight="700"
-          fill="var(--text)"
-          {...T}
-        >
+        <text x="38" y="134" fontSize="17" fontWeight="700" fill="var(--text)" {...T}>
           01:12:08
         </text>
         <text
-          x="100"
-          y="170"
-          textAnchor="middle"
+          x="162"
+          y="133"
+          textAnchor="end"
           fontSize="10"
           fill="var(--live)"
           fontWeight="600"
@@ -116,19 +113,65 @@ export function PhoneArt() {
         </text>
         <rect
           x="24"
-          y="198"
+          y="158"
           width="152"
-          height="54"
+          height="84"
           rx="12"
           fill="var(--surface)"
           stroke="var(--border)"
         />
-        <text x="38" y="230" fontSize="11" fill="var(--muted)" {...T}>
+        <text x="38" y="177" fontSize="9.5" fontWeight="600" fill="var(--muted)" {...T}>
+          INSTRUCTIONS
+        </text>
+        {["Square the frame first", "4 screws per corner", "Check with the gauge"].map(
+          (line, i) => (
+            <g key={line}>
+              <circle cx="41" cy={193 + i * 16} r="2.2" fill="var(--accent)" />
+              <text x="49" y={196 + i * 16} fontSize="10.5" fill="var(--text)" {...T}>
+                {line}
+              </text>
+            </g>
+          ),
+        )}
+        <rect
+          x="24"
+          y="250"
+          width="152"
+          height="40"
+          rx="12"
+          fill="var(--surface)"
+          stroke="var(--live)"
+        />
+        <path
+          d="M37 263h4l2-3h8l2 3h4v13H37z"
+          fill="none"
+          stroke="var(--live)"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+        <circle cx="47" cy="269.5" r="3" fill="none" stroke="var(--live)" strokeWidth="1.6" />
+        <text x="64" y="274" fontSize="10.5" fontWeight="600" fill="var(--text)" {...T}>
+          Photo required
+        </text>
+        <rect x="136" y="259" width="32" height="22" rx="11" fill="var(--accent)" />
+        <text x="152" y="274" textAnchor="middle" fontSize="10" fontWeight="700" fill="#fff" {...T}>
+          Add
+        </text>
+        <rect
+          x="24"
+          y="298"
+          width="152"
+          height="40"
+          rx="12"
+          fill="var(--surface)"
+          stroke="var(--border)"
+        />
+        <text x="38" y="322" fontSize="11" fill="var(--muted)" {...T}>
           Units
         </text>
         <text
           x="100"
-          y="231"
+          y="323"
           textAnchor="middle"
           fontSize="16"
           fontWeight="700"
@@ -137,22 +180,22 @@ export function PhoneArt() {
         >
           42
         </text>
-        <rect x="134" y="210" width="30" height="30" rx="8" fill="var(--accent)" />
-        <text x="149" y="231" textAnchor="middle" fontSize="18" fontWeight="700" fill="#fff" {...T}>
+        <rect x="138" y="304" width="28" height="28" rx="8" fill="var(--accent)" />
+        <text x="152" y="324" textAnchor="middle" fontSize="18" fontWeight="700" fill="#fff" {...T}>
           +
         </text>
         <rect
           x="24"
-          y="300"
+          y="346"
           width="72"
-          height="38"
-          rx="19"
+          height="32"
+          rx="16"
           fill="var(--surface)"
           stroke="var(--border)"
         />
         <text
           x="60"
-          y="324"
+          y="366"
           textAnchor="middle"
           fontSize="12"
           fontWeight="600"
@@ -161,13 +204,9 @@ export function PhoneArt() {
         >
           Pause
         </text>
-        <rect x="104" y="300" width="72" height="38" rx="19" fill="var(--accent)" />
-        <text x="140" y="324" textAnchor="middle" fontSize="12" fontWeight="600" fill="#fff" {...T}>
+        <rect x="104" y="346" width="72" height="32" rx="16" fill="var(--accent)" />
+        <text x="140" y="366" textAnchor="middle" fontSize="12" fontWeight="600" fill="#fff" {...T}>
           End
-        </text>
-        <rect x="44" y="352" width="112" height="20" rx="10" fill="var(--bg-alt)" />
-        <text x="100" y="366" textAnchor="middle" fontSize="9" fill="var(--muted)" {...T}>
-          Offline · 2 updates queued
         </text>
       </Frame>
     </div>

@@ -1,4 +1,4 @@
-// Top-down floor builder: grid, placed objects, one selected with resize handles.
+// Top-down floor builder: grid, cubes and a cylinder, one selected with handles and its size.
 const OBJECTS = [
   { x: 40, y: 40, w: 80, h: 140, label: "Rack A" },
   { x: 160, y: 40, w: 110, h: 70, label: "Assembly 1", accent: true },
@@ -6,8 +6,10 @@ const OBJECTS = [
   { x: 160, y: 150, w: 250, h: 30, label: "Conveyor" },
   { x: 160, y: 220, w: 110, h: 70, label: "Pack" },
   { x: 300, y: 220, w: 110, h: 70, label: "QA" },
-  { x: 40, y: 220, w: 80, h: 70, label: "Dock" },
 ];
+
+// A cylinder: tanks and round machines sit on whole grid squares too.
+const TANK = { cx: 80, cy: 255, r: 40, label: "Tank" };
 
 export function BuilderArt() {
   const sel = OBJECTS[4]!;
@@ -21,9 +23,9 @@ export function BuilderArt() {
     <div className="ui-stack">
       <div className="ui-row">
         <div className="ui-row" style={{ justifyContent: "flex-start", gap: 6 }}>
-          <span className="chip">Labels</span>
-          <span className="chip">Grid</span>
-          <span className="chip">Snap</span>
+          <span className="chip">Add</span>
+          <span className="chip idle">↶ Undo</span>
+          <span className="chip idle">↷ Redo</span>
           <span className="chip idle">Fit</span>
         </div>
         <span className="ui-muted">Floor 1 · Building A</span>
@@ -60,6 +62,24 @@ export function BuilderArt() {
             </text>
           </g>
         ))}
+        <circle
+          cx={TANK.cx}
+          cy={TANK.cy}
+          r={TANK.r}
+          fill="var(--obj-top)"
+          stroke="var(--obj-right)"
+        />
+        <text
+          x={TANK.cx}
+          y={TANK.cy + 4}
+          textAnchor="middle"
+          fontSize="11"
+          fontWeight="600"
+          fill="var(--muted)"
+          fontFamily="system-ui, sans-serif"
+        >
+          {TANK.label}
+        </text>
         <rect
           x={sel.x - 4}
           y={sel.y - 4}
@@ -84,15 +104,27 @@ export function BuilderArt() {
             strokeWidth="2"
           />
         ))}
-        <circle cx={sel.x + sel.w / 2} cy={sel.y - 22} r="6" fill="var(--accent)" />
-        <line
-          x1={sel.x + sel.w / 2}
-          y1={sel.y - 16}
-          x2={sel.x + sel.w / 2}
-          y2={sel.y - 4}
-          stroke="var(--accent)"
-          strokeWidth="2"
-        />
+        <g>
+          <rect
+            x={sel.x + sel.w / 2 - 30}
+            y={sel.y - 30}
+            width="60"
+            height="20"
+            rx="10"
+            fill="var(--accent)"
+          />
+          <text
+            x={sel.x + sel.w / 2}
+            y={sel.y - 16}
+            textAnchor="middle"
+            fontSize="11"
+            fontWeight="700"
+            fill="var(--accent-text)"
+            fontFamily="system-ui, sans-serif"
+          >
+            3 × 2 × 1
+          </text>
+        </g>
       </svg>
     </div>
   );

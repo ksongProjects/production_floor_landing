@@ -634,6 +634,116 @@ svg {
   color: var(--muted);
 }
 
+.ui-steps {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.ui-steps li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ui-extra {
+  margin-left: 8px;
+  vertical-align: 1px;
+}
+
+.ui-arrow {
+  justify-self: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.ui-btn.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Workflow diagram: the switch picks an outcome; the path it takes lights up. */
+.flow-toggle {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.flow-toggle button {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  min-height: 32px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.flow-toggle button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.flow-toggle button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.flow-edge {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+  transition: stroke 0.25s ease;
+}
+
+.flow-edge.on {
+  stroke: var(--accent);
+  stroke-dasharray: 6 6;
+  animation: flow-march 0.8s linear infinite;
+}
+
+@keyframes flow-march {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+.flow-node {
+  transition: opacity 0.25s ease;
+}
+
+.flow-node.off {
+  opacity: 0.4;
+}
+
+@media (max-width: 420px) {
+  .flow > .ui-row {
+    flex-wrap: wrap;
+  }
+}
+
 /* Role / permission matrix. */
 .matrix {
   width: 100%;
