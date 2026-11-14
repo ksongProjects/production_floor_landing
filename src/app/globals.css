@@ -345,6 +345,74 @@ svg {
   }
 }
 
+/* Section menu for narrow screens. */
+.nav-menu-btn {
+  display: none;
+  order: 1;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid rgb(255 255 255 / 0.28);
+  background: none;
+  color: var(--hero-text);
+  cursor: pointer;
+}
+
+.nav-menu-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.nav-panel {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  display: grid;
+  padding: 8px var(--gutter) 16px;
+  background: var(--hero-bg);
+  box-shadow: 0 16px 32px rgb(0 0 0 / 0.35);
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.nav-panel[hidden] {
+  display: none;
+}
+
+.nav-panel a {
+  padding: 14px 0 14px 12px;
+  border-left: 2px solid transparent;
+  color: var(--hero-muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-panel a.active {
+  color: var(--hero-text);
+  border-left-color: #4c8dff;
+}
+
+@media (max-width: 860px) {
+  .nav-menu-btn {
+    display: grid;
+  }
+  .nav .wrap {
+    gap: 12px;
+  }
+}
+
+@media (min-width: 861px) {
+  .nav-panel {
+    display: none;
+  }
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -1143,28 +1211,57 @@ svg {
   cursor: default;
 }
 
-/* Small screens: dots only, labels hidden unless active, smaller footprint. */
+/* Touch and narrow screens: no arrows, thumb-sized dots on a see-through pill. Hover labels are
+   off; the current step's name shows for a moment when the step changes. */
 @media (max-width: 860px) {
-  .step-rail:hover .rail-label,
-  .step-rail:focus-within .rail-label {
-    opacity: 0;
+  .step-rail {
+    right: max(4px, env(safe-area-inset-right));
   }
+  .rail-arrow {
+    display: none;
+  }
+  .step-rail ol {
+    gap: 0;
+    padding: 2px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--surface) 72%, transparent);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .step-rail ol::before {
+    display: none;
+  }
+  .step-rail a {
+    position: relative;
+    padding: 6px;
+  }
+  /* Out of the flow, so the pill stays as narrow as the dots. */
+  .rail-label {
+    position: absolute;
+    right: calc(100% + 6px);
+    top: 50%;
+    translate: 0 -50%;
+  }
+  .rail-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+  .step-rail a.active .rail-dot {
+    transform: none;
+  }
+  .step-rail:hover .rail-label,
+  .step-rail:focus-within .rail-label,
   .step-rail a.active .rail-label {
     opacity: 0;
   }
-  .rail-dot,
-  .rail-arrow {
-    width: 26px;
-    height: 26px;
-    font-size: 0.72rem;
+  .step-rail.flash a.active .rail-label {
+    opacity: 1;
+    transform: none;
   }
-  .step-rail ol::before {
-    right: 12px;
-  }
-}
-
-@media (max-width: 560px) {
-  .step-rail {
-    display: none;
+  /* Keep step content clear of the rail. */
+  .step .wrap {
+    padding-right: calc(var(--gutter) + 52px);
   }
 }

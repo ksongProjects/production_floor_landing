@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Link = { id: string; label: string };
 
@@ -47,35 +47,103 @@ function scrollToId(id: string) {
   history.replaceState(null, "", `#${id}`);
 }
 
-/** Top nav section links; the one for the section in view is highlighted. */
+/**
+ * Top nav section links; the one for the section in view is highlighted. On narrow screens the
+ * links move into a menu that opens from a button in the nav bar.
+ */
 export function NavLinks({ links }: { links: readonly Link[] }) {
   const active = useActiveSection(links.map((l) => l.id));
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const wide = window.matchMedia("(min-width: 861px)");
+    const onWide = () => wide.matches && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    wide.addEventListener("change", onWide);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      wide.removeEventListener("change", onWide);
+    };
+  }, [open]);
+
+  const items = (onPick?: () => void) =>
+    links.map((l) => (
+      <a
+        key={l.id}
+        href={`#${l.id}`}
+        className={active === l.id ? "active" : undefined}
+        aria-current={active === l.id ? "true" : undefined}
+        onClick={onPick}
+      >
+        {l.label}
+      </a>
+    ));
+
   return (
-    <nav className="nav-links" aria-label="Sections">
-      {links.map((l) => (
-        <a
-          key={l.id}
-          href={`#${l.id}`}
-          className={active === l.id ? "active" : undefined}
-          aria-current={active === l.id ? "true" : undefined}
-        >
-          {l.label}
-        </a>
-      ))}
-    </nav>
+    <>
+      <nav className="nav-links" aria-label="Sections">
+        {items()}
+      </nav>
+      <button
+        type="button"
+        className="nav-menu-btn"
+        aria-expanded={open}
+        aria-controls="nav-panel"
+        aria-label={open ? "Close menu" : "Open menu"}
+        onClick={() => setOpen((o) => !o)}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+        </svg>
+      </button>
+      <nav
+        id="nav-panel"
+        className={`nav-panel${open ? " open" : ""}`}
+        aria-label="Sections"
+        hidden={!open}
+      >
+        {items(() => setOpen(false))}
+      </nav>
+    </>
   );
 }
 
-/** Fixed step rail on the right, shown while the "How it works" section is in view. */
+/**
+ * Fixed step rail on the right, shown while the "How it works" section is in view. On touch
+ * screens the current step's name shows for a moment each time the step changes.
+ */
 export function StepRail({ group, steps }: { group: string; steps: readonly Link[] }) {
   const inGroup = useActiveSection([group], 0.5) === group;
-  const active = useActiveSection(steps.map((s) => s.id), 0.5);
+  const active = useActiveSection(
+    steps.map((s) => s.id),
+    0.5,
+  );
   const index = steps.findIndex((s) => s.id === active);
+  const [flash, setFlash] = useState(false);
+  const first = useRef(true);
+
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    if (!active) return;
+    setFlash(true);
+    const t = window.setTimeout(() => setFlash(false), 1500);
+    return () => window.clearTimeout(t);
+  }, [active]);
   const prev = index > 0 ? steps[index - 1] : undefined;
   const next = index < steps.length - 1 ? steps[index + 1] : undefined;
 
   return (
-    <nav className={`step-rail${inGroup ? " show" : ""}`} aria-label="How it works steps">
+    <nav
+      className={`step-rail${inGroup ? " show" : ""}${flash ? " flash" : ""}`}
+      aria-label="How it works steps"
+    >
       <button
         type="button"
         className="rail-arrow"
