@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { StepRail } from "./scroll-spy";
 import { BuilderArt } from "./visuals/builder";
-import { LiveArt } from "./visuals/live";
-import { PermissionsArt } from "./visuals/permissions";
+import { FlowArt } from "./visuals/flow";
+import { InboxArt } from "./visuals/inbox";
 import { PhoneArt } from "./visuals/phone";
 import { PlanningArt } from "./visuals/planning";
 
@@ -14,80 +14,90 @@ type Step = {
   points: string[];
   art: ReactNode;
   bare?: boolean;
+  /** Not in the product yet: shows a "Coming soon" badge. */
+  soon?: boolean;
+  /** A short line under the points, e.g. what is already available. */
+  note?: string;
 };
 
 const STEPS: Step[] = [
   {
     id: "build",
     eyebrow: "Build",
-    title: "Lay out the floor the way it really is.",
+    title: "Draw the floor as it really is.",
     text:
-      "Draw each floor in the built-in builder: stations, machines, racks, zones, walls and " +
-      "paths. Tilt from top-down to isometric with a drag; both views read the same model.",
+      "Lay out stations, machines, racks, zones, walls and paths on a grid. Tilt from top-down " +
+      "to 3D with a drag; every view shows the same floor.",
     points: [
-      "Place, move, resize and rotate objects with snap to grid",
-      "Custom properties, colours and labels per object",
-      "Many sites and floors per company, each in its own time zone",
-      "Print a QR code for every station",
+      "Cubes and cylinders on whole grid squares, sized with handles",
+      "Drag to place, undo and redo, duplicate, move with the arrow keys",
+      "Many sites and floors, each in its own time zone",
+      "A printable QR code for any object on the floor",
     ],
     art: <BuilderArt />,
   },
   {
     id: "plan",
     eyebrow: "Plan",
-    title: "Turn orders into tasks at stations.",
+    title: "Write the job once. Reuse it every time.",
     text:
-      "Define products, create work orders with quantities and due dates, and split them into " +
-      "tasks assigned to stations and shifts on a floor.",
+      "A job template holds the steps, with instructions, drawings and files. Start a work " +
+      "order from it and each step becomes a task at a station, with its own target.",
     points: [
-      "Products, work orders, tasks and shifts per floor",
-      "Progress tracked as units, tasks and time",
-      "Shifts follow the floor's local time",
+      "Step instructions with lists, bold text, images and files",
+      "Ask for a photo before a step can finish",
+      "Work orders with quantity, due date and shifts",
+      "Progress in units, tasks and time",
     ],
     art: <PlanningArt />,
   },
   {
-    id: "staff",
-    eyebrow: "Staff",
-    title: "Add people and decide who can do what.",
+    id: "send",
+    eyebrow: "Send",
+    title: "Send jobs to a person, a team or the whole floor.",
     text:
-      "Add employees, give them a company role and a role per floor. Admin, Manager and " +
-      "Operator come ready; edit them or create your own from a fixed set of permissions.",
+      "Hand out work like mail, not chat. For a team or floor job, the first person to accept " +
+      "takes it. When they finish, they report how it went.",
     points: [
-      "Company-wide and per-floor roles",
-      "Permissions checked on the server for every request",
-      "Personal logins — no shared device accounts",
+      "Jobs and notices in one inbox, on web and phone",
+      "Accept, hand back, decline, or finish with feedback",
+      "Problems stand out for whoever sent the job",
+      "Push notifications for new jobs",
     ],
-    art: <PermissionsArt />,
+    art: <InboxArt />,
   },
   {
     id: "work",
     eyebrow: "Work",
     title: "Scan the station. Start the job.",
     text:
-      "Operators sign in on their own phone, scan the QR code on a station and see the task " +
-      "waiting there. Start, pause, resume, log units and end with one tap.",
+      "Operators sign in on their own phone, scan the station's QR code and see the task with " +
+      "its steps and files. Managers see them appear at the station on the live floor.",
     points: [
-      "Android app, installs from a direct download",
-      "Keeps working with no signal; updates sync when back online",
-      "Each update is applied once, even if it is sent twice",
+      "Start, pause, resume, log units and end with one tap",
+      "Take photos for steps that need them",
+      "Keeps working with no signal and catches up when back online",
+      "My work, a jobs board and a live floor map on the phone",
     ],
     art: <PhoneArt />,
     bare: true,
   },
   {
-    id: "watch",
-    eyebrow: "Watch",
-    title: "See the whole floor, live.",
+    id: "automate",
+    eyebrow: "Automate",
+    title: "Let the floor run itself.",
     text:
-      "Every scan, pause and unit shows up on the manager's floor view the moment it happens. " +
-      "See who is at which station, and who else is looking at the floor.",
+      "Once jobs and teams are in place, draw workflows in a visual builder. When a job is " +
+      "declined, waits too long or comes back with a problem, the flow decides what happens next.",
     points: [
-      "Workers shown at their stations in real time",
-      "Layout edits appear for every viewer at once",
-      "Presence: see who is viewing a floor",
+      "Start from any job change: sent, accepted, declined, finished",
+      "Branch on outcome, team, station, shift or time waiting",
+      "Assign to the next available person, send a job or notice, or escalate",
+      "Shift and meeting reports, analytics and KPIs built for you",
     ],
-    art: <LiveArt />,
+    note: "Available today: live KPIs, work and jobs reports, and CSV export.",
+    art: <FlowArt />,
+    soon: true,
   },
 ];
 
@@ -95,27 +105,6 @@ export function Workflow() {
   return (
     <div id="workflow">
       <StepRail group="workflow" steps={STEPS.map((s) => ({ id: s.id, label: s.eyebrow }))} />
-      <section className="screen alt">
-        <div className="wrap">
-          <div className="section-head reveal" style={{ marginBottom: 0 }}>
-            <p className="eyebrow">How it works</p>
-            <h2>From an empty floor plan to live progress in five steps.</h2>
-            <p className="lead">
-              Build the floor, plan the work, staff it, let operators scan in, and watch it move.
-            </p>
-            <ol className="step-index">
-              {STEPS.map((s, i) => (
-                <li key={s.id}>
-                  <a href={`#${s.id}`}>
-                    <span>{i + 1}</span>
-                    {s.eyebrow}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
       {STEPS.map((s, i) => (
         <section
           key={s.id}
@@ -124,16 +113,26 @@ export function Workflow() {
           aria-labelledby={`${s.id}-title`}
         >
           <div className="wrap">
+            {i === 0 ? (
+              <header className="flow-head reveal">
+                <p className="eyebrow">How it works</p>
+                <h2>From an empty floor to a floor that runs itself, in five steps.</h2>
+              </header>
+            ) : null}
             <div className="copy reveal">
               <span className="step-num">{i + 1}</span>
               <p className="eyebrow">{s.eyebrow}</p>
-              <h2 id={`${s.id}-title`}>{s.title}</h2>
+              {s.soon ? <span className="tag soon">Coming soon</span> : null}
+              <h3 className="step-title" id={`${s.id}-title`}>
+                {s.title}
+              </h3>
               <p className="lead">{s.text}</p>
               <ul className="checks">
                 {s.points.map((p) => (
                   <li key={p}>{p}</li>
                 ))}
               </ul>
+              {s.note ? <p className="step-note">{s.note}</p> : null}
             </div>
             <div className={`art reveal${s.bare ? " bare" : ""}`}>{s.art}</div>
           </div>
