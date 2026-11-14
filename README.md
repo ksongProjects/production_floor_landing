@@ -1,18 +1,25 @@
 # Landing page
 
-Public marketing page for Production Floor: what it does, the five-step workflow, features,
-platform and roadmap, with links to sign in to the platform and to contact us.
+Public marketing page for Production Floor: what it does, the five steps (Build, Plan, Send,
+Work, Automate), features and recent releases, with links to sign in to the platform and to
+contact us.
 
 - Next.js with `output: "export"`: `next build` writes plain static files to `out/`.
-- Server components, plus one small client module ([`scroll-spy.tsx`](src/components/scroll-spy.tsx))
-  that highlights the top nav link for the section in view and drives the step rail on the right
-  of "How it works". Illustrations are inline SVG drawn at build
-  time; scroll reveals are CSS only and switch off with reduced motion.
+- Server components, plus two small client modules:
+  - [`scroll-spy.tsx`](src/components/scroll-spy.tsx): highlights the nav link for the section in
+    view, the section menu on narrow screens, and the step rail on the right of "How it works"
+    (on every screen size).
+  - [`visuals/flow.tsx`](src/components/visuals/flow.tsx): the workflow diagram's outcome switch.
+- Illustrations are inline SVG and HTML drawn at build time; scroll reveals are CSS only and
+  switch off with reduced motion.
 - Light and dark themes follow the visitor's system setting.
 
 ## Edit
 
-Links and the contact address live in [`src/site.ts`](src/site.ts). Each section is one file in
+Links and the contact address live in [`src/site.ts`](src/site.ts). Recent releases are a list at
+the top of [`src/components/whats-new.tsx`](src/components/whats-new.tsx): add new ones first.
+A step marked `soon` in [`src/components/workflow.tsx`](src/components/workflow.tsx) shows a
+"Coming soon" badge; remove the flag when it ships. Each section is one file in
 [`src/components`](src/components); the page order is in [`src/app/page.tsx`](src/app/page.tsx).
 
 ```
