@@ -26,7 +26,7 @@ export function Hero() {
         </div>
         <HeroFloor />
       </div>
-      <a className="scroll-cue" href="#roles" aria-hidden="true" tabIndex={-1}>
+      <a className="scroll-cue" href="#workflow" aria-hidden="true" tabIndex={-1}>
         Scroll
       </a>
     </section>

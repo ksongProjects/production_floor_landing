@@ -474,20 +474,7 @@ svg {
   }
 }
 
-/* ---------- Roles ---------- */
-
-.roles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.role {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px;
-}
+/* ---------- Badges ---------- */
 
 .tag {
   display: inline-block;
@@ -500,41 +487,6 @@ svg {
   background: var(--accent-soft);
   color: var(--accent);
   margin-bottom: 16px;
-}
-
-.role p {
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-.role ul {
-  margin: 16px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 8px;
-  font-size: 0.94rem;
-}
-
-.role li {
-  display: flex;
-  gap: 10px;
-}
-
-.role li::before {
-  content: "";
-  flex: none;
-  width: 6px;
-  height: 6px;
-  margin-top: 0.6em;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-@media (max-width: 860px) {
-  .roles {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ---------- Workflow steps ---------- */
@@ -782,51 +734,6 @@ svg {
 
 @media (max-width: 560px) {
   .features {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---------- Platform ---------- */
-
-.platform {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(32px, 6vw, 96px);
-  align-items: center;
-}
-
-.deploy {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.deploy div {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px;
-  background: var(--surface);
-}
-
-.deploy p {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-top: 6px;
-}
-
-.diagram text {
-  font-family: var(--font-body);
-}
-
-@media (max-width: 900px) {
-  .platform {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .deploy {
     grid-template-columns: 1fr;
   }
 }
