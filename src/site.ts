@@ -8,7 +8,7 @@ export const SITE = {
   platformUrl: "https://production-floor-prod.up.railway.app",
   signInUrl: "https://production-floor-prod.up.railway.app/login",
   androidAppUrl:
-    "https://github.com/ksongProjects/production-floor-android/releases/latest/download/production-floor.apk",
+    "https://github.com/ksongProjects/production_floor_android/releases/latest/download/production-floor.apk",
   contactEmail: "ksongprojects@gmail.com",
 } as const;
 
