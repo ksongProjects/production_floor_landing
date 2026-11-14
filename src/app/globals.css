@@ -806,6 +806,21 @@ svg {
   opacity: 0.4;
 }
 
+.flow-compact {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .flow-wide {
+    display: none;
+  }
+  .flow-compact {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 420px) {
   .flow > .ui-row {
     flex-wrap: wrap;

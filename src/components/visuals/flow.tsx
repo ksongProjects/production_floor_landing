@@ -13,6 +13,7 @@ function Node({
   sub,
   on,
   accent = false,
+  w = 180,
 }: {
   x: number;
   y: number;
@@ -20,13 +21,14 @@ function Node({
   sub: string;
   on: boolean;
   accent?: boolean;
+  w?: number;
 }) {
   return (
     <g className={`flow-node${on ? "" : " off"}`}>
       <rect
         x={x}
         y={y}
-        width={180}
+        width={w}
         height={56}
         rx={12}
         fill={accent ? "var(--accent)" : "var(--surface)"}
@@ -34,7 +36,7 @@ function Node({
         strokeWidth={accent ? 0 : 1.5}
       />
       <text
-        x={x + 90}
+        x={x + w / 2}
         y={y + 24}
         textAnchor="middle"
         fontSize="13"
@@ -45,7 +47,7 @@ function Node({
         {title}
       </text>
       <text
-        x={x + 90}
+        x={x + w / 2}
         y={y + 42}
         textAnchor="middle"
         fontSize="10.5"
@@ -57,6 +59,23 @@ function Node({
     </g>
   );
 }
+
+const BRANCH = {
+  problem: [
+    { title: "Send repair job", sub: "Maintenance · first available" },
+    { title: "Flag in shift report", sub: "For the morning meeting" },
+  ],
+  ok: [
+    { title: "Update KPIs", sub: "Output · time to finish" },
+    { title: "Offer next task", sub: "Same person, same station" },
+  ],
+} as const;
+
+const LABEL = {
+  problem:
+    "Job finished with a problem: send a repair job to the first available person in Maintenance, then flag it in the shift report",
+  ok: "Job finished ok: update the KPIs, then offer the next task to the same person",
+} as const;
 
 /**
  * A workflow drawn in the builder: when a job is finished, branch on its outcome.
@@ -86,15 +105,8 @@ export function FlowArt() {
           ))}
         </div>
       </div>
-      <svg
-        viewBox="0 0 400 382"
-        role="img"
-        aria-label={
-          yes
-            ? "Job finished with a problem: send a repair job to the first available person in Maintenance, then flag it in the shift report"
-            : "Job finished ok: update the KPIs, then offer the next task to the same person"
-        }
-      >
+      {/* Wide screens: both branches side by side. */}
+      <svg className="flow-wide" viewBox="0 0 400 382" role="img" aria-label={LABEL[outcome]}>
         <path className="flow-edge on" d="M200 66 V96" />
         <path className={`flow-edge${yes ? " on" : ""}`} d="M110 140 H100 V220" />
         <path className={`flow-edge${yes ? " on" : ""}`} d="M100 276 V316" />
@@ -153,10 +165,50 @@ export function FlowArt() {
           no
         </text>
 
-        <Node x={10} y={220} title="Send repair job" sub="Maintenance · first available" on={yes} />
-        <Node x={10} y={316} title="Flag in shift report" sub="For the morning meeting" on={yes} />
-        <Node x={210} y={220} title="Update KPIs" sub="Output · time to finish" on={!yes} />
-        <Node x={210} y={316} title="Offer next task" sub="Same person, same station" on={!yes} />
+        <Node x={10} y={220} {...BRANCH.problem[0]} on={yes} />
+        <Node x={10} y={316} {...BRANCH.problem[1]} on={yes} />
+        <Node x={210} y={220} {...BRANCH.ok[0]} on={!yes} />
+        <Node x={210} y={316} {...BRANCH.ok[1]} on={!yes} />
+      </svg>
+      {/* Phones: one column, showing the branch the switch picked, so the text stays readable. */}
+      <svg className="flow-compact" viewBox="0 0 260 352" role="img" aria-label={LABEL[outcome]}>
+        <path className="flow-edge on" d="M130 56 V84" />
+        <path className="flow-edge on" d="M130 172 V212" />
+        <path className="flow-edge on" d="M130 268 V296" />
+        <Node x={20} y={0} w={220} title="Job finished" sub="Any job on Floor 1" on accent />
+        <polygon
+          points="130,84 220,128 130,172 40,128"
+          fill="var(--surface)"
+          stroke="var(--accent)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="130"
+          y="125"
+          textAnchor="middle"
+          fontSize="12"
+          fontWeight="700"
+          fill="var(--text)"
+          {...T}
+        >
+          Outcome is
+        </text>
+        <text
+          x="130"
+          y="141"
+          textAnchor="middle"
+          fontSize="12"
+          fontWeight="700"
+          fill="var(--text)"
+          {...T}
+        >
+          problem?
+        </text>
+        <text x="140" y="196" fontSize="11" fontWeight="600" fill="var(--accent)" {...T}>
+          {yes ? "yes" : "no"}
+        </text>
+        <Node x={20} y={212} w={220} {...BRANCH[outcome][0]} on />
+        <Node x={20} y={296} w={220} {...BRANCH[outcome][1]} on />
       </svg>
     </div>
   );
