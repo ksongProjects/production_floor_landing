@@ -14,10 +14,6 @@ type Step = {
   points: string[];
   art: ReactNode;
   bare?: boolean;
-  /** Not in the product yet: shows a "Coming soon" badge. */
-  soon?: boolean;
-  /** A short line under the points, e.g. what is already available. */
-  note?: string;
 };
 
 const STEPS: Step[] = [
@@ -95,9 +91,7 @@ const STEPS: Step[] = [
       "Assign to the next available person, send a job or notice, or escalate",
       "Shift and meeting reports, analytics and KPIs built for you",
     ],
-    note: "Available today: live KPIs, work and jobs reports, and CSV export.",
     art: <FlowArt />,
-    soon: true,
   },
 ];
 
@@ -122,7 +116,6 @@ export function Workflow() {
             <div className="copy reveal">
               <span className="step-num">{i + 1}</span>
               <p className="eyebrow">{s.eyebrow}</p>
-              {s.soon ? <span className="tag soon">Coming soon</span> : null}
               <h3 className="step-title" id={`${s.id}-title`}>
                 {s.title}
               </h3>
@@ -132,7 +125,6 @@ export function Workflow() {
                   <li key={p}>{p}</li>
                 ))}
               </ul>
-              {s.note ? <p className="step-note">{s.note}</p> : null}
             </div>
             <div className={`art reveal${s.bare ? " bare" : ""}`}>{s.art}</div>
           </div>

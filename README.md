@@ -18,8 +18,7 @@ contact us.
 
 Links and the contact address live in [`src/site.ts`](src/site.ts). Recent releases are a list at
 the top of [`src/components/whats-new.tsx`](src/components/whats-new.tsx): add new ones first.
-A step marked `soon` in [`src/components/workflow.tsx`](src/components/workflow.tsx) shows a
-"Coming soon" badge; remove the flag when it ships. Each section is one file in
+Each section is one file in
 [`src/components`](src/components); the page order is in [`src/app/page.tsx`](src/app/page.tsx).
 
 ```
