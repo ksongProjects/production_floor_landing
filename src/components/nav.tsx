@@ -5,7 +5,7 @@ import { NavLinks } from "./scroll-spy";
 const LINKS = [
   { id: "workflow", label: "How it works" },
   { id: "features", label: "Features" },
-  { id: "roadmap", label: "Roadmap" },
+  { id: "whats-new", label: "What's new" },
 ];
 
 export function Nav() {

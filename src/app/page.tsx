@@ -2,7 +2,7 @@ import { Cta, Footer } from "@/components/closing";
 import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
-import { Roadmap } from "@/components/roadmap";
+import { WhatsNew } from "@/components/whats-new";
 import { Workflow } from "@/components/workflow";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
         <Hero />
         <Workflow />
         <Features />
-        <Roadmap />
+        <WhatsNew />
         <Cta />
       </main>
       <Footer />
