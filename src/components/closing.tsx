@@ -9,7 +9,7 @@ export function Cta() {
         <h2>Bring your floor online.</h2>
         <p className="lead">
           Already have an account? Sign in. Want a walkthrough or a pilot on your floor? Get in
-          touch and we will set it up with you.
+          touch and we&apos;ll set it up with you.
         </p>
         <div className="actions">
           <a className="btn primary" href={SITE.signInUrl}>
@@ -35,7 +35,8 @@ export function Footer() {
         <nav aria-label="Footer">
           <a href="#workflow">How it works</a>
           <a href="#features">Features</a>
-          <a href={SITE.platformUrl}>Platform</a>
+          <a href="#whats-new">What&apos;s new</a>
+          <a href={SITE.signInUrl}>Sign in</a>
           <a href={contactHref}>Contact</a>
         </nav>
         <span>

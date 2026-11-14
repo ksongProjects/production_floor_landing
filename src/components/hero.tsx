@@ -9,8 +9,8 @@ export function Hero() {
           <p className="eyebrow">Production floor management</p>
           <h1>{SITE.tagline}</h1>
           <p className="lead">
-            Lay out every floor in 2D or 3D, plan work orders and shifts, let operators start work
-            by scanning a station QR code, and see every station, person and task update live.
+            Lay out every floor, turn job templates into work orders, send jobs to people and teams,
+            and see every station update live as operators scan in.
           </p>
           <div className="actions">
             <a className="btn primary" href={SITE.signInUrl}>

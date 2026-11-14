@@ -1,10 +1,10 @@
 /** Links and copy shared across the landing page. Change them here, not in components. */
 export const SITE = {
   name: "Production Floor",
-  tagline: "Design your floor. Staff it. Watch work move, live.",
+  tagline: "Build your floor. Send the work. Watch it run.",
   description:
-    "Production Floor is one place to lay out a production floor, plan work orders, put people " +
-    "at stations with a phone scan, and watch progress live — on web and mobile.",
+    "Production Floor is one place to lay out a production floor, plan work from job templates, " +
+    "send jobs to people and teams, and watch progress live — on the web and on Android.",
   platformUrl: "https://production-floor-prod.up.railway.app",
   signInUrl: "https://production-floor-prod.up.railway.app/login",
   androidAppUrl:
