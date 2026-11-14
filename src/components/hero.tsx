@@ -10,7 +10,7 @@ export function Hero() {
           <h1>{SITE.tagline}</h1>
           <p className="lead">
             Lay out every floor, turn job templates into work orders, send jobs to people and teams,
-            and see every station update live as operators scan in.
+            and automate what happens next with custom workflows.
           </p>
           <div className="actions">
             <a className="btn primary" href={SITE.signInUrl}>
