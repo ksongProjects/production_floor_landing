@@ -9,6 +9,8 @@ export const SITE = {
   signInUrl: "https://production-floor-prod.up.railway.app/login",
   androidAppUrl:
     "https://github.com/ksongProjects/production_floor_android/releases/latest/download/production-floor.apk",
+  /** Public status page (UptimeRobot), outside our own hosting so it loads during outages. */
+  statusUrl: "https://stats.uptimerobot.com/mfL8H7OSSJ",
   contactEmail: "ksongprojects@gmail.com",
 } as const;
 
