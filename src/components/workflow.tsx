@@ -84,12 +84,14 @@ const STEPS: Step[] = [
     title: "Let the floor run itself.",
     text:
       "Once jobs and teams are in place, draw workflows in a visual builder. When a job is " +
-      "declined, waits too long or comes back with a problem, the flow decides what happens next.",
+      "declined, a task runs late or work comes back with a problem, the flow decides what " +
+      "happens next.",
     points: [
-      "Start from any job change: sent, accepted, declined, finished",
-      "Branch on outcome, team, station, shift or time waiting",
-      "Assign to the next available person, send a job or notice, or escalate",
-      "Shift and meeting reports, analytics and KPIs built for you",
+      "Start from a job change (sent, accepted, declined, finished) or a task running late",
+      "Branch on outcome, team, station, shift, product or pace",
+      "Assign to the next available person, send a job or notice, escalate or offer the next task",
+      "Try a draft on something that already happened before you turn it on",
+      "Shift and meeting reports and KPI counters, built for you",
     ],
     art: <FlowArt />,
   },
