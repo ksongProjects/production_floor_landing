@@ -241,6 +241,20 @@ svg {
   margin-top: 36px;
 }
 
+/* Small link under the sign-in button to the public status page. */
+.status-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--hero-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.status-link:hover {
+  color: var(--hero-text);
+}
+
 /* ---------- Nav ---------- */
 
 .nav {

@@ -20,6 +20,9 @@ export function Hero() {
               Contact us
             </a>
           </div>
+          <a className="status-link" href={SITE.statusUrl} target="_blank" rel="noopener noreferrer">
+            Server status
+          </a>
           <p className="hero-note">
             Web for managers, Android app for the floor. <a href="#workflow">See how it works ↓</a>
           </p>
