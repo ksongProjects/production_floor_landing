@@ -38,7 +38,6 @@ export function Footer() {
         <nav aria-label="Footer">
           <a href="#workflow">How it works</a>
           <a href="#features">Features</a>
-          <a href="#whats-new">What&apos;s new</a>
           <a href={SITE.signInUrl}>Sign in</a>
           <a href={contactHref}>Contact</a>
         </nav>

@@ -883,51 +883,6 @@ svg {
   }
 }
 
-/* ---------- What's new ---------- */
-
-.news {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px 32px;
-}
-
-.news li {
-  display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 16px;
-  padding-top: 18px;
-  border-top: 1px solid var(--border);
-}
-
-.news time {
-  color: var(--accent);
-  font-size: 0.85rem;
-  font-weight: 650;
-  padding-top: 2px;
-}
-
-.news p {
-  color: var(--muted);
-  font-size: 0.94rem;
-  margin: 6px 0 0;
-}
-
-@media (max-width: 860px) {
-  .news {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .news li {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-}
-
 /* ---------- Final CTA + footer ---------- */
 
 .cta {
