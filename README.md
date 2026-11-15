@@ -1,7 +1,7 @@
 # Landing page
 
 Public marketing page for Production Floor: what it does, the five steps (Build, Plan, Send,
-Work, Automate), and features, with links to sign in to the platform and to
+Work, Automate), features and pricing, with links to sign in to the platform and to
 contact us.
 
 - Next.js with `output: "export"`: `next build` writes plain static files to `out/`.
@@ -16,7 +16,9 @@ contact us.
 
 ## Edit
 
-Links and the contact address live in [`src/site.ts`](src/site.ts). Each section is one file in
+Links and the contact address live in [`src/site.ts`](src/site.ts). Tiers, prices and the
+features each tier includes are a list at the top of
+[`src/components/pricing.tsx`](src/components/pricing.tsx). Each section is one file in
 [`src/components`](src/components); the page order is in [`src/app/page.tsx`](src/app/page.tsx).
 
 ```
