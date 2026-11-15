@@ -12,13 +12,13 @@ function I({ d }: { d: string }) {
 const FEATURES: { icon: ReactNode; title: string; text: string }[] = [
   {
     icon: <I d="M12 3v3M12 18v3M3 12h3M18 12h3M12 8a4 4 0 100 8 4 4 0 000-8z" />,
-    title: "Live on every screen",
-    text: "Edits, scans and units show up on every open screen at once. Missed updates catch up when you reconnect.",
+    title: "Live dashboard",
+    text: "Tiles for stations, headcount, output and utilisation, updated on every open screen the moment someone scans in. Missed updates catch up when you reconnect.",
   },
   {
     icon: <I d="M4 20V10M10 20V4M16 20v-7M22 20H2" />,
-    title: "Dashboard and reports",
-    text: "Live tiles for stations, headcount, output and utilisation. Reports by shift, day, station or person, with CSV export.",
+    title: "Reports and pace",
+    text: "Give each step an expected time and see who is ahead or behind as they work. Reports by shift, day, station or person, with CSV export.",
   },
   {
     icon: <I d="M16 11a4 4 0 10-8 0M4 20a8 8 0 0116 0M18 8l2 2 3-3" />,
