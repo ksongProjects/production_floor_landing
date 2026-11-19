@@ -3,9 +3,10 @@ import { Brand } from "./brand";
 import { NavLinks } from "./scroll-spy";
 
 const LINKS = [
+  { id: "gaps", label: "Downtime" },
   { id: "workflow", label: "How it works" },
   { id: "features", label: "Features" },
-  { id: "pricing", label: "Pricing" },
+  { id: "pilot", label: "Pilot" },
 ];
 
 export function Nav() {

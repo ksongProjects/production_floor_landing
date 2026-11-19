@@ -1,8 +1,9 @@
 import { Cta, Footer } from "@/components/closing";
 import { Features } from "@/components/features";
+import { Gaps } from "@/components/gaps";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
-import { Pricing } from "@/components/pricing";
+import { Pilot } from "@/components/pilot";
 import { Workflow } from "@/components/workflow";
 
 export default function Home() {
@@ -14,9 +15,10 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
+        <Gaps />
         <Workflow />
         <Features />
-        <Pricing />
+        <Pilot />
         <Cta />
       </main>
       <Footer />
