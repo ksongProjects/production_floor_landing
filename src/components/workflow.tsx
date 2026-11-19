@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { StepRail } from "./scroll-spy";
+import { BottleneckArt } from "./visuals/bottleneck";
 import { BuilderArt } from "./visuals/builder";
 import { FlowArt } from "./visuals/flow";
-import { InboxArt } from "./visuals/inbox";
 import { PhoneArt } from "./visuals/phone";
 import { PlanningArt } from "./visuals/planning";
 
@@ -18,82 +18,82 @@ type Step = {
 
 const STEPS: Step[] = [
   {
-    id: "build",
-    eyebrow: "Build",
-    title: "Draw the floor as it really is.",
+    id: "see",
+    eyebrow: "See",
+    title: "Every station, every person, right now.",
     text:
-      "Lay out stations, machines, racks, zones, walls and paths on a grid. Tilt from top-down " +
-      "to 3D with a drag; every view shows the same floor.",
+      "Operators scan a station's QR code on their own phone to start and end work. Every " +
+      "station shows up live: who is on it, the task, and its pace against the expected time.",
     points: [
-      "Cubes and cylinders on whole grid squares, sized with handles",
-      "Drag to place, undo and redo, duplicate, move with the arrow keys",
-      "Many sites and floors, each in its own time zone",
-      "A printable QR code for any object on the floor",
-    ],
-    art: <BuilderArt />,
-  },
-  {
-    id: "plan",
-    eyebrow: "Plan",
-    title: "Write the job once. Reuse it every time.",
-    text:
-      "A job template holds the steps, with instructions, drawings and files. Start a work " +
-      "order from it and each step becomes a task at a station, with its own target.",
-    points: [
-      "Step instructions with lists, bold text, images and files",
-      "Ask for a photo before a step can finish",
-      "Work orders with quantity, due date and shifts",
-      "Progress in units, tasks and time",
-    ],
-    art: <PlanningArt />,
-  },
-  {
-    id: "send",
-    eyebrow: "Send",
-    title: "Send jobs to a person, a team or the whole floor.",
-    text:
-      "Hand out work like mail, not chat. For a team or floor job, the first person to accept " +
-      "takes it. When they finish, they report how it went.",
-    points: [
-      "Jobs and notices in one inbox, on web and phone",
-      "Accept, hand back, decline, or finish with feedback",
-      "Problems stand out for whoever sent the job",
-      "Push notifications for new jobs",
-    ],
-    art: <InboxArt />,
-  },
-  {
-    id: "work",
-    eyebrow: "Work",
-    title: "Scan the station. Start the job.",
-    text:
-      "Operators sign in on their own phone, scan the station's QR code and see the task with " +
-      "its steps and files. Managers see them appear at the station on the live floor.",
-    points: [
-      "Start, pause, resume, log units and end with one tap",
-      "Take photos for steps that need them",
+      "Delayed, paused and idle stations rise to the top of the board",
+      "Start, pause, log units and end with one tap",
       "Keeps working with no signal and catches up when back online",
-      "My work, a jobs board and a live floor map on the phone",
+      "Every floor at once on the home screen",
     ],
     art: <PhoneArt />,
     bare: true,
   },
   {
-    id: "automate",
-    eyebrow: "Automate",
-    title: "Let the floor run itself.",
+    id: "spot",
+    eyebrow: "Spot",
+    title: "The bottleneck shows itself.",
     text:
-      "Once jobs and teams are in place, draw workflows in a visual builder. When a job is " +
-      "declined, a task runs late or work comes back with a problem, the flow decides what " +
-      "happens next.",
+      "The floor map shows where work piles up: full zones in amber, a blocked zone in red. " +
+      "Needs attention ranks the units and tasks waiting longest, and where they are stuck.",
     points: [
-      "Start from a job change (sent, accepted, declined, finished) or a task running late",
-      "Branch on outcome, team, station, shift, product or pace",
-      "Assign to the next available person, send a job or notice, escalate or offer the next task",
-      "Try a draft on something that already happened before you turn it on",
-      "Shift and meeting reports and KPI counters, built for you",
+      "Time in each zone for every unit that moves through the shop",
+      "Pace per step against its expected time",
+      "See which step holds up the line, shift after shift",
+      "Report by shift, day, station or person, with CSV export",
+    ],
+    art: <BottleneckArt />,
+  },
+  {
+    id: "fix",
+    eyebrow: "Fix",
+    title: "The next step happens on its own.",
+    text:
+      "Workflows close the routine gaps without anyone chasing them. A reported problem becomes " +
+      "a repair job, a late task alerts the supervisor, a finished unit gets moved to the next " +
+      "zone so the next station isn't starved.",
+    points: [
+      "Work goes to the first free person: clocked in, not busy and trained for it",
+      "Start from ready-made workflows, or draw your own",
+      "Test a workflow on something that already happened before you turn it on",
+      "Every run logged step by step; switch any workflow off with one tap",
     ],
     art: <FlowArt />,
+  },
+  {
+    id: "track",
+    eyebrow: "Track",
+    title: "Orders to units to tasks, through the shop.",
+    text:
+      "Custom orders with line items and units. Each unit gets its own tasks from a job " +
+      "template, and moves zone to zone with move jobs that close when the handler scans the " +
+      "destination.",
+    points: [
+      "Job templates with steps, instructions, drawings and photo checks",
+      "Import orders by CSV, with a preview of every change",
+      "Jobs and notices to a person, a team or the whole floor",
+      "Progress in units, tasks and time against the due date",
+    ],
+    art: <PlanningArt />,
+  },
+  {
+    id: "start",
+    eyebrow: "Start",
+    title: "Live on one floor in a day.",
+    text:
+      "No new hardware: printed QR codes and the crew's own phones. A guided checklist takes " +
+      "you from an empty floor to live work in about an hour.",
+    points: [
+      "Draw the floor on a grid, in top-down or 3D",
+      "A printable QR code for every station",
+      "Roles per floor, training records and shift rosters",
+      "Many sites and floors, each in its own time zone",
+    ],
+    art: <BuilderArt />,
   },
 ];
 
@@ -112,7 +112,7 @@ export function Workflow() {
             {i === 0 ? (
               <header className="flow-head reveal">
                 <p className="eyebrow">How it works</p>
-                <h2>From an empty floor to a floor that runs itself, in five steps.</h2>
+                <h2>See the floor, spot the bottleneck, close the gap.</h2>
               </header>
             ) : null}
             <div className="copy reveal">

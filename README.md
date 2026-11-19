@@ -1,8 +1,9 @@
 # Landing page
 
-Public marketing page for Production Floor: what it does, the five steps (Build, Plan, Send,
-Work, Automate), features and pricing, with links to sign in to the platform and to
-contact us.
+Public marketing page for Production Floor. The message follows the sales pitch
+(`docs/sales/pitch.md` in the main repo): **find the bottleneck, cut the downtime.** Sections:
+where downtime hides, the five steps (See, Spot, Fix, Track, Start), features, the 30-day
+pilot, with links to book a walkthrough and to sign in to the platform.
 
 - Next.js with `output: "export"`: `next build` writes plain static files to `out/`.
 - Server components, plus two small client modules:
@@ -16,9 +17,9 @@ contact us.
 
 ## Edit
 
-Links and the contact address live in [`src/site.ts`](src/site.ts). Tiers, prices and the
-features each tier includes are a list at the top of
-[`src/components/pricing.tsx`](src/components/pricing.tsx). Each section is one file in
+Links, the tagline and the contact address live in [`src/site.ts`](src/site.ts). Pricing is
+off the page while it is being reworked; the old tiers are still in
+[`src/components/pricing.tsx`](src/components/pricing.tsx) if it comes back. Each section is one file in
 [`src/components`](src/components); the page order is in [`src/app/page.tsx`](src/app/page.tsx).
 
 ```
