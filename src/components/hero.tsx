@@ -9,15 +9,16 @@ export function Hero() {
           <p className="eyebrow">Production floor management</p>
           <h1>{SITE.tagline}</h1>
           <p className="lead">
-            Lay out every floor, turn job templates into work orders, send jobs to people and teams,
-            and automate what happens next with custom workflows.
+            Most lost time on a floor isn&apos;t a breakdown. It&apos;s the gaps between jobs: people
+            waiting for work, units piling up in front of one bay, a problem nobody reported.
+            Production Floor shows you those gaps live and closes the routine ones for you.
           </p>
           <div className="actions">
             <a className="btn primary" href={SITE.signInUrl}>
               Sign in to the platform
             </a>
             <a className="btn ghost" href={contactHref}>
-              Contact us
+              Book a walkthrough
             </a>
           </div>
           <a
@@ -29,12 +30,13 @@ export function Hero() {
             Server status
           </a>
           <p className="hero-note">
-            Web for managers, Android app for the floor. <a href="#workflow">See how it works ↓</a>
+            No new hardware: printed QR codes and your crew&apos;s own phones.{" "}
+            <a href="#gaps">See where the time goes ↓</a>
           </p>
         </div>
         <HeroFloor />
       </div>
-      <a className="scroll-cue" href="#workflow" aria-hidden="true" tabIndex={-1}>
+      <a className="scroll-cue" href="#gaps" aria-hidden="true" tabIndex={-1}>
         Scroll
       </a>
     </section>
