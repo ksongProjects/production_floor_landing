@@ -17,7 +17,8 @@ export function Hero() {
         <div>
           <p className="eyebrow">FloorOS · Shop floor operating system</p>
           <h1 className="hero-title">
-            FloorOS, for all your{" "}
+            <span className="hero-line">FloorOS,</span>
+            <span className="hero-line">for all your</span>
             <span className="word-rotator" aria-label={HERO_WORDS.join(", ")}>
               <span className="word-track" aria-hidden="true">
                 {HERO_WORDS.map((word) => (
@@ -29,8 +30,8 @@ export function Hero() {
                   {HERO_WORDS[0]}
                 </span>
               </span>
-            </span>{" "}
-            needs
+            </span>
+            <span className="hero-line">needs</span>
           </h1>
           <p className="lead">
             See every station, person and unit across every site — live. Spot the gaps between jobs

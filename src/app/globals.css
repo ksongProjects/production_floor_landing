@@ -379,15 +379,22 @@ svg {
 }
 
 .hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   font-size: clamp(2.2rem, 4.8vw, 4rem);
-  line-height: 1.18;
+  line-height: 1.15;
+}
+
+.hero-line {
+  display: block;
 }
 
 .word-rotator {
-  display: inline-flex;
-  height: 1.36em;
+  display: flex;
+  height: 1.26em;
+  margin: -0.05em 0;
   overflow: hidden;
-  vertical-align: -0.25em;
   padding: 0;
   background: transparent;
   border: 0;
@@ -407,12 +414,12 @@ svg {
   flex-direction: column;
   align-items: flex-start;
   will-change: transform;
-  animation: word-rotate 18s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation: word-rotate 15s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 .word-item {
-  height: 1.36em;
-  line-height: 1.36em;
+  height: 1.26em;
+  line-height: 1.26em;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -422,31 +429,31 @@ svg {
 
 @keyframes word-rotate {
   0%,
-  13.6% {
+  13.2% {
     transform: translateY(0);
   }
   16.67%,
-  30.27% {
-    transform: translateY(-1.36em);
+  29.87% {
+    transform: translateY(-1.26em);
   }
   33.33%,
-  46.93% {
-    transform: translateY(-2.72em);
+  46.53% {
+    transform: translateY(-2.52em);
   }
   50%,
-  63.6% {
-    transform: translateY(-4.08em);
+  63.2% {
+    transform: translateY(-3.78em);
   }
   66.67%,
-  80.27% {
-    transform: translateY(-5.44em);
+  79.87% {
+    transform: translateY(-5.04em);
   }
   83.33%,
-  96.93% {
-    transform: translateY(-6.8em);
+  96.53% {
+    transform: translateY(-6.3em);
   }
   100% {
-    transform: translateY(-8.16em);
+    transform: translateY(-7.56em);
   }
 }
 
