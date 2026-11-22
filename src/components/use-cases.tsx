@@ -321,8 +321,75 @@ export function UseCases() {
               <span className="tag">Use Case 4 · FloorOS Pro (Android)</span>
               <h3>One-scan station start, Watch-Out step warnings &amp; offline voice notes</h3>
             </div>
-            <div className="pro-showcase">
-              <PhoneArt />
+            <div className="app-window">
+              <div className="app-topbar">
+                <div className="window-dots" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <div className="app-crumb">
+                  FloorOS Pro · <strong>Android Trades App</strong> · Wiring Bay 2 (Sam K.)
+                </div>
+                <span className="chip ok">● Offline-ready queue</span>
+              </div>
+              <div className="app-body split-2">
+                <div className="pro-showcase">
+                  <PhoneArt />
+                </div>
+                <div className="ui-stack">
+                  <div className="ui-card">
+                    <div className="ui-row">
+                      <div>
+                        <div className="ui-title">1 · Instant Station &amp; Move Scan</div>
+                        <div className="ui-muted">
+                          Point camera at bay or destination zone QR to start task or close move job
+                        </div>
+                      </div>
+                      <span className="chip">QR Scan</span>
+                    </div>
+                  </div>
+                  <div className="ui-card">
+                    <div className="ui-row">
+                      <div>
+                        <div className="ui-title">2 · Watch-Out Safety &amp; Step Drawings</div>
+                        <div className="ui-muted">
+                          Auto-displays linked quality warnings &amp; drawings before timer starts
+                        </div>
+                      </div>
+                      <span className="chip warn">▲ Step 3</span>
+                    </div>
+                  </div>
+                  <div className="ui-card">
+                    <div className="ui-row">
+                      <div>
+                        <div className="ui-title">3 · Push-to-Talk Voice &amp; Ask AI</div>
+                        <div className="ui-muted">
+                          Speak notes hands-free or ask cited troubleshooting questions from SOPs
+                        </div>
+                      </div>
+                      <div className="waveform" aria-label="Animated voice waveform">
+                        <span />
+                        <span />
+                        <span />
+                        <span />
+                        <span />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="ui-card">
+                    <div className="ui-row">
+                      <div>
+                        <div className="ui-title">4 · Dead-Zone Offline Sync</div>
+                        <div className="ui-muted">
+                          Pieces, pauses, photos and audio chunks queue locally and replay once
+                        </div>
+                      </div>
+                      <span className="chip ok">Synced</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
         </div>

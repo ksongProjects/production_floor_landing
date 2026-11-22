@@ -19,7 +19,7 @@ function Qr() {
 
 function Frame({ children, label }: { children: ReactNode; label: string }) {
   return (
-    <svg viewBox="0 0 200 400" role="img" aria-label={label}>
+    <svg width="100%" viewBox="0 0 200 400" role="img" aria-label={label}>
       <rect x="2" y="2" width="196" height="396" rx="30" fill="#0b0e12" />
       <rect x="10" y="10" width="180" height="380" rx="23" fill="var(--bg)" />
       <rect x="75" y="18" width="50" height="8" rx="4" fill="#0b0e12" />
@@ -32,7 +32,7 @@ const T = { fontFamily: "system-ui, sans-serif" };
 
 export function PhoneArt() {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(12px, 3vw, 32px)" }}>
+    <div className="pro-phones">
       <Frame label="Phone scanning a station or zone QR code">
         <text
           x="100"
