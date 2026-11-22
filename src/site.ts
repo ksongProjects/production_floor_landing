@@ -7,8 +7,8 @@ export const SITE = {
     "FloorOS is the live operating system for manufacturing floors — uniting leadership " +
     "(FloorOS Executive Suite), plant managers and leads (FloorOS Manager), and skilled trades " +
     "operators (FloorOS Pro) to spot bottlenecks and cut downtime.",
-  platformUrl: "https://production-floor-prod.up.railway.app",
-  signInUrl: "https://production-floor-prod.up.railway.app/login",
+  platformUrl: "https://flooros.dev",
+  signInUrl: "https://flooros.dev/login",
   androidAppUrl:
     "https://github.com/ksongProjects/production_floor_android/releases/latest/download/production-floor.apk",
   /** Public status page (UptimeRobot), outside our own hosting so it loads during outages. */

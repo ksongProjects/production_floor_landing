@@ -32,4 +32,4 @@ pnpm --filter @pf/landing build    # static site in apps/landing/out
 security headers. Production deploys follow `main`; other branches get preview URLs.
 
 The page links to the production platform at
-https://production-floor-prod.up.railway.app; it does not call it.
+https://flooros.dev; it does not call it.
