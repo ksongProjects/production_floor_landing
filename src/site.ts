@@ -2,7 +2,7 @@
 export const SITE = {
   name: "FloorOS",
   tagline:
-    "FloorOS, for all your company's production, automation, operation, planning, reporting and management needs.",
+    "FloorOS, for all your production, automation, operation, planning, reporting and management needs.",
   description:
     "FloorOS is the live operating system for your shop floor — connecting C-level directors " +
     "(FloorOS Executive Suite), plant managers and leads (FloorOS Manager), and skilled trades " +

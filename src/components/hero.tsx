@@ -17,7 +17,7 @@ export function Hero() {
         <div>
           <p className="eyebrow">FloorOS · Shop floor operating system</p>
           <h1 className="hero-title">
-            FloorOS, for all your company&apos;s{" "}
+            FloorOS, for all your{" "}
             <span className="word-rotator" aria-label={HERO_WORDS.join(", ")}>
               <span className="word-track" aria-hidden="true">
                 {HERO_WORDS.map((word) => (
