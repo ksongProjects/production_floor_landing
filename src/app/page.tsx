@@ -1,12 +1,9 @@
 import { Cta, Footer } from "@/components/closing";
-import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
-import { Intelligence } from "@/components/intelligence";
 import { Nav } from "@/components/nav";
 import { Platform } from "@/components/platform";
-import { Roadmap } from "@/components/roadmap";
 import { Roles } from "@/components/roles";
-import { Workflow } from "@/components/workflow";
+import { UseCases } from "@/components/use-cases";
 
 export default function Home() {
   return (
@@ -18,11 +15,8 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Roles />
-        <Workflow />
-        <Intelligence />
-        <Features />
+        <UseCases />
         <Platform />
-        <Roadmap />
         <Cta />
       </main>
       <Footer />

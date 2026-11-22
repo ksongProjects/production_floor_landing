@@ -5,13 +5,11 @@ export function Cta() {
   return (
     <section className="screen hero cta" id="get-started">
       <div className="wrap">
-        <p className="eyebrow">Get started with {SITE.name}</p>
-        <h2>Put your first floor live in a day.</h2>
+        <p className="eyebrow">Get started</p>
+        <h2>Live on your first floor in a day.</h2>
         <p className="lead">
-          We&apos;ll walk you through a live plant running on{" "}
-          <strong>FloorOS Executive Suite</strong>, <strong>FloorOS Manager</strong> and{" "}
-          <strong>FloorOS Pro</strong>, then set up a measured 30-day pilot on one of your floors —
-          using printed QR codes and the phones your crew already carries.
+          See a live plant running on <strong>Executive Suite</strong>, <strong>Manager</strong> and{" "}
+          <strong>FloorOS Pro</strong>, then run a measured 30-day pilot with zero new hardware.
         </p>
         <div className="actions">
           <a className="btn primary" href={contactHref}>
@@ -25,8 +23,7 @@ export function Cta() {
           Server status
         </a>
         <p className="hero-note">
-          Trades operator or lead on Android?{" "}
-          <a href={SITE.androidAppUrl}>Download FloorOS Pro (APK)</a>
+          On Android? <a href={SITE.androidAppUrl}>Download FloorOS Pro (APK)</a>
         </p>
       </div>
     </section>
@@ -39,12 +36,10 @@ export function Footer() {
       <div className="wrap">
         <Brand />
         <nav aria-label="Footer">
-          <a href="#roles">Suites</a>
-          <a href="#workflow">How it works</a>
-          <a href="#intelligence">AI &amp; Knowledge</a>
-          <a href="#features">Features</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href={SITE.platformUrl}>Platform</a>
+          <a href="#roles">Suites &amp; Features</a>
+          <a href="#use-cases">Live Screens</a>
+          <a href="#platform">Platform &amp; Roadmap</a>
+          <a href={SITE.platformUrl}>Sign in</a>
           <a href={contactHref}>Contact</a>
         </nav>
         <span>

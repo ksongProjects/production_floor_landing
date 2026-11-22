@@ -2,12 +2,9 @@ import { contactHref, SITE } from "@/site";
 import { Brand } from "./brand";
 
 const LINKS = [
-  { href: "#roles", label: "Suites" },
-  { href: "#workflow", label: "How it works" },
-  { href: "#intelligence", label: "AI & Knowledge" },
-  { href: "#features", label: "Features" },
-  { href: "#platform", label: "Platform" },
-  { href: "#roadmap", label: "Roadmap" },
+  { href: "#roles", label: "Suites & Features" },
+  { href: "#use-cases", label: "Live Screens" },
+  { href: "#platform", label: "Platform & Roadmap" },
 ];
 
 export function Nav() {

@@ -58,13 +58,16 @@ export function PhoneArt() {
         />
         <line
           x1="45"
-          y1="167"
+          y1="125"
           x2="155"
-          y2="167"
+          y2="125"
           stroke="var(--live)"
-          strokeWidth="2"
-          opacity="0.8"
-        />
+          strokeWidth="2.5"
+          opacity="0.9"
+        >
+          <animate attributeName="y1" values="118;216;118" dur="2.4s" repeatCount="indefinite" />
+          <animate attributeName="y2" values="118;216;118" dur="2.4s" repeatCount="indefinite" />
+        </line>
         <text x="100" y="262" textAnchor="middle" fontSize="10.5" fill="var(--muted)" {...T}>
           Start work or close a move job
         </text>

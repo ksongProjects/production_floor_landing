@@ -15,7 +15,7 @@ export function Hero() {
     <section className="screen hero" id="top">
       <div className="wrap">
         <div>
-          <p className="eyebrow">FloorOS · Shop floor operating system</p>
+          <p className="eyebrow">FloorOS · Live shop floor operating system</p>
           <h1 className="hero-title">
             <span className="hero-line">FloorOS,</span>
             <span className="hero-line">for all your</span>
@@ -34,9 +34,8 @@ export function Hero() {
             <span className="hero-line">needs</span>
           </h1>
           <p className="lead">
-            Most lost time on a shop floor isn&apos;t a breakdown — it&apos;s the gaps between jobs.
-            FloorOS gives you a live picture of every site, station and unit, closes routine
-            handoffs automatically, and turns spoken floor know-how into shared intelligence.
+            See every site, station and unit live. Spot bottlenecks instantly, automate routine
+            handoffs, and turn spoken floor know-how into shared intelligence.
           </p>
           <div className="actions">
             <a className="btn primary" href={SITE.signInUrl}>
@@ -55,9 +54,8 @@ export function Hero() {
             Server status
           </a>
           <p className="hero-note">
-            <strong>FloorOS Executive Suite</strong> for leadership ·{" "}
-            <strong>FloorOS Manager</strong> for plant leads · <strong>FloorOS Pro</strong> for
-            skilled trades. <a href="#roles">Explore the suites ↓</a>
+            <strong>Executive Suite</strong> · <strong>Manager</strong> · <strong>Pro</strong>.{" "}
+            <a href="#roles">Explore suites ↓</a>
           </p>
         </div>
         <HeroFloor />
