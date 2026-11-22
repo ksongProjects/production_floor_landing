@@ -385,26 +385,33 @@ svg {
 
 .word-rotator {
   display: inline-flex;
-  height: 1.2em;
+  height: 1.28em;
   overflow: hidden;
-  vertical-align: -0.18em;
-  padding: 0 0.28em;
-  border-radius: 0.22em;
-  background: rgb(76 141 255 / 0.14);
-  border: 1px solid rgb(76 141 255 / 0.36);
+  vertical-align: -0.22em;
+  padding: 0 0.14em;
+  background: transparent;
+  border: 0;
   color: #79adff;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .word-track {
   display: flex;
   flex-direction: column;
   will-change: transform;
-  animation: word-rotate 4.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation: word-rotate 18s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 .word-item {
-  height: 1.2em;
-  line-height: 1.2em;
+  height: 1.28em;
+  line-height: 1.28em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -413,31 +420,31 @@ svg {
 
 @keyframes word-rotate {
   0%,
-  10.5% {
+  13.6% {
     transform: translateY(0);
   }
   16.67%,
-  27.17% {
-    transform: translateY(-1.2em);
+  30.27% {
+    transform: translateY(-1.28em);
   }
   33.33%,
-  43.83% {
-    transform: translateY(-2.4em);
+  46.93% {
+    transform: translateY(-2.56em);
   }
   50%,
-  60.5% {
-    transform: translateY(-3.6em);
+  63.6% {
+    transform: translateY(-3.84em);
   }
   66.67%,
-  77.17% {
-    transform: translateY(-4.8em);
+  80.27% {
+    transform: translateY(-5.12em);
   }
   83.33%,
-  93.83% {
-    transform: translateY(-6em);
+  96.93% {
+    transform: translateY(-6.4em);
   }
   100% {
-    transform: translateY(-7.2em);
+    transform: translateY(-7.68em);
   }
 }
 
