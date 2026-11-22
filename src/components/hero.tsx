@@ -34,9 +34,9 @@ export function Hero() {
             <span className="hero-line">needs</span>
           </h1>
           <p className="lead">
-            See every station, person and unit across every site — live. Spot the gaps between jobs
-            the moment they open, close routine ones with visual workflows, and turn shop-floor
-            voice notes into searchable, AI-assisted knowledge.
+            Most lost time on a shop floor isn&apos;t a breakdown — it&apos;s the gaps between jobs.
+            FloorOS gives you a live picture of every site, station and unit, closes routine
+            handoffs automatically, and turns spoken floor know-how into shared intelligence.
           </p>
           <div className="actions">
             <a className="btn primary" href={SITE.signInUrl}>
@@ -56,8 +56,8 @@ export function Hero() {
           </a>
           <p className="hero-note">
             <strong>FloorOS Executive Suite</strong> for leadership ·{" "}
-            <strong>FloorOS Manager</strong> for leads · <strong>FloorOS Pro</strong> for trades
-            operators. <a href="#roles">Explore the suites ↓</a>
+            <strong>FloorOS Manager</strong> for plant leads · <strong>FloorOS Pro</strong> for
+            skilled trades. <a href="#roles">Explore the suites ↓</a>
           </p>
         </div>
         <HeroFloor />

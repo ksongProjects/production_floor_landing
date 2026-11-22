@@ -19,45 +19,45 @@ const STEPS: Step[] = [
   {
     id: "build",
     eyebrow: "Build",
-    title: "Map every floor, zone and department.",
+    title: "Map your floor the way it actually runs.",
     text:
-      "Draw each floor in the built-in builder — stations, machines, racks, zones, walls, move " +
-      "paths and custom shapes. Tilt smoothly between 2D and 3D; print QR codes for any station or zone.",
+      "Lay out bays, machines, racks, zones and aisles in the built-in builder. Tilt smoothly " +
+      "from a top-down blueprint to a 3D view, colour zones by department and print QR codes in one click.",
     points: [
-      "Snap to grid, drag handles, undo / redo and department colours",
-      "Zones with purpose, capacity and required roles",
-      "Many sites and floors per company, each in its local time zone",
-      "First pilot floor goes live in a day with no new hardware",
+      "Snap-to-grid editing with custom shapes, undo / redo and department colours",
+      "Zones configured with purpose, unit capacity and required trade qualifications",
+      "Multiple sites and floors under one company, each running in its local time zone",
+      "Stand up your first pilot floor in a day with zero extra hardware",
     ],
     art: <BuilderArt />,
   },
   {
     id: "plan",
     eyebrow: "Plan",
-    title: "Import orders, track suppliers and route units.",
+    title: "Turn incoming orders into routed, ready-to-run work.",
     text:
-      "Bring custom orders in from your ERP by CSV with a change preview, track inbound supplier " +
-      "material, and generate unit tasks automatically from multi-step job templates.",
+      "Bring orders in from your ERP by CSV with a clear preview of every change, track inbound " +
+      "supplier parts before they hold up a bay, and generate unit tasks from reusable job templates.",
     points: [
-      "Custom orders → line items → units → tasks from reusable templates",
-      "Expected times, pace targets, attached drawings and sequential steps",
-      "Inbound material tracking (PO, expected date, received, kitted) with late alerts",
-      "Shift rosters and training qualifications decide who is ready for each role",
+      "Break orders into units and step-by-step tasks automatically from templates",
+      "Attach drawings, expected times, photo checks and sequential dependencies per step",
+      "Track supplier POs from expected delivery to received and kitted, with late alerts",
+      "Match shift rosters and verified training records to every station and role",
     ],
     art: <PlanningArt />,
   },
   {
     id: "work",
     eyebrow: "Work · FloorOS Pro",
-    title: "Scan the station. Record work and notes.",
+    title: "One scan to start. Zero paperwork at the bay.",
     text:
-      "Trades operators open FloorOS Pro on Android — scan a station QR to start, log pieces and " +
-      "pauses, close move jobs with a zone scan, see watch-out alerts, and hold to record voice notes.",
+      "Trades operators open FloorOS Pro on their phone, scan a station QR code to start work, " +
+      "log pieces, scan destination zones to finish moves, and hold a button to speak notes hands-free.",
     points: [
-      "Offline command queue syncs safely when Wi-Fi drops, applied exactly once",
-      "Job steps carousel, attached drawings and published Watch-out items on start",
-      "Hold-to-record voice notes stream to FloorOS Manager as live transcripts in seconds",
-      "Personal shifts, training credentials and mobile single sign-on built in",
+      "Works reliably in Wi-Fi dead zones and syncs automatically without double-counting",
+      "Shows step instructions, drawings and safety watch-outs the moment work starts",
+      "Spoken voice notes transcribe live to the web in seconds for leads to review",
+      "Operators can check their shift schedule, training sign-offs and sign in with company SSO",
     ],
     art: <PhoneArt />,
     bare: true,
@@ -65,30 +65,30 @@ const STEPS: Step[] = [
   {
     id: "watch",
     eyebrow: "Watch · Manager & Executive",
-    title: "See every station, floor and site — live.",
+    title: "See where work is flowing — and where it's stuck.",
     text:
-      "Leads run the floor in FloorOS Manager from the live Board and 3D map. C-level and " +
-      "directors open FloorOS Executive Suite for multi-site dashboards, team alignment and daily schedules.",
+      "Supervisors run the shift from the live Board and 3D map, where delayed and idle stations " +
+      "float straight to the top. Directors open FloorOS Executive Suite to see every site at a glance.",
     points: [
-      "Board station cards with live pace bars, Today's numbers and Bottleneck badges",
-      "3D Live Map: units travel along aisles, waiting and blocked zones pulse",
-      "Daily schedules, shift rosters, morning huddle reports and team sync",
-      "Executive Company view: animated department flow and status across 5,000+ people",
+      "Live station cards with pace bars, daily output counters and Bottleneck badges",
+      "3D floor map shows units moving along aisles and highlights full or blocked zones",
+      "Aligned with daily schedules, shift rosters, morning huddle sheets and team channels",
+      "Company-wide view tracks live department flow and status across 5,000+ employees",
     ],
     art: <LiveArt />,
   },
   {
     id: "automate",
     eyebrow: "Automate",
-    title: "Close the gaps between jobs automatically.",
+    title: "Let the next step happen on its own.",
     text:
-      "Build visual workflows that react to failed tests, delayed tasks, finished units and " +
-      "reported problems — dispatching the first free, clocked-in, trained person automatically.",
+      "Close the everyday gaps that quietly eat up shift hours. Visual workflows react the " +
+      "instant a test fails, a task runs late or a unit finishes — routing work to the right person automatically.",
     points: [
-      "Dispatch inbox for jobs and notices to a person, team, role or floor with photos & push",
-      "First-free routing checks live presence, current workload and valid training sign-off",
-      "Automatic move jobs, live KPI counters and shift-report flags",
-      "Safe by design: test runs before going live, full run history and a one-click off switch",
+      "Dispatches the first free person who is clocked in and trained for that exact step",
+      "Sends jobs and notices to an individual, team, trade role or floor with photos and push alerts",
+      "Creates automatic material move jobs, updates live KPI tiles and flags shift reports",
+      "Built with guardrails: dry-run on past events, full step-by-step logs and a one-click kill switch",
     ],
     art: <AutomateArt />,
   },
@@ -101,10 +101,10 @@ export function Workflow() {
         <div className="wrap">
           <div className="section-head reveal" style={{ marginBottom: 0 }}>
             <p className="eyebrow">How it works</p>
-            <h2>From empty floor plan to self-running flow in five steps.</h2>
+            <h2>From floor layout to self-running flow in five steps.</h2>
             <p className="lead">
-              Most lost time isn&apos;t a breakdown — it&apos;s the gaps between jobs. Map the
-              floor, route orders, scan on the phone, watch every site live and automate handoffs.
+              No new hardware and no six-month rollout. Map your bays, bring in orders, let crews
+              scan in on their phones, watch work move live and automate the handoffs.
             </p>
             <ol className="step-index">
               {STEPS.map((s, i) => (

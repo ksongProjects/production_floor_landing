@@ -2,34 +2,34 @@ const ROLES = [
   {
     tag: "C-Level & Directors",
     title: "FloorOS Executive Suite",
-    text: "Company-wide live visibility, executive dashboards, and seamless alignment with your teams and daily schedules.",
+    text: "One live picture of every plant, department and shift — built for leadership visibility and daily operational alignment.",
     items: [
-      "Multi-site Company view & animated department flow",
-      "Executive dashboards, KPIs and bottleneck ROI tracking",
-      "Integrations with teams, daily schedules & morning huddles",
-      "Enterprise OIDC / SAML SSO, AI spend caps and audit trail",
+      "Live department flow and headcount across every site and time zone",
+      "Executive dashboards for throughput, bottleneck impact and improvement ROI",
+      "Connected to team channels, daily schedules and morning huddles",
+      "Enterprise single sign-on (OIDC & SAML), AI budget controls and full audit trail",
     ],
   },
   {
     tag: "Managers, Planners & Leads",
     title: "FloorOS Manager",
-    text: "Design the floor, schedule orders and rosters, dispatch jobs and let visual workflows close the gaps.",
+    text: "Lay out the floor, schedule orders and crews, spot delays early, and let automation handle routine follow-ups.",
     items: [
-      "2D & 3D floor builder, live Board and station pace bars",
-      "Custom orders, CSV import, job templates & supplier tracking",
-      "Shift rosters, Who is here clock-in and training sign-off",
-      "Dispatch inbox, Automate workflows, Knowledge review & AI advisor",
+      "Interactive 2D & 3D floor map plus a live station Board with pace bars",
+      "ERP order import, multi-step job templates and inbound supplier tracking",
+      "Shift rosters, live clock-in availability and training qualification gates",
+      "One-click job dispatch, visual automation rules and AI floor suggestions",
     ],
   },
   {
     tag: "Floor Workers & Trades Operators",
     title: "FloorOS Pro",
-    text: "Built for skilled trades and operators on the floor — scan in, track pace, move units and capture know-how hands-free.",
+    text: "Fast, no-nonsense tools on the crew's own phones — scan in, build, move material and share shop know-how without paperwork.",
     items: [
-      "Station & zone QR scan on Android — works offline",
-      "Pieces, pace timer, job step guides and move jobs",
-      "Hold-to-record voice notes streamed live to the web",
-      "Watch-out step warnings and Ask AI troubleshooting assistant",
+      "One QR scan to start work at a station or close a material move",
+      "Live pace timer, piece counts, step drawings and watch-out reminders",
+      "Push-to-talk voice notes transcribed straight to leads in seconds",
+      "Ask AI assistant for step-by-step answers — works offline in dead zones",
     ],
   },
 ];
@@ -40,10 +40,10 @@ export function Roles() {
       <div className="wrap">
         <div className="section-head reveal">
           <p className="eyebrow">One operating system, three suites</p>
-          <h2>Purpose-built for the boardroom, the office and the bays.</h2>
+          <h2>Built for the boardroom, the plant office and the bays.</h2>
           <p className="lead">
-            FloorOS sits beside your ERP and connects leadership, managers and trades professionals
-            on the same live data — with each suite tailored to how that role works.
+            FloorOS sits alongside your ERP to connect executives, plant managers and skilled trades
+            on one live operating system — with a dedicated experience for every role.
           </p>
         </div>
         <div className="roles">

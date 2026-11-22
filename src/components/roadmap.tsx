@@ -5,12 +5,12 @@ const COLUMNS = [
     done: true,
     title: "Executive Suite, Manager & FloorOS Pro",
     items: [
-      "FloorOS Executive Suite: multi-site Company view, dashboards, daily schedules & huddle reports",
-      "FloorOS Manager: 2D/3D builder, live Board, orders, CSV import, suppliers & Automate workflows",
-      "FloorOS Pro (Android): offline QR scan, pieces, move jobs, voice notes and mobile views",
-      "Bottleneck analysis with AI root-cause fixes and before / after improvement tracking",
-      "Knowledge base, live phone-to-web transcripts, Ask assistant and operational advisor",
-      "Rosters, clock-in, training sign-off, Glass UI and enterprise OIDC / SAML SSO",
+      "FloorOS Executive Suite: multi-site Company live view, KPI dashboards, daily schedules & huddle sheets",
+      "FloorOS Manager: 2D/3D floor builder, live Board, ERP CSV import, supplier tracking & visual automation",
+      "FloorOS Pro (Android): offline QR scan, piece tracking, material move jobs and live voice notes",
+      "Bottleneck analysis engine with AI root-cause explanations and before / after improvement ROI",
+      "Central knowledge base, phone-to-web transcripts, cited Ask AI assistant and live floor advisor",
+      "Shift rosters, clock-in presence, training sign-offs, Glass UI and OIDC / SAML single sign-on",
     ],
   },
   {
@@ -19,23 +19,23 @@ const COLUMNS = [
     done: false,
     title: "Team integrations, Mail & iOS",
     items: [
-      "Microsoft Teams, Slack and daily calendar / schedule sync for FloorOS Executive Suite",
-      "Email delivery for shift, meeting and weekly bottleneck reports, plus forgot password",
-      "Departments and Company live view in FloorOS Pro on Android",
-      "French voice transcription and assistant answers for bilingual sites",
-      "FloorOS Pro for iPhone via TestFlight with APNs push notifications",
+      "Direct Microsoft Teams, Slack and calendar schedule sync for FloorOS Executive Suite",
+      "Automated email delivery for shift, huddle and weekly bottleneck reports",
+      "Multi-site Company view and department filters inside FloorOS Pro on Android",
+      "French voice transcription and bilingual Ask AI support for Canadian plants",
+      "FloorOS Pro for iPhone with native push notifications",
     ],
   },
   {
     chip: "Later",
     tone: "idle",
     done: false,
-    title: "Enterprise assurance & integrations",
+    title: "Enterprise assurance & connectors",
     items: [
-      "MFA for non-SSO accounts, IP allow-lists and SCIM user provisioning",
-      "SOC 2 compliance and external penetration testing",
-      "Canada-hosted data residency and packaged on-prem installs",
-      "Direct ERP connectors and machine / PLC telemetry",
+      "Multi-factor authentication for non-SSO logins, IP allow-lists and SCIM directory sync",
+      "SOC 2 Type II certification and independent penetration testing",
+      "Dedicated Canadian data-residency hosting and turnkey on-prem appliances",
+      "Two-way ERP connectors and direct machine / PLC telemetry",
     ],
   },
 ];
@@ -46,9 +46,10 @@ export function Roadmap() {
       <div className="wrap">
         <div className="section-head reveal">
           <p className="eyebrow">Roadmap</p>
-          <h2>Honest about what runs today — and what comes next.</h2>
+          <h2>Built in the open. Shipped straight to the floor.</h2>
           <p className="lead">
-            Every release ships directly to the floor. Here is what is live now and what is on deck.
+            What runs in production today, what is shipping next, and where we are taking enterprise
+            integrations.
           </p>
         </div>
         <div className="timeline">

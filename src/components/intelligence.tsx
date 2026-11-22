@@ -1,7 +1,7 @@
 const STAGES = [
-  { name: "Fabrication", util: "71%", note: "0.4h queue" },
-  { name: "Assembly", util: "78%", note: "0.6h queue" },
-  { name: "Wiring", util: "96%", note: "2.4h queue", bottleneck: true },
+  { name: "Fabrication", util: "71%", note: "0.4h wait" },
+  { name: "Assembly", util: "78%", note: "0.6h wait" },
+  { name: "Wiring", util: "96%", note: "2.4h wait", bottleneck: true },
   { name: "Test & QA", util: "58%", note: "Starved 28%" },
 ];
 
@@ -11,10 +11,10 @@ export function Intelligence() {
       <div className="wrap">
         <div className="section-head reveal">
           <p className="eyebrow">AI, Knowledge &amp; Bottlenecks</p>
-          <h2>Numbers find the bottleneck. Floor knowledge and AI help fix it.</h2>
+          <h2>Hard numbers find the bottleneck. Floor knowledge fixes it.</h2>
           <p className="lead">
-            Capture what your best operators know without slowing them down, pinpoint what actually
-            limits output over days and weeks, and keep a human in charge of every approval.
+            Capture what your best tradespeople know while they work, pinpoint the exact stage
+            holding back output, and keep a human in charge of every change.
           </p>
         </div>
 
@@ -22,13 +22,14 @@ export function Intelligence() {
           <article className="intel-card reveal">
             <div className="ui-row">
               <span className="chip danger">Bottleneck analysis</span>
-              <span className="ui-muted">SQL metrics · AI explanation</span>
+              <span className="ui-muted">Verified numbers · AI root cause</span>
             </div>
-            <h3>Pinpoint what limits output — then measure the fix</h3>
+            <h3>See what limits output — and prove the fix worked</h3>
             <p className="intel-lead">
-              Exact SQL queries compute utilisation, queue time, blocked and starved hours, lost
-              daily output and cause signals. AI reads those figures plus linked floor notes to
-              explain why and propose concrete actions — every number verified against real data.
+              FloorOS measures station utilisation, queue times, blocked bays and starved downstream
+              steps over days and weeks to rank your true constraints. AI combines those metrics
+              with floor notes to explain why and recommend fixes — with every number checked
+              against real floor data so it never guesses.
             </p>
             <div className="stage-strip" aria-label="Department utilisation strip">
               {STAGES.map((s) => (
@@ -41,18 +42,19 @@ export function Intelligence() {
               ))}
             </div>
             <div className="intel-quote">
-              “Wiring led 4 of the last 5 days (2.4 h wait before it; 2 of 7 qualified wirers on day
-              shift). Cross-train 2 assemblers or stagger breaks to recover +3.2 units/day.”
+              “Wiring was the bottleneck on 4 of the last 5 days (2.4 h average wait; only 2 of 7
+              qualified wirers rostered on day shift). Cross-train 2 assemblers or stagger breaks to
+              recover +3.2 units/day.”
               <span className="ui-muted">
-                Every figure checked against floor data · Bottleneck badge shown on Board &amp; 3D
-                map
+                Every figure verified against floor data · Bottleneck badge highlighted on Board
+                &amp; 3D map
               </span>
             </div>
             <div className="ui-card">
               <div className="ui-row">
                 <div>
                   <div className="ui-title">Tracked improvement · Stagger Wiring breaks</div>
-                  <div className="ui-muted">2-week before / after check</div>
+                  <div className="ui-muted">2-week before &amp; after comparison</div>
                 </div>
                 <span className="chip ok">Queue −48% · Output +11%</span>
               </div>
@@ -64,12 +66,12 @@ export function Intelligence() {
               <span className="chip">Knowledge base · Voice · Ask AI</span>
               <span className="ui-muted">Human-approved</span>
             </div>
-            <h3>Turn shop-floor voice notes into live company knowledge</h3>
+            <h3>Turn spoken shop notes into living SOPs</h3>
             <p className="intel-lead">
-              Operators hold to record a note on their phone; transcripts stream onto the web in
-              seconds. AI summarises key points and drafts article updates for your central
-              knowledge base. Ask answers questions with exact citations, and the live advisor
-              suggests floor moves — never acting without a person pressing Accept.
+              Operators hold a button to speak a note mid-task; a live transcript lands on the web
+              in seconds. AI extracts key points and drafts SOP or safety updates for a manager to
+              approve. Anyone on the floor can ask a question and get an instant answer citing your
+              own approved articles.
             </p>
             <div className="ui-stack">
               <div className="ui-card">
@@ -86,20 +88,20 @@ export function Intelligence() {
               <div className="ui-card">
                 <div className="ui-row">
                   <div>
-                    <div className="ui-title">Proposed edit → Wiring SOP (v5)</div>
+                    <div className="ui-title">Proposed update → Wiring SOP (v5)</div>
                     <div className="ui-muted">
-                      Adds Watch-out item linked to Step 3 · Safety &amp; quality tagged
+                      Adds Watch-out reminder to Step 3 · Tagged for quality review
                     </div>
                   </div>
-                  <span className="chip warn">Review queue</span>
+                  <span className="chip warn">Awaiting approval</span>
                 </div>
               </div>
               <div className="ui-card">
                 <div className="ui-row">
                   <div>
-                    <div className="ui-title">Operational advisor · Live suggestion</div>
+                    <div className="ui-title">Live floor advisor · Suggestion</div>
                     <div className="ui-muted">
-                      Move 1 idle qualified wirer from Bay 4 → Bay 2 to clear 4-unit queue
+                      Reassign 1 idle qualified wirer from Bay 4 → Bay 2 to clear 4-unit queue
                     </div>
                   </div>
                   <span className="chip ok">Accept</span>
@@ -111,11 +113,11 @@ export function Intelligence() {
 
         <div className="intel-note reveal">
           <div>
-            <strong>Your models, your rules, zero surprises.</strong> Choose Anthropic, OpenAI or
-            Google with a per-company opt-in switch, monthly spend cap and audit trail — or run
-            completely AI-free (including self-hosted Whisper transcription for on-prem).
+            <strong>Your models, your guardrails, zero surprises.</strong> Connect Anthropic, OpenAI
+            or Google with a per-company switch, monthly spend cap and full usage log — or run
+            completely AI-free with self-hosted voice transcription.
           </div>
-          <span className="chip">Retrieval (RAG) with citations · No model training</span>
+          <span className="chip">Cites your approved SOPs · Never trains external models</span>
         </div>
       </div>
     </section>

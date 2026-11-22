@@ -6,18 +6,19 @@ export function Cta() {
     <section className="screen hero cta" id="get-started">
       <div className="wrap">
         <p className="eyebrow">Get started with {SITE.name}</p>
-        <h2>Live on your first floor in a day.</h2>
+        <h2>Put your first floor live in a day.</h2>
         <p className="lead">
-          Already have an account? Sign in. Want to see your own bottleneck live across{" "}
+          We&apos;ll walk you through a live plant running on{" "}
           <strong>FloorOS Executive Suite</strong>, <strong>FloorOS Manager</strong> and{" "}
-          <strong>FloorOS Pro</strong>? Book a walkthrough or run a measured 30-day pilot.
+          <strong>FloorOS Pro</strong>, then set up a measured 30-day pilot on one of your floors —
+          using printed QR codes and the phones your crew already carries.
         </p>
         <div className="actions">
-          <a className="btn primary" href={SITE.signInUrl}>
-            Sign in to {SITE.name}
-          </a>
-          <a className="btn ghost" href={contactHref}>
+          <a className="btn primary" href={contactHref}>
             Book a walkthrough
+          </a>
+          <a className="btn ghost" href={SITE.signInUrl}>
+            Sign in to {SITE.name}
           </a>
         </div>
         <a className="status-link" href={SITE.statusUrl} target="_blank" rel="noopener noreferrer">
