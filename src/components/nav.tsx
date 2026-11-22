@@ -4,7 +4,7 @@ import { Brand } from "./brand";
 const LINKS = [
   { href: "#roles", label: "Suites & Features" },
   { href: "#use-cases", label: "Live Screens" },
-  { href: "#platform", label: "Platform & Roadmap" },
+  { href: "#platform", label: "Cloud & Security" },
 ];
 
 export function Nav() {

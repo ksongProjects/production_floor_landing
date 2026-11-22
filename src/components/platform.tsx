@@ -69,20 +69,20 @@ function Diagram() {
     <svg
       viewBox="0 0 440 330"
       role="img"
-      aria-label="FloorOS Executive Suite, Manager and Pro connected over live WebSockets to one server and PostgreSQL"
+      aria-label="FloorOS Executive Suite, Manager and Pro connected over encrypted TLS and WebSockets to the FloorOS Cloud Server and PostgreSQL"
     >
       <Box x={10} y={10} w={195} title="Executive &amp; Manager" sub="Web · Dashboards · 3D Map" />
       <Box x={235} y={10} w={195} title="FloorOS Pro" sub="Android · QR · Voice · Offline" />
       <Wire d="M107 74 V112 H190 V148" />
       <Wire d="M332 74 V112 H250 V148" />
       <text x="220" y="104" textAnchor="middle" fontSize="10.5" fill="var(--muted)" {...T}>
-        HTTPS &amp; live WebSockets
+        Encrypted TLS &amp; live WebSockets
       </text>
       <Box
         x={70}
         y={148}
         w={300}
-        title="FloorOS Realtime Server"
+        title="FloorOS Cloud &amp; Realtime Gateway"
         sub="API · Automate · OIDC/SAML · AI &amp; Voice"
         accent
       />
@@ -91,46 +91,12 @@ function Diagram() {
         x={70}
         y={252}
         w={300}
-        title="PostgreSQL"
-        sub="Single source of truth · Hybrid search · Backups"
+        title="Managed Cloud PostgreSQL"
+        sub="Tenant-isolated · Hybrid search · Nightly backups"
       />
     </svg>
   );
 }
-
-const ROADMAP = [
-  {
-    chip: "Shipped & Live",
-    tone: "ok",
-    items: [
-      "Executive Suite (multi-site flow, KPIs, huddles)",
-      "Manager (2D/3D builder, Board, CSV, suppliers, Automate)",
-      "FloorOS Pro Android (offline QR, moves, live voice notes)",
-      "Bottleneck engine, AI root-cause, Knowledge Base & Ask AI",
-      "Rosters, training gates, Glass UI & OIDC / SAML SSO",
-    ],
-  },
-  {
-    chip: "Next",
-    tone: "",
-    items: [
-      "MS Teams, Slack & calendar schedule sync",
-      "Automated email delivery for shift & bottleneck reports",
-      "Company view & department filters on Android",
-      "French voice & bilingual AI; FloorOS Pro for iPhone",
-    ],
-  },
-  {
-    chip: "Later",
-    tone: "idle",
-    items: [
-      "MFA for non-SSO logins, IP allow-lists & SCIM sync",
-      "SOC 2 Type II & external penetration test",
-      "Canadian data residency & turnkey on-prem appliances",
-      "Two-way ERP connectors & direct PLC machine telemetry",
-    ],
-  },
-];
 
 export function Platform() {
   return (
@@ -138,40 +104,33 @@ export function Platform() {
       <div className="wrap">
         <div className="platform">
           <div className="reveal">
-            <p className="eyebrow">Platform, Security &amp; Roadmap</p>
-            <h2>One realtime core. Cloud or on-prem.</h2>
+            <p className="eyebrow">Cloud Platform &amp; Security</p>
+            <h2>100% cloud-native. Zero floor hardware required.</h2>
             <p className="lead">
-              Load-tested to 1,000 floor viewers and 5,000 employees across sites. Sign in with
-              Entra ID, Okta or Google; bring Anthropic, OpenAI or Google AI keys with a monthly cap
-              — or run 100% AI-free.
+              No servers to maintain and no terminals to install — just any modern browser, printed
+              QR codes and your crew&apos;s phones. Load-tested to 1,000 live viewers on a floor and
+              5,000 employees across sites.
             </p>
             <div className="deploy">
               <div>
-                <h3>Managed Cloud &amp; SSO</h3>
-                <p>Hosted with nightly backups, OIDC/SAML group mapping and audit trail.</p>
+                <h3>Modern Security Standards</h3>
+                <p>
+                  OIDC &amp; SAML 2.0 SSO (Entra ID, Okta, Google), strict tenant isolation,
+                  server-checked permissions, full audit logs and nightly encrypted backups.
+                </p>
               </div>
               <div>
-                <h3>On-Prem &amp; AI Control</h3>
-                <p>Run in your network via Docker with strict spend caps or AI off.</p>
+                <h3>Professionally Audited &amp; Governed</h3>
+                <p>
+                  Built to modern enterprise security standards with independent professional
+                  security audits, plus per-company AI opt-in switches and monthly budget caps.
+                </p>
               </div>
             </div>
           </div>
           <div className="art reveal">
             <Diagram />
           </div>
-        </div>
-
-        <div className="timeline compact-timeline reveal">
-          {ROADMAP.map((col, idx) => (
-            <article key={col.chip} className={idx === 0 ? "done" : ""}>
-              <span className={`chip ${col.tone}`}>{col.chip}</span>
-              <ul>
-                {col.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
         </div>
       </div>
     </section>

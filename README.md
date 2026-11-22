@@ -1,9 +1,9 @@
 # Landing page
 
 Public marketing page for **FloorOS** (`FloorOS Executive Suite`, `FloorOS Manager`, and
-`FloorOS Pro`): live shop-floor visibility, the five-step workflow, AI & bottleneck analysis,
-features, platform architecture and roadmap, with links to sign in to the platform and to contact
-us.
+`FloorOS Pro`): live shop-floor visibility, expandable suite feature lists, animated platform
+use-case screens and cloud security architecture, with links to sign in to the platform and to
+contact us.
 
 - Next.js with `output: "export"`: `next build` writes plain static files to `out/`.
 - Server components only, no client code of its own. Illustrations are inline SVG drawn at build

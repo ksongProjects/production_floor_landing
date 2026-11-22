@@ -58,7 +58,7 @@ const SUITES: Suite[] = [
           "Enforced SSO per email domain with emergency break-glass admin accounts",
           "Automatic identity-provider group-to-role mapping and just-in-time provisioning",
           "Per-company AI opt-in switch, monthly USD budget cap and per-feature usage log",
-          "Choice of Anthropic, OpenAI, Google or 100% AI-free / on-prem mode",
+          "Modern cloud security standards with independent professional security audits",
           "Tamper-evident audit log for access, role, SSO, training and SOP changes",
           "Nightly encrypted backups with 14-day retention and health monitoring",
         ],

@@ -8,8 +8,9 @@ export function Cta() {
         <p className="eyebrow">Get started</p>
         <h2>Live on your first floor in a day.</h2>
         <p className="lead">
-          See a live plant running on <strong>Executive Suite</strong>, <strong>Manager</strong> and{" "}
-          <strong>FloorOS Pro</strong>, then run a measured 30-day pilot with zero new hardware.
+          100% cloud-hosted with zero hardware required. See a live plant running on{" "}
+          <strong>Executive Suite</strong>, <strong>Manager</strong> and{" "}
+          <strong>FloorOS Pro</strong>, then run a measured 30-day pilot.
         </p>
         <div className="actions">
           <a className="btn primary" href={contactHref}>
@@ -38,7 +39,7 @@ export function Footer() {
         <nav aria-label="Footer">
           <a href="#roles">Suites &amp; Features</a>
           <a href="#use-cases">Live Screens</a>
-          <a href="#platform">Platform &amp; Roadmap</a>
+          <a href="#platform">Cloud &amp; Security</a>
           <a href={SITE.platformUrl}>Sign in</a>
           <a href={contactHref}>Contact</a>
         </nav>
