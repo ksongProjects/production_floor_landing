@@ -385,36 +385,38 @@ svg {
 
 .word-rotator {
   display: inline-flex;
-  height: 1.28em;
+  height: 1.36em;
   overflow: hidden;
-  vertical-align: -0.22em;
-  padding: 0 0.14em;
+  vertical-align: -0.25em;
+  padding: 0;
   background: transparent;
   border: 0;
   color: #79adff;
-  -webkit-mask-image:
-    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%),
-    linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%),
-    linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
-  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
 .word-track {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   will-change: transform;
   animation: word-rotate 18s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 .word-item {
-  height: 1.28em;
-  line-height: 1.28em;
+  height: 1.36em;
+  line-height: 1.36em;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  text-align: left;
   white-space: nowrap;
 }
 
@@ -425,26 +427,26 @@ svg {
   }
   16.67%,
   30.27% {
-    transform: translateY(-1.28em);
+    transform: translateY(-1.36em);
   }
   33.33%,
   46.93% {
-    transform: translateY(-2.56em);
+    transform: translateY(-2.72em);
   }
   50%,
   63.6% {
-    transform: translateY(-3.84em);
+    transform: translateY(-4.08em);
   }
   66.67%,
   80.27% {
-    transform: translateY(-5.12em);
+    transform: translateY(-5.44em);
   }
   83.33%,
   96.93% {
-    transform: translateY(-6.4em);
+    transform: translateY(-6.8em);
   }
   100% {
-    transform: translateY(-7.68em);
+    transform: translateY(-8.16em);
   }
 }
 
