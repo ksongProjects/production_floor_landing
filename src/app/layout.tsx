@@ -15,7 +15,7 @@ const grotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${SITE.name} — find bottlenecks, cut downtime`,
+  title: `${SITE.name} — live shop floor visibility, automation and bottleneck analysis`,
   description: SITE.description,
   openGraph: {
     type: "website",

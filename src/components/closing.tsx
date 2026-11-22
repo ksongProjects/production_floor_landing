@@ -5,25 +5,27 @@ export function Cta() {
   return (
     <section className="screen hero cta" id="get-started">
       <div className="wrap">
-        <p className="eyebrow">Get started</p>
-        <h2>Let&apos;s find your bottleneck.</h2>
+        <p className="eyebrow">Get started with {SITE.name}</p>
+        <h2>Live on your first floor in a day.</h2>
         <p className="lead">
-          We&apos;ll show you a real floor running on Production Floor, then set up a pilot on yours.
-          Already have an account? Sign in.
+          Already have an account? Sign in. Want to see your own bottleneck live across{" "}
+          <strong>FloorOS Executive Suite</strong>, <strong>FloorOS Manager</strong> and{" "}
+          <strong>FloorOS Pro</strong>? Book a walkthrough or run a measured 30-day pilot.
         </p>
         <div className="actions">
-          <a className="btn primary" href={contactHref}>
-            Book a walkthrough
+          <a className="btn primary" href={SITE.signInUrl}>
+            Sign in to {SITE.name}
           </a>
-          <a className="btn ghost" href={SITE.signInUrl}>
-            Sign in to the platform
+          <a className="btn ghost" href={contactHref}>
+            Book a walkthrough
           </a>
         </div>
         <a className="status-link" href={SITE.statusUrl} target="_blank" rel="noopener noreferrer">
           Server status
         </a>
         <p className="hero-note">
-          Operator on Android? <a href={SITE.androidAppUrl}>Download the app</a>
+          Trades operator or lead on Android?{" "}
+          <a href={SITE.androidAppUrl}>Download FloorOS Pro (APK)</a>
         </p>
       </div>
     </section>
@@ -36,11 +38,12 @@ export function Footer() {
       <div className="wrap">
         <Brand />
         <nav aria-label="Footer">
-          <a href="#gaps">Downtime</a>
+          <a href="#roles">Suites</a>
           <a href="#workflow">How it works</a>
+          <a href="#intelligence">AI &amp; Knowledge</a>
           <a href="#features">Features</a>
-          <a href="#pilot">Pilot</a>
-          <a href={SITE.signInUrl}>Sign in</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href={SITE.platformUrl}>Platform</a>
           <a href={contactHref}>Contact</a>
         </nav>
         <span>

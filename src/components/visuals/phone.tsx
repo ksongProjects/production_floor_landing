@@ -1,10 +1,8 @@
 import type { ReactNode } from "react";
 
-// Two phone screens: scan a station QR code, then the work screen it opens, with the step's
-// instructions and a photo the step asks for.
+// Two phone screens: scan a station/zone QR code, then the active task with watch-out alert & voice note.
 
 function Qr() {
-  // A fixed, decorative pattern that reads as a QR code. Not scannable.
   const cells = ["1110101", "1010011", "1110110", "0001010", "1101101", "0110011", "1011101"];
   return (
     <g>
@@ -35,24 +33,24 @@ const T = { fontFamily: "system-ui, sans-serif" };
 export function PhoneArt() {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(12px, 3vw, 32px)" }}>
-      <Frame label="Phone scanning a station QR code">
+      <Frame label="Phone scanning a station or zone QR code">
         <text
           x="100"
-          y="62"
+          y="60"
           textAnchor="middle"
           fontSize="12"
           fontWeight="700"
           fill="var(--text)"
           {...T}
         >
-          Scan station
+          Scan station or zone
         </text>
-        <rect x="35" y="110" width="130" height="130" rx="14" fill="#151a21" />
-        <g transform="translate(65 140)" fill="#eef1f5">
+        <rect x="35" y="102" width="130" height="130" rx="14" fill="#151a21" />
+        <g transform="translate(65 132)" fill="#eef1f5">
           <Qr />
         </g>
         <path
-          d="M40 135v-18h18M142 117h18v18M160 215v18h-18M58 233H40v-18"
+          d="M40 127v-18h18M142 109h18v18M160 207v18h-18M58 225H40v-18"
           fill="none"
           stroke="var(--accent)"
           strokeWidth="4"
@@ -60,153 +58,154 @@ export function PhoneArt() {
         />
         <line
           x1="45"
-          y1="175"
+          y1="167"
           x2="155"
-          y2="175"
+          y2="167"
           stroke="var(--live)"
           strokeWidth="2"
           opacity="0.8"
         />
-        <text x="100" y="272" textAnchor="middle" fontSize="11" fill="var(--muted)" {...T}>
-          Point at the code on
+        <text x="100" y="262" textAnchor="middle" fontSize="10.5" fill="var(--muted)" {...T}>
+          Start work or close a move job
         </text>
-        <text x="100" y="288" textAnchor="middle" fontSize="11" fill="var(--muted)" {...T}>
-          the station
+        <rect
+          x="26"
+          y="292"
+          width="148"
+          height="58"
+          rx="12"
+          fill="var(--surface)"
+          stroke="var(--border)"
+        />
+        <text x="38" y="314" fontSize="9.5" fontWeight="700" fill="var(--warn)" {...T}>
+          ▲ Watch out for
+        </text>
+        <text x="38" y="330" fontSize="9" fill="var(--text)" {...T}>
+          Check lug torque on Sec 3
+        </text>
+        <text x="38" y="342" fontSize="8.5" fill="var(--muted)" {...T}>
+          From Wiring SOP · v4
         </text>
       </Frame>
-      <Frame label="Work screen with the step's instructions, a required photo, units, and pause and end buttons">
-        <rect x="120" y="44" width="58" height="16" rx="8" fill="var(--bg-alt)" />
-        <text x="149" y="55" textAnchor="middle" fontSize="8" fill="var(--muted)" {...T}>
-          Offline · 3
+      <Frame label="Work screen with pace timer, pieces, voice note recording and offline queue">
+        <text x="24" y="54" fontSize="10" fill="var(--muted)" {...T}>
+          Wiring Bay 2 · 09:41
         </text>
-        <text x="24" y="56" fontSize="10" fill="var(--muted)" {...T}>
-          Assembly 2 · 09:41
+        <text x="24" y="73" fontSize="13.5" fontWeight="700" fill="var(--text)" {...T}>
+          Control wiring
         </text>
-        <text x="24" y="78" fontSize="14" fontWeight="700" fill="var(--text)" {...T}>
-          Assemble frame
-        </text>
-        <text x="24" y="94" fontSize="10" fill="var(--muted)" {...T}>
-          WO-1042 · Shelf unit, oak
+        <text x="24" y="88" fontSize="9.5" fill="var(--muted)" {...T}>
+          CO-482910 · Unit 3 · On pace
         </text>
         <rect
           x="24"
-          y="106"
+          y="102"
           width="152"
-          height="44"
+          height="66"
           rx="12"
           fill="var(--surface)"
           stroke="var(--border)"
         />
-        <text x="38" y="134" fontSize="17" fontWeight="700" fill="var(--text)" {...T}>
-          01:12:08
-        </text>
-        <text
-          x="162"
-          y="133"
-          textAnchor="end"
-          fontSize="10"
-          fill="var(--live)"
-          fontWeight="600"
-          {...T}
-        >
-          ● Working
-        </text>
-        <rect
-          x="24"
-          y="158"
-          width="152"
-          height="84"
-          rx="12"
-          fill="var(--surface)"
-          stroke="var(--border)"
-        />
-        <text x="38" y="177" fontSize="9.5" fontWeight="600" fill="var(--muted)" {...T}>
-          INSTRUCTIONS
-        </text>
-        {["Square the frame first", "4 screws per corner", "Check with the gauge"].map(
-          (line, i) => (
-            <g key={line}>
-              <circle cx="41" cy={193 + i * 16} r="2.2" fill="var(--accent)" />
-              <text x="49" y={196 + i * 16} fontSize="10.5" fill="var(--text)" {...T}>
-                {line}
-              </text>
-            </g>
-          ),
-        )}
-        <rect
-          x="24"
-          y="250"
-          width="152"
-          height="40"
-          rx="12"
-          fill="var(--surface)"
-          stroke="var(--live)"
-        />
-        <path
-          d="M37 263h4l2-3h8l2 3h4v13H37z"
-          fill="none"
-          stroke="var(--live)"
-          strokeWidth="1.6"
-          strokeLinejoin="round"
-        />
-        <circle cx="47" cy="269.5" r="3" fill="none" stroke="var(--live)" strokeWidth="1.6" />
-        <text x="64" y="274" fontSize="10.5" fontWeight="600" fill="var(--text)" {...T}>
-          Photo required
-        </text>
-        <rect x="136" y="259" width="32" height="22" rx="11" fill="var(--accent)" />
-        <text x="152" y="274" textAnchor="middle" fontSize="10" fontWeight="700" fill="#fff" {...T}>
-          Add
-        </text>
-        <rect
-          x="24"
-          y="298"
-          width="152"
-          height="40"
-          rx="12"
-          fill="var(--surface)"
-          stroke="var(--border)"
-        />
-        <text x="38" y="322" fontSize="11" fill="var(--muted)" {...T}>
-          Units
-        </text>
         <text
           x="100"
-          y="323"
+          y="134"
           textAnchor="middle"
-          fontSize="16"
+          fontSize="22"
           fontWeight="700"
           fill="var(--text)"
           {...T}
         >
-          42
+          00:34:18
         </text>
-        <rect x="138" y="304" width="28" height="28" rx="8" fill="var(--accent)" />
-        <text x="152" y="324" textAnchor="middle" fontSize="18" fontWeight="700" fill="#fff" {...T}>
+        <text
+          x="100"
+          y="155"
+          textAnchor="middle"
+          fontSize="9.5"
+          fill="var(--ok)"
+          fontWeight="600"
+          {...T}
+        >
+          ● Working · 45m expected
+        </text>
+        <rect
+          x="24"
+          y="178"
+          width="152"
+          height="46"
+          rx="12"
+          fill="var(--surface)"
+          stroke="var(--border)"
+        />
+        <text x="38" y="205" fontSize="10.5" fill="var(--muted)" {...T}>
+          Pieces
+        </text>
+        <text
+          x="100"
+          y="206"
+          textAnchor="middle"
+          fontSize="15"
+          fontWeight="700"
+          fill="var(--text)"
+          {...T}
+        >
+          18 / 24
+        </text>
+        <rect x="138" y="187" width="28" height="28" rx="8" fill="var(--accent)" />
+        <text x="152" y="206" textAnchor="middle" fontSize="17" fontWeight="700" fill="#fff" {...T}>
           +
         </text>
         <rect
           x="24"
-          y="346"
+          y="234"
+          width="152"
+          height="48"
+          rx="12"
+          fill="var(--accent-soft)"
+          stroke="var(--accent)"
+        />
+        <circle cx="42" cy="258" r="6" fill="var(--live)" />
+        <text x="56" y="255" fontSize="10" fontWeight="700" fill="var(--text)" {...T}>
+          Hold to record note
+        </text>
+        <text x="56" y="270" fontSize="8.5" fill="var(--muted)" {...T}>
+          Live transcript → web
+        </text>
+        <rect
+          x="24"
+          y="296"
           width="72"
-          height="32"
-          rx="16"
+          height="36"
+          rx="18"
           fill="var(--surface)"
           stroke="var(--border)"
         />
         <text
           x="60"
-          y="366"
+          y="318"
           textAnchor="middle"
-          fontSize="12"
+          fontSize="11.5"
           fontWeight="600"
           fill="var(--text)"
           {...T}
         >
           Pause
         </text>
-        <rect x="104" y="346" width="72" height="32" rx="16" fill="var(--accent)" />
-        <text x="140" y="366" textAnchor="middle" fontSize="12" fontWeight="600" fill="#fff" {...T}>
-          End
+        <rect x="104" y="296" width="72" height="36" rx="18" fill="var(--accent)" />
+        <text
+          x="140"
+          y="318"
+          textAnchor="middle"
+          fontSize="11.5"
+          fontWeight="600"
+          fill="#fff"
+          {...T}
+        >
+          Finish
+        </text>
+        <rect x="38" y="346" width="124" height="22" rx="11" fill="var(--bg-alt)" />
+        <text x="100" y="361" textAnchor="middle" fontSize="9" fill="var(--muted)" {...T}>
+          Offline · 2 updates queued
         </text>
       </Frame>
     </div>

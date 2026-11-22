@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
-import { StepRail } from "./scroll-spy";
-import { BottleneckArt } from "./visuals/bottleneck";
+import { AutomateArt } from "./visuals/automate";
 import { BuilderArt } from "./visuals/builder";
-import { FlowArt } from "./visuals/flow";
+import { LiveArt } from "./visuals/live";
 import { PhoneArt } from "./visuals/phone";
 import { PlanningArt } from "./visuals/planning";
 
@@ -18,89 +17,108 @@ type Step = {
 
 const STEPS: Step[] = [
   {
-    id: "see",
-    eyebrow: "See",
-    title: "Every station, every person, right now.",
+    id: "build",
+    eyebrow: "Build",
+    title: "Map every floor, zone and department.",
     text:
-      "Operators scan a station's QR code on their own phone to start and end work. Every " +
-      "station shows up live: who is on it, the task, and its pace against the expected time.",
+      "Draw each floor in the built-in builder — stations, machines, racks, zones, walls, move " +
+      "paths and custom shapes. Tilt smoothly between 2D and 3D; print QR codes for any station or zone.",
     points: [
-      "Delayed, paused and idle stations rise to the top of the board",
-      "Start, pause, log units and end with one tap",
-      "Keeps working with no signal and catches up when back online",
-      "Every floor at once on the home screen",
+      "Snap to grid, drag handles, undo / redo and department colours",
+      "Zones with purpose, capacity and required roles",
+      "Many sites and floors per company, each in its local time zone",
+      "First pilot floor goes live in a day with no new hardware",
+    ],
+    art: <BuilderArt />,
+  },
+  {
+    id: "plan",
+    eyebrow: "Plan",
+    title: "Import orders, track suppliers and route units.",
+    text:
+      "Bring custom orders in from your ERP by CSV with a change preview, track inbound supplier " +
+      "material, and generate unit tasks automatically from multi-step job templates.",
+    points: [
+      "Custom orders → line items → units → tasks from reusable templates",
+      "Expected times, pace targets, attached drawings and sequential steps",
+      "Inbound material tracking (PO, expected date, received, kitted) with late alerts",
+      "Shift rosters and training qualifications decide who is ready for each role",
+    ],
+    art: <PlanningArt />,
+  },
+  {
+    id: "work",
+    eyebrow: "Work · FloorOS Pro",
+    title: "Scan the station. Record work and notes.",
+    text:
+      "Trades operators open FloorOS Pro on Android — scan a station QR to start, log pieces and " +
+      "pauses, close move jobs with a zone scan, see watch-out alerts, and hold to record voice notes.",
+    points: [
+      "Offline command queue syncs safely when Wi-Fi drops, applied exactly once",
+      "Job steps carousel, attached drawings and published Watch-out items on start",
+      "Hold-to-record voice notes stream to FloorOS Manager as live transcripts in seconds",
+      "Personal shifts, training credentials and mobile single sign-on built in",
     ],
     art: <PhoneArt />,
     bare: true,
   },
   {
-    id: "spot",
-    eyebrow: "Spot",
-    title: "The bottleneck shows itself.",
+    id: "watch",
+    eyebrow: "Watch · Manager & Executive",
+    title: "See every station, floor and site — live.",
     text:
-      "The floor map shows where work piles up: full zones in amber, a blocked zone in red. " +
-      "Needs attention ranks the units and tasks waiting longest, and where they are stuck.",
+      "Leads run the floor in FloorOS Manager from the live Board and 3D map. C-level and " +
+      "directors open FloorOS Executive Suite for multi-site dashboards, team alignment and daily schedules.",
     points: [
-      "Time in each zone for every unit that moves through the shop",
-      "Pace per step against its expected time",
-      "See which step holds up the line, shift after shift",
-      "Report by shift, day, station or person, with CSV export",
+      "Board station cards with live pace bars, Today's numbers and Bottleneck badges",
+      "3D Live Map: units travel along aisles, waiting and blocked zones pulse",
+      "Daily schedules, shift rosters, morning huddle reports and team sync",
+      "Executive Company view: animated department flow and status across 5,000+ people",
     ],
-    art: <BottleneckArt />,
+    art: <LiveArt />,
   },
   {
-    id: "fix",
-    eyebrow: "Fix",
-    title: "The next step happens on its own.",
+    id: "automate",
+    eyebrow: "Automate",
+    title: "Close the gaps between jobs automatically.",
     text:
-      "Workflows close the routine gaps without anyone chasing them. A reported problem becomes " +
-      "a repair job, a late task alerts the supervisor, a finished unit gets moved to the next " +
-      "zone so the next station isn't starved.",
+      "Build visual workflows that react to failed tests, delayed tasks, finished units and " +
+      "reported problems — dispatching the first free, clocked-in, trained person automatically.",
     points: [
-      "Work goes to the first free person: clocked in, not busy and trained for it",
-      "Start from ready-made workflows, or draw your own",
-      "Test a workflow on something that already happened before you turn it on",
-      "Every run logged step by step; switch any workflow off with one tap",
+      "Dispatch inbox for jobs and notices to a person, team, role or floor with photos & push",
+      "First-free routing checks live presence, current workload and valid training sign-off",
+      "Automatic move jobs, live KPI counters and shift-report flags",
+      "Safe by design: test runs before going live, full run history and a one-click off switch",
     ],
-    art: <FlowArt />,
-  },
-  {
-    id: "track",
-    eyebrow: "Track",
-    title: "Orders to units to tasks, through the shop.",
-    text:
-      "Custom orders with line items and units. Each unit gets its own tasks from a job " +
-      "template, and moves zone to zone with move jobs that close when the handler scans the " +
-      "destination.",
-    points: [
-      "Job templates with steps, instructions, drawings and photo checks",
-      "Import orders by CSV, with a preview of every change",
-      "Jobs and notices to a person, a team or the whole floor",
-      "Progress in units, tasks and time against the due date",
-    ],
-    art: <PlanningArt />,
-  },
-  {
-    id: "start",
-    eyebrow: "Start",
-    title: "Live on one floor in a day.",
-    text:
-      "No new hardware: printed QR codes and the crew's own phones. A guided checklist takes " +
-      "you from an empty floor to live work in about an hour.",
-    points: [
-      "Draw the floor on a grid, in top-down or 3D",
-      "A printable QR code for every station",
-      "Roles per floor, training records and shift rosters",
-      "Many sites and floors, each in its own time zone",
-    ],
-    art: <BuilderArt />,
+    art: <AutomateArt />,
   },
 ];
 
 export function Workflow() {
   return (
     <div id="workflow">
-      <StepRail group="workflow" steps={STEPS.map((s) => ({ id: s.id, label: s.eyebrow }))} />
+      <section className="screen alt">
+        <div className="wrap">
+          <div className="section-head reveal" style={{ marginBottom: 0 }}>
+            <p className="eyebrow">How it works</p>
+            <h2>From empty floor plan to self-running flow in five steps.</h2>
+            <p className="lead">
+              Most lost time isn&apos;t a breakdown — it&apos;s the gaps between jobs. Map the
+              floor, route orders, scan on the phone, watch every site live and automate handoffs.
+            </p>
+            <ol className="step-index">
+              {STEPS.map((s, i) => (
+                <li key={s.id}>
+                  <a href={`#${s.id}`}>
+                    <span>{i + 1}</span>
+                    {s.eyebrow}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
       {STEPS.map((s, i) => (
         <section
           key={s.id}
@@ -109,18 +127,10 @@ export function Workflow() {
           aria-labelledby={`${s.id}-title`}
         >
           <div className="wrap">
-            {i === 0 ? (
-              <header className="flow-head reveal">
-                <p className="eyebrow">How it works</p>
-                <h2>See the floor, spot the bottleneck, close the gap.</h2>
-              </header>
-            ) : null}
             <div className="copy reveal">
               <span className="step-num">{i + 1}</span>
               <p className="eyebrow">{s.eyebrow}</p>
-              <h3 className="step-title" id={`${s.id}-title`}>
-                {s.title}
-              </h3>
+              <h2 id={`${s.id}-title`}>{s.title}</h2>
               <p className="lead">{s.text}</p>
               <ul className="checks">
                 {s.points.map((p) => (

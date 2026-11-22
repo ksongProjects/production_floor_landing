@@ -1,9 +1,11 @@
 import { Cta, Footer } from "@/components/closing";
 import { Features } from "@/components/features";
-import { Gaps } from "@/components/gaps";
 import { Hero } from "@/components/hero";
+import { Intelligence } from "@/components/intelligence";
 import { Nav } from "@/components/nav";
-import { Pilot } from "@/components/pilot";
+import { Platform } from "@/components/platform";
+import { Roadmap } from "@/components/roadmap";
+import { Roles } from "@/components/roles";
 import { Workflow } from "@/components/workflow";
 
 export default function Home() {
@@ -15,10 +17,12 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <Gaps />
+        <Roles />
         <Workflow />
+        <Intelligence />
         <Features />
-        <Pilot />
+        <Platform />
+        <Roadmap />
         <Cta />
       </main>
       <Footer />

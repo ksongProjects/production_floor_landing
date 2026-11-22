@@ -1,51 +1,46 @@
 const STEPS = [
-  { name: "Cut panels", station: "Saw 1", extra: "drawing.pdf" },
-  { name: "Assemble frame", station: "Assembly 2", extra: "Photo required" },
-  { name: "Inspect", station: "QA" },
-  { name: "Pack and label", station: "Pack" },
+  { name: "Inbound breakers · PO-8821", dept: "Suppliers", status: "Kitted", tone: "ok" },
+  { name: "Cut & bend enclosure", dept: "Fabrication · Bay 2", status: "Done", tone: "ok" },
+  {
+    name: "Control wiring · Sec 1–4",
+    dept: "Wiring · 45 min est.",
+    status: "In progress",
+    tone: "live",
+  },
+  { name: "Hi-pot test & QA sign-off", dept: "Test & inspection", status: "Waiting", tone: "warn" },
 ];
 
-// A job template with its steps, and the work order started from it.
+// Custom order with inbound material and department-routed tasks from a template.
 export function PlanningArt() {
   return (
     <div className="ui-stack">
       <div className="ui-card">
         <div className="ui-row">
           <div>
-            <div className="ui-muted">Job template</div>
-            <div className="ui-title">Shelf unit, oak</div>
+            <div className="ui-muted">Custom order · CSV import</div>
+            <div className="ui-title">CO-482910 · Switchgear Panel B</div>
           </div>
-          <span className="chip">4 steps</span>
-        </div>
-        <ol className="ui-steps">
-          {STEPS.map((s) => (
-            <li key={s.name}>
-              <span className="ui-title">{s.name}</span>
-              <span className="ui-muted"> · {s.station}</span>
-              {s.extra ? <span className="chip idle ui-extra">{s.extra}</span> : null}
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div className="ui-arrow" aria-hidden="true">
-        ↓ Start work order
-      </div>
-      <div className="ui-card">
-        <div className="ui-row">
-          <div>
-            <div className="ui-muted">Work order</div>
-            <div className="ui-title">WO-1042 · 500 units</div>
-          </div>
-          <span className="chip live">4 tasks</span>
+          <span className="chip">6 units · Day shift</span>
         </div>
         <div className="ui-row" style={{ marginTop: 12 }}>
-          <span className="ui-muted">310 of 500 units · Day shift</span>
-          <span className="ui-muted">Due Fri</span>
+          <span className="ui-muted">4 of 6 units in flow</span>
+          <span className="ui-muted">Due Thu</span>
         </div>
         <div className="ui-bar">
-          <span style={{ width: "62%" }} />
+          <span style={{ width: "68%" }} />
         </div>
       </div>
+      {STEPS.map((t) => (
+        <div className="ui-card" key={t.name}>
+          <div className="ui-row">
+            <div>
+              <div className="ui-title">{t.name}</div>
+              <div className="ui-muted">{t.dept}</div>
+            </div>
+            <span className={`chip ${t.tone}`}>{t.status}</span>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
