@@ -71,7 +71,7 @@ function Diagram() {
       role="img"
       aria-label="FloorOS Executive Suite, Manager and Pro connected over encrypted TLS and WebSockets to the FloorOS Cloud Server and PostgreSQL"
     >
-      <Box x={10} y={10} w={195} title="Executive &amp; Manager" sub="Web · Dashboards · 3D Map" />
+      <Box x={10} y={10} w={195} title="Executive &amp; Manager" sub="Web · Command Center · 3D Map" />
       <Box x={235} y={10} w={195} title="FloorOS Pro" sub="Android · QR · Voice · Offline" />
       <Wire d="M107 74 V112 H190 V148" />
       <Wire d="M332 74 V112 H250 V148" />
@@ -104,7 +104,7 @@ export function Platform() {
       <div className="wrap">
         <div className="platform">
           <div className="reveal">
-            <p className="eyebrow">Cloud Platform &amp; Security</p>
+            <p className="eyebrow">Cloud Platform, Security &amp; Governance</p>
             <h2>100% cloud-native. Zero floor hardware required.</h2>
             <p className="lead">
               No servers to maintain and no terminals to install — just any modern browser, printed
@@ -113,17 +113,19 @@ export function Platform() {
             </p>
             <div className="deploy">
               <div>
-                <h3>Modern Security Standards</h3>
+                <h3>Enterprise Identity &amp; Isolation</h3>
                 <p>
                   OIDC &amp; SAML 2.0 SSO (Entra ID, Okta, Google), strict tenant isolation,
-                  server-checked permissions, full audit logs and nightly encrypted backups.
+                  server-checked role permissions, tamper-evident audit logs and nightly encrypted
+                  backups.
                 </p>
               </div>
               <div>
-                <h3>Professionally Audited &amp; Governed</h3>
+                <h3>AI Governance &amp; Full Data Ownership</h3>
                 <p>
-                  Built to modern enterprise security standards with independent professional
-                  security audits, plus per-company AI opt-in switches and monthly budget caps.
+                  AI stays off until enabled, respects your monthly USD budget cap and never acts
+                  without human approval. Standard PostgreSQL stack with full CSV export so your
+                  data is always yours.
                 </p>
               </div>
             </div>

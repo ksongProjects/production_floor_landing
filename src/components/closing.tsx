@@ -1,16 +1,21 @@
 import { contactHref, SITE } from "@/site";
 import { Brand } from "./brand";
 
-function GooglePlayBadge() {
+function AndroidDownloadBadge() {
   return (
-    <svg viewBox="0 0 155 48" width="145" height="45" aria-hidden="true">
-      <rect width="155" height="48" rx="8" fill="#0b0e12" stroke="#303742" strokeWidth="1.2" />
-      <path d="M18 11.5v25l14-12.5L18 11.5z" fill="#4285F4" />
-      <path d="M18 11.5l18.5 10-4.5 2.5-14-12.5z" fill="#34A853" />
-      <path d="M18 36.5l18.5-10-4.5-2.5-14 12.5z" fill="#EA4335" />
-      <path d="M36.5 21.5l4.5 2.5-4.5 2.5-4.5-2.5 4.5-2.5z" fill="#FBBC05" />
+    <svg viewBox="0 0 220 48" width="210" height="45" aria-hidden="true">
+      <rect width="220" height="48" rx="8" fill="#0b0e12" stroke="#303742" strokeWidth="1.2" />
+      <g transform="translate(15 11)">
+        <path
+          d="M5.2 6.8 3.6 4.1a.6.6 0 0 1 1-.6l1.7 2.8a9.8 9.8 0 0 1 7.4 0l1.7-2.8a.6.6 0 1 1 1 .6l-1.6 2.7A8.8 8.8 0 0 1 19 14H1a8.8 8.8 0 0 1 4.2-7.2Z"
+          fill="#34D399"
+        />
+        <circle cx="6.8" cy="10.8" r="1.1" fill="#0b0e12" />
+        <circle cx="13.2" cy="10.8" r="1.1" fill="#0b0e12" />
+        <rect x="2.5" y="15.5" width="15" height="9" rx="2.5" fill="#34D399" />
+      </g>
       <text
-        x="49"
+        x="48"
         y="18"
         fill="#c2cad4"
         fontSize="8.5"
@@ -18,50 +23,17 @@ function GooglePlayBadge() {
         letterSpacing="0.06em"
         fontFamily="system-ui, sans-serif"
       >
-        GET IT ON
+        ANDROID APK · FLOOROS PRO
       </text>
       <text
-        x="49"
+        x="48"
         y="34"
         fill="#ffffff"
-        fontSize="15.5"
+        fontSize="14"
         fontWeight="700"
         fontFamily="system-ui, sans-serif"
       >
-        Google Play
-      </text>
-    </svg>
-  );
-}
-
-function AppleAppStoreBadge() {
-  return (
-    <svg viewBox="0 0 155 48" width="145" height="45" aria-hidden="true">
-      <rect width="155" height="48" rx="8" fill="#0b0e12" stroke="#303742" strokeWidth="1.2" />
-      <path
-        fill="#ffffff"
-        d="M31.2 24.8c0-3.2 2.6-4.8 2.7-4.9-1.5-2.2-3.8-2.5-4.6-2.5-2-.2-3.8 1.2-4.8 1.2s-2.5-1.2-4.2-1.1c-2.1 0-4.1 1.2-5.2 3.1-2.2 3.9-.6 9.6 1.6 12.7 1.1 1.5 2.3 3.2 4 3.1 1.6-.1 2.2-1 4.2-1s2.5 1 4.2 1c1.7 0 2.9-1.5 3.9-3.1 1.3-1.8 1.8-3.5 1.8-3.6-.1-.1-3.6-1.4-3.6-4.9zm-3.2-9.1c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.9.9-3.8 2-.8.9-1.5 2.5-1.3 3.9 1.5.1 2.9-.7 3.8-1.8z"
-      />
-      <text
-        x="46"
-        y="18"
-        fill="#c2cad4"
-        fontSize="8.5"
-        fontWeight="600"
-        letterSpacing="0.02em"
-        fontFamily="system-ui, sans-serif"
-      >
-        Download on the
-      </text>
-      <text
-        x="46"
-        y="34"
-        fill="#ffffff"
-        fontSize="16"
-        fontWeight="700"
-        fontFamily="system-ui, sans-serif"
-      >
-        App Store
+        Download for Android
       </text>
     </svg>
   );
@@ -114,7 +86,8 @@ export function Cta() {
         <p className="lead">
           100% cloud-hosted with zero hardware required. See a live plant running on{" "}
           <strong>Executive Suite</strong>, <strong>Manager</strong> and{" "}
-          <strong>FloorOS Pro</strong>, then run a measured 30-day pilot.
+          <strong>FloorOS Pro</strong>, then run a measured 30-day pilot with direct founder
+          support.
         </p>
         <div className="actions">
           <a className="btn primary" href={contactHref}>
@@ -131,9 +104,9 @@ export function Cta() {
           style={{
             marginTop: 28,
             display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: 16,
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 12,
           }}
           aria-label="Download FloorOS Pro mobile app"
         >
@@ -150,33 +123,17 @@ export function Cta() {
           >
             <a
               href={SITE.androidAppUrl}
-              aria-label="Get FloorOS Pro on Google Play"
+              aria-label="Download FloorOS Pro Android APK"
               style={{ display: "inline-flex", lineHeight: 0 }}
             >
-              <GooglePlayBadge />
+              <AndroidDownloadBadge />
             </a>
-            <StoreQr label="QR code to download FloorOS Pro on Google Play" />
+            <StoreQr label="QR code to download FloorOS Pro Android APK" />
           </div>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 12,
-              padding: "8px 12px",
-              borderRadius: 12,
-              background: "rgb(255 255 255 / 0.05)",
-              border: "1px solid rgb(255 255 255 / 0.14)",
-            }}
-          >
-            <a
-              href={SITE.androidAppUrl}
-              aria-label="Download FloorOS Pro on the Apple App Store"
-              style={{ display: "inline-flex", lineHeight: 0 }}
-            >
-              <AppleAppStoreBadge />
-            </a>
-            <StoreQr label="QR code to download FloorOS Pro on the App Store" />
-          </div>
+          <p className="hero-note" style={{ marginTop: 0 }}>
+            Android app available now · iOS app coming soon (web app &amp; Ask AI work in any phone
+            browser).
+          </p>
         </div>
       </div>
     </section>

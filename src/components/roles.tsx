@@ -10,57 +10,58 @@ const SUITES: Suite[] = [
   {
     tag: "C-Level & Directors",
     title: "FloorOS Executive Suite",
-    sub: "Multi-site visibility, executive KPIs, team & daily schedule alignment.",
+    sub: "3D Command Center globe, multi-site live flow, executive KPIs and AI-drafted email.",
     major: [
       {
+        title: "3D Command Center Globe & Stacked Floors",
+        detail: "Zoom from a live dot-matrix globe of every plant into stacked 3D floor plates and live bays.",
+      },
+      {
         title: "Multi-Site Company Live View",
-        detail: "Animated 8-department flow and live status for 5,000+ staff across every plant.",
+        detail: "Animated 8-department flow, local shift clocks and live status across every plant.",
       },
       {
-        title: "Bottleneck & Improvement ROI",
-        detail: "Pinpoint what limits output across weeks and measure before / after gains.",
+        title: "Bottleneck Analytics & Measured Improvements",
+        detail: "Pinpoint the step limiting output over weeks and measure before / after gains.",
       },
       {
-        title: "Teams & Daily Schedule Sync",
-        detail: "Connects with team channels, daily executive schedules and morning huddles.",
-      },
-      {
-        title: "Enterprise SSO & AI Governance",
-        detail: "OIDC & SAML 2.0, role hierarchy, monthly AI spend caps and full audit logs.",
+        title: "AI Email Writer, SSO & Governance",
+        detail: "Draft verified updates to Google or Microsoft mail, plus OIDC/SAML 2.0 SSO and AI budget caps.",
       },
     ],
     groups: [
       {
-        category: "Company & Multi-Site Command",
+        category: "Command Center & Multi-Site Live View",
         items: [
-          "Live 8-department flow strip with animated unit tokens",
-          "Per-site rows with local time zone, active shift and headcount by status",
+          "Interactive 3D dot-matrix globe zooming smoothly through company, region, site and floor layers",
+          "Stacked translucent site floor plates with live zone heat and floor switcher",
+          "Floating glass Details window with 2-second KPIs, 8-hour sparklines and active bottleneck",
+          "AI-drafted email from live on-screen metrics sent via linked Google or Microsoft mailbox",
+          "Live 8-department flow strip with animated unit tokens and late supplier PO alerts",
           "Virtualised 5,000+ employee live status table (Working, Idle, Break, Moving, Off)",
-          "Company-wide ranked Needs Attention list with one-click drill-down to any bay",
-          "2-second aggregated company pulse channel (tested to 500 concurrent leadership viewers)",
         ],
       },
       {
         category: "Dashboards, Reports & Schedules",
         items: [
-          "Executive throughput, utilisation and capacity-gap dashboards",
+          "Executive throughput, utilisation and capacity-gap bottleneck dashboards",
+          "AI bottleneck explanations with every quoted figure verified against floor SQL metrics",
+          "Before / after improvement tracking across agreed review windows",
           "Automated shift reports 15 minutes after shift end",
           "Printable morning huddle & daily meeting schedule sheets",
-          "Team channel notices and daily schedule alignment",
-          "Before / after improvement tracking (e.g. Queue −48%, Output +11%)",
           "Work, pace, job and unit-flow reports with one-click CSV export",
         ],
       },
       {
-        category: "Security, Identity & Compliance",
+        category: "Security, Identity & AI Governance",
         items: [
           "Microsoft Entra ID, Okta & Google Workspace SSO (OIDC & SAML 2.0)",
           "Enforced SSO per email domain with emergency break-glass admin accounts",
           "Automatic identity-provider group-to-role mapping and just-in-time provisioning",
           "Per-company AI opt-in switch, monthly USD budget cap and per-feature usage log",
-          "Modern cloud security standards with independent professional security audits",
-          "Tamper-evident audit log for access, role, SSO, training and SOP changes",
-          "Nightly encrypted backups with 14-day retention and health monitoring",
+          "Strict tenant isolation, server-checked RBAC and encrypted OAuth mail tokens",
+          "Tamper-evident audit log for access, role, SSO, training, email and SOP changes",
+          "Nightly encrypted backups with 14-day retention and external health monitoring",
         ],
       },
     ],
@@ -68,35 +69,35 @@ const SUITES: Suite[] = [
   {
     tag: "Managers, Planners & Leads",
     title: "FloorOS Manager",
-    sub: "2D/3D floor builder, live Board, ERP order routing, automation & AI advisor.",
+    sub: "Full live visibility, 3D moving-outline floor map, QR workflows, orders & AI advisor.",
     major: [
       {
-        title: "Live Station Board & 3D Map",
-        detail: "Pace bars, Today's numbers and 3D moving units; delayed bays float to the top.",
+        title: "Live Station Board & Moving-Outline 3D Map",
+        detail: "Pace bars, Today's numbers and glowing 3D floor outlines; delayed bays float to the top.",
       },
       {
-        title: "Orders, Templates & Suppliers",
-        detail: "ERP CSV import with preview, multi-step job templates and inbound PO kitting.",
+        title: "QR-Driven Visual Automate Workflows",
+        detail: "Auto-dispatch the first free, clocked-in, trained person when events happen on the floor.",
       },
       {
-        title: "Visual Automate Workflows",
-        detail: "Auto-dispatch the first free, clocked-in, trained person when events happen.",
+        title: "Orders, Templates & Inbound Suppliers",
+        detail: "ERP CSV import with diff preview, multi-step job templates and late supplier PO alerts.",
       },
       {
-        title: "Knowledge Review & AI Advisor",
-        detail: "Turn floor voice notes into versioned SOPs and accept live floor suggestions.",
+        title: "Central Knowledge Base, Review & Ask AI",
+        detail: "Approve voice-note SOP proposals, track Knowledge Gaps and accept live AI advisor moves.",
       },
     ],
     groups: [
       {
         category: "Floor Builder, Board & 3D Map",
         items: [
-          "Interactive 2D blueprint and 3D isometric floor builder with snap-to-grid",
+          "Two-layer Glass UI shell with interactive 2D blueprint and 3D isometric floor builder",
+          "Glowing moving-outline 3D live map highlighting full, blocked and bottleneck zones",
           "Stations, machines, racks, walls, paths, zones and custom polygon shapes",
-          "Undo / redo, drag handles, object grouping and department colour coding",
           "Printable QR code sheets for every station, machine and zone",
           "Live Board with station cards, expected-time pace bars and Bottleneck badges",
-          "3D Live Map with units travelling aisles and pulsing full / blocked zones",
+          "Ranked Needs Attention queue showing waiting units, delays and blocked bays",
         ],
       },
       {
@@ -111,16 +112,16 @@ const SUITES: Suite[] = [
         ],
       },
       {
-        category: "Dispatch, Automate & People",
+        category: "Dispatch, Automate, Knowledge & People",
         items: [
           "Dispatch inbox: send jobs & notices to a person, team, trade role or floor",
           "Visual workflow builder on job, task, unit, zone and team-availability triggers",
           "First-free routing verifying live clock-in presence, workload and valid training",
           "Dry-run workflow testing on historical events, step logs and one-click kill switch",
           "Shift rosters, live Who is Here availability and training sign-off with expiry dates",
-          "Central Knowledge Base with Markdown editor, version rollback and AI review queue",
+          "Central Knowledge Base with Markdown editor, version rollback and AI safety review queue",
+          "Ask AI assistant (Ctrl + J) with clickable SOP citations and live floor context",
           "Live AI operational advisor strip with one-click Accept or Dismiss",
-          "Glass UI shell, Cmd/Ctrl+K quick jump, notification centre and Undo toasts",
         ],
       },
     ],
@@ -139,7 +140,7 @@ const SUITES: Suite[] = [
         detail: "Hold to speak mid-task; audio chunks stream to a live web transcript in seconds.",
       },
       {
-        title: "Watch-Out Alerts & Ask AI",
+        title: "Watch-Out Alerts & Cited Ask AI",
         detail: "See safety and quality reminders on task start, or ask cited SOP questions.",
       },
       {
