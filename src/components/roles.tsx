@@ -9,7 +9,7 @@ type Suite = {
 const SUITES: Suite[] = [
   {
     tag: "C-Level & Directors",
-    title: "FloorOS Executive Suite",
+    title: "Executive",
     sub: "3D Command Center globe, multi-site live flow, executive KPIs and AI-drafted email.",
     major: [
       {
@@ -68,7 +68,7 @@ const SUITES: Suite[] = [
   },
   {
     tag: "Managers, Planners & Leads",
-    title: "FloorOS Manager",
+    title: "Manager",
     sub: "Full live visibility, 3D moving-outline floor map, QR workflows, orders & AI advisor.",
     major: [
       {
@@ -128,7 +128,7 @@ const SUITES: Suite[] = [
   },
   {
     tag: "Floor Workers & Trades Operators",
-    title: "FloorOS Pro",
+    title: "Pro",
     sub: "Android app for skilled trades — QR scans, pace, voice notes, Ask AI & offline sync.",
     major: [
       {

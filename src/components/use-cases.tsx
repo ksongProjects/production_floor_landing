@@ -32,7 +32,7 @@ const SHOWCASES: ShowcaseBlock[] = [
       {
         id: "command-globe",
         label: "3D Globe Dashboard",
-        crumb: "Executive Suite · Command Center · Northwind Power Systems",
+        crumb: "Executive · Command Center · Northwind Power Systems",
         badge: "● Live pulse · 2s",
         badgeTone: "live",
         src: "/screenshots/command-globe.png",
@@ -48,7 +48,7 @@ const SHOWCASES: ShowcaseBlock[] = [
       {
         id: "command-floors",
         label: "Stacked Site Floors",
-        crumb: "Executive Suite · Riverside Plant · Stacked 3D Floors",
+        crumb: "Executive · Riverside Plant · Stacked 3D Floors",
         badge: "Site layer · 2 floors",
         badgeTone: "default",
         src: "/screenshots/command-site-floors.png",
@@ -64,7 +64,7 @@ const SHOWCASES: ShowcaseBlock[] = [
       {
         id: "company-live",
         label: "Company Live View",
-        crumb: "Executive Suite · Company Live Flow · 4 Plants · 8 Departments",
+        crumb: "Executive · Company Live Flow · 4 Plants · 8 Departments",
         badge: "8 departments · Live",
         badgeTone: "ok",
         src: "/screenshots/company-live.png",
@@ -88,7 +88,7 @@ const SHOWCASES: ShowcaseBlock[] = [
       {
         id: "board",
         label: "Live Station Board",
-        crumb: "FloorOS Manager · Fab Hall A · Live Board & AI Advisor",
+        crumb: "Manager · Fab Hall A · Live Board & AI Advisor",
         badge: "Delayed first · Live",
         badgeTone: "warn",
         src: "/screenshots/board.png",
@@ -104,7 +104,7 @@ const SHOWCASES: ShowcaseBlock[] = [
       {
         id: "map-outline",
         label: "3D Moving-Outline Map",
-        crumb: "FloorOS Manager · Fab Hall A · 3D Isometric Control Room",
+        crumb: "Manager · Fab Hall A · 3D Isometric Control Room",
         badge: "Moving outlines · 3D",
         badgeTone: "live",
         src: "/screenshots/map-outline.png",
@@ -128,7 +128,7 @@ const SHOWCASES: ShowcaseBlock[] = [
       {
         id: "automate",
         label: "Visual Automate Workflows",
-        crumb: "FloorOS Manager · Automate · Problem → repair job",
+        crumb: "Manager · Automate · Problem → repair job",
         badge: "● Auto-dispatched",
         badgeTone: "ok",
         src: "/screenshots/automate.png",
@@ -351,7 +351,7 @@ export function UseCases() {
 
           <article className="case-block reveal">
             <div className="case-head">
-              <span className="tag">6 · FloorOS Pro (Android)</span>
+              <span className="tag">6 · Pro (Android)</span>
               <h3>One-scan station QR, Watch-Out safety alerts &amp; offline voice notes</h3>
               <p className="case-summary">
                 Purpose-built for operators and trades on the shop floor — works in Wi-Fi dead zones

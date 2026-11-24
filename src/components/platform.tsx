@@ -69,7 +69,7 @@ function Diagram() {
     <svg
       viewBox="0 0 440 330"
       role="img"
-      aria-label="FloorOS Executive Suite, Manager and Pro connected over encrypted TLS and WebSockets to the FloorOS Cloud Server and PostgreSQL"
+      aria-label="FloorOS Executive, Manager and Pro connected over encrypted TLS and WebSockets to the FloorOS Cloud Server and PostgreSQL"
     >
       <Box x={10} y={10} w={195} title="Executive &amp; Manager" sub="Web · Command Center · 3D Map" />
       <Box x={235} y={10} w={195} title="FloorOS Pro" sub="Android · QR · Voice · Offline" />
