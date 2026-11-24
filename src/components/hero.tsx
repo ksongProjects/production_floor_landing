@@ -54,7 +54,7 @@ export function Hero() {
             Server status
           </a>
           <p className="hero-note">
-            <strong>Executive Suite</strong> · <strong>Manager</strong> · <strong>Pro</strong>.{" "}
+            <strong>Executive</strong> · <strong>Manager</strong> · <strong>Pro</strong>.{" "}
             <a href="#roles">Explore suites ↓</a>
           </p>
         </div>

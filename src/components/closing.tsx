@@ -85,7 +85,7 @@ export function Cta() {
         <h2>Live on your first floor in a day.</h2>
         <p className="lead">
           100% cloud-hosted with zero hardware required. See a live plant running on{" "}
-          <strong>Executive Suite</strong>, <strong>Manager</strong> and{" "}
+          <strong>Executive</strong>, <strong>Manager</strong> and{" "}
           <strong>FloorOS Pro</strong>, then run a measured 30-day pilot with direct founder
           support.
         </p>
