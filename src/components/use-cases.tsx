@@ -25,9 +25,9 @@ type ShowcaseBlock = {
 const SHOWCASES: ShowcaseBlock[] = [
   {
     tag: "1 · Modern UI & Executive Command Center",
-    title: "Every site, every floor — one futuristic glass Command Center",
+    title: "Every site, every floor — one live Command Center",
     summary:
-      "Zoom seamlessly from a 3D dot-matrix globe of all sites into stacked translucent floor plates and live bays, with 2-second KPIs and AI-drafted status emails.",
+      "Start on a globe with a ring for every plant, then zoom into one site, its stacked floors and a live bay. The numbers follow the view every 2 seconds, and a status email drafts itself from them.",
     tabs: [
       {
         id: "command-globe",
@@ -36,11 +36,11 @@ const SHOWCASES: ShowcaseBlock[] = [
         badge: "● Live pulse · 2s",
         badgeTone: "live",
         src: "/screenshots/command-globe.png",
-        alt: "FloorOS Command Center 3D dot-matrix globe with floating glass Details window showing live multi-site KPIs and bottleneck status",
+        alt: "FloorOS Command Center globe with a live ring on each of four plants in Calgary, Reno, Riverside and Mississauga, beside the Details window with company KPIs and the current bottleneck",
         caption:
-          "3D dot-matrix globe with floating glass KPIs, 8-hour sparklines, active bottleneck badge and AI Write email (demo plant data).",
+          "Four plants in two countries on one globe: a live ring per site, company KPIs with 8-hour sparklines, the current bottleneck and AI Write email (demo plant data).",
         highlights: [
-          "Live site status rings across regions",
+          "One live status ring per plant",
           "2-second KPIs & 8-hour sparklines",
           "AI-drafted email via Google / Microsoft",
         ],
@@ -68,9 +68,9 @@ const SHOWCASES: ShowcaseBlock[] = [
         badge: "8 departments · Live",
         badgeTone: "ok",
         src: "/screenshots/company-live.png",
-        alt: "FloorOS Company Live View showing 8-department flow strip, AI operational advisor suggestions, 4 sites across time zones, and ranked Needs attention list",
+        alt: "FloorOS Company Live View showing units per department from Suppliers to Wrap and shipping, AI advisor suggestions, four sites with their local time and headcount, and a ranked Needs attention list with late supplier lines",
         caption:
-          "Company-wide 8-department flow strip, live AI suggestions, per-site shift clocks and late supplier alerts (demo plant data).",
+          "Units per department in route order, live AI suggestions, each plant with its local time and who is here, and late supplier lines ranked by age (demo plant data).",
         highlights: [
           "All 8 departments in route order",
           "Local shift clocks per site",
@@ -163,13 +163,13 @@ const SHOWCASES: ShowcaseBlock[] = [
     tag: "4 · Live Dashboard Statistics & Analytics",
     title: "Pinpoint bottlenecks with verified AI root-cause & before/after proof",
     summary:
-      "Move past gut feel. FloorOS identifies the limiting step over days and weeks, explains why with SQL-checked figures, and measures before-and-after improvements.",
+      "Move past gut feel. FloorOS identifies the limiting step over days and weeks, explains why with figures checked against your floor data, and measures before-and-after improvements.",
     tabs: [
       {
         id: "bottlenecks-ai",
         label: "Bottleneck & AI Root-Cause",
         crumb: "FloorOS Analytics · Bottlenecks · Assembly & Wiring",
-        badge: "Figures SQL-checked",
+        badge: "Figures checked",
         badgeTone: "ok",
         src: "/screenshots/bottlenecks-ai.png",
         alt: "FloorOS Bottlenecks report showing Wiring 1/2/3 bottleneck badge, AI Why and what to do causes and 4 Suggested fixes with Start improvement buttons",
@@ -177,7 +177,7 @@ const SHOWCASES: ShowcaseBlock[] = [
           "Bottlenecks report naming the limiting step with confidence, AI root-cause explanation and concrete Suggested fixes (demo plant data).",
         highlights: [
           "Limiting step named with confidence",
-          "Every AI figure verified against SQL",
+          "Every AI figure checked against floor data",
           "Start a tracked improvement in 1 click",
         ],
       },
