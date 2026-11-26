@@ -927,14 +927,6 @@ svg {
   gap: 16px;
 }
 
-.case-head-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px 24px;
-}
-
 .case-head {
   display: flex;
   flex-direction: column;
@@ -957,39 +949,94 @@ svg {
   line-height: 1.55;
 }
 
+/* The views of one screen: a row of labelled tabs joined to the top of the window. Each says
+   what its screen shows, so the picture needs no caption. */
 .shot-tabs {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 5px;
-  border-radius: 999px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  background: #0f141b;
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
 }
 
 .shot-tab {
   appearance: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  padding: 14px 20px 15px;
   border: 0;
+  border-top: 2px solid transparent;
+  border-right: 1px solid rgb(255 255 255 / 0.08);
   background: transparent;
-  color: var(--muted);
+  color: #8f9aa9;
   font-family: var(--font-body);
-  font-size: 0.84rem;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 999px;
   cursor: pointer;
   transition:
     background 0.16s ease,
     color 0.16s ease;
 }
 
+.shot-tab:last-child {
+  border-right: 0;
+}
+
+.shot-tab-label {
+  font-size: 0.92rem;
+  font-weight: 650;
+  color: #c9d1dc;
+}
+
+.shot-tab-hint {
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .shot-tab:hover {
-  color: var(--text);
+  background: rgb(255 255 255 / 0.03);
+}
+
+.shot-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .shot-tab.active {
-  background: var(--accent);
-  color: var(--accent-text);
+  background: #121720;
+  border-top-color: var(--accent);
+  color: #aeb8c6;
+}
+
+.shot-tab.active .shot-tab-label {
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .shot-tabs {
+    grid-auto-flow: row;
+  }
+
+  .shot-tab {
+    border-right: 0;
+    border-top: 0;
+    border-left: 2px solid transparent;
+    border-bottom: 1px solid rgb(255 255 255 / 0.08);
+    padding: 11px 16px;
+  }
+
+  .shot-tab:last-child {
+    border-bottom: 0;
+  }
+
+  .shot-tab.active {
+    border-left-color: var(--accent);
+  }
+
+  /* Only the open view explains itself on a phone; the others are just names. */
+  .shot-tab:not(.active) .shot-tab-hint {
+    display: none;
+  }
 }
 
 .screenshot-window {
@@ -1022,35 +1069,6 @@ svg {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top left;
-}
-
-.shot-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 20px;
-  padding: 14px 20px;
-  background: #121720;
-  border-top: 1px solid rgb(255 255 255 / 0.08);
-}
-
-.shot-caption {
-  color: #aeb8c6;
-  font-size: 0.86rem;
-  line-height: 1.45;
-  max-width: 64ch;
-}
-
-.shot-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.screenshot-window .chip.idle {
-  background: rgb(255 255 255 / 0.07);
-  color: #d6dde7;
 }
 
 .app-window {
