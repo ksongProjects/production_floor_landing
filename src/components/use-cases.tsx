@@ -11,14 +11,13 @@ type ShotTab = {
   badgeTone?: "live" | "ok" | "warn" | "default";
   src: string;
   alt: string;
-  caption: string;
-  highlights: string[];
+  /** One line under the tab's label: what this screen shows. */
+  hint: string;
 };
 
 type ShowcaseBlock = {
   tag: string;
   title: string;
-  summary: string;
   tabs: [ShotTab, ...ShotTab[]];
 };
 
@@ -26,8 +25,6 @@ const SHOWCASES: ShowcaseBlock[] = [
   {
     tag: "1 · Modern UI & Executive Command Center",
     title: "Every site, every floor — one live Command Center",
-    summary:
-      "Start on a globe with a ring for every plant, then zoom into one site, its stacked floors and a live bay. The numbers follow the view every 2 seconds, and a status email drafts itself from them.",
     tabs: [
       {
         id: "command-globe",
@@ -37,13 +34,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "live",
         src: "/screenshots/command-globe.png",
         alt: "FloorOS Command Center globe with a live ring on each of four plants in Calgary, Reno, Riverside and Mississauga, beside the Details window with company KPIs and the current bottleneck",
-        caption:
-          "Four plants in two countries on one globe: a live ring per site, company KPIs with 8-hour sparklines, the current bottleneck and AI Write email (demo plant data).",
-        highlights: [
-          "One live status ring per plant",
-          "2-second KPIs & 8-hour sparklines",
-          "AI-drafted email via Google / Microsoft",
-        ],
+        hint: "Every plant as a live ring, with company KPIs, the current bottleneck and Write email beside it.",
       },
       {
         id: "command-floors",
@@ -53,13 +44,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "default",
         src: "/screenshots/command-site-floors.png",
         alt: "FloorOS Command Center zoomed into Riverside Plant showing stacked glowing 3D floor plates for Fabrication Hall and Assembly & Wiring",
-        caption:
-          "Zoom into any plant to inspect stacked translucent floor plates, live headcount per floor, and bottleneck pressure (demo plant data).",
-        highlights: [
-          "Stacked translucent floor blueprints",
-          "Instant floor switcher & heat status",
-          "Click any plate to enter live 3D floor",
-        ],
+        hint: "One plant, its floors as stacked live plates. Click a plate to open that floor.",
       },
       {
         id: "company-live",
@@ -69,21 +54,13 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "ok",
         src: "/screenshots/company-live.png",
         alt: "FloorOS Company Live View showing units per department from Suppliers to Wrap and shipping, AI advisor suggestions, four sites with their local time and headcount, and a ranked Needs attention list with late supplier lines",
-        caption:
-          "Units per department in route order, live AI suggestions, each plant with its local time and who is here, and late supplier lines ranked by age (demo plant data).",
-        highlights: [
-          "All 8 departments in route order",
-          "Local shift clocks per site",
-          "Late supplier POs flagged early",
-        ],
+        hint: "Units per department in route order, each plant's local time and headcount, late supplier lines.",
       },
     ],
   },
   {
     tag: "2 · Full Floor Visibility",
     title: "Every job, task, unit and station — live on Board & 3D Map",
-    summary:
-      "Replace whiteboards and floor walks with live station pace bars, trouble-first sorting, AI operational advisor moves, and a moving-outline 3D floor map.",
     tabs: [
       {
         id: "board",
@@ -93,13 +70,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "warn",
         src: "/screenshots/board.png",
         alt: "FloorOS live station Board showing expected-time pace bars, delayed stations floated to the top, and AI operational advisor suggestions",
-        caption:
-          "Station cards sorted by Needs Attention with expected-time pace bars, linked SOP counts and one-click AI advisor suggestions (demo plant data).",
-        highlights: [
-          "Expected-time pace bars per station",
-          "Delayed, paused & idle bays on top",
-          "AI advisor suggests bottleneck moves",
-        ],
+        hint: "One card per station: who, which task and a pace bar. Delayed and paused stations come first.",
       },
       {
         id: "map-outline",
@@ -109,21 +80,13 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "live",
         src: "/screenshots/map-outline.png",
         alt: "FloorOS 3D isometric moving-outline floor map showing amber full bays, red blocked Bay 5, bottleneck badges, and ranked Needs Attention queue",
-        caption:
-          "Glowing moving-outline 3D map flagging full bays in amber, blocked bays in red and waiting units ranked by wait time (demo plant data).",
-        highlights: [
-          "Full, blocked & bottleneck zones glow",
-          "Ranked Needs Attention waiting queue",
-          "Free a blocked bay & watch units move",
-        ],
+        hint: "Your real layout in 3D. Full bays turn amber, blocked bays red, waiting units are ranked.",
       },
     ],
   },
   {
     tag: "3 · Live Automated Floor Management",
     title: "QR code system & visual workflows that close gaps automatically",
-    summary:
-      "Printed station and zone QR codes drive starts, completions and material moves while visual Automate workflows route repairs, escalations and shift flags without radio calls.",
     tabs: [
       {
         id: "automate",
@@ -133,13 +96,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "ok",
         src: "/screenshots/automate.png",
         alt: "FloorOS visual Automate workflow graph Problem to repair job with live green Run history panel",
-        caption:
-          "Visual trigger-condition-action workflow routing reported problems to the first free, clocked-in, trained maintenance technician with audited run history (demo plant data).",
-        highlights: [
-          "First-free, clocked-in & trained routing",
-          "Dry-run test on real historical events",
-          "Step-by-step run history & kill switch",
-        ],
+        hint: "A reported problem becomes a repair job for the first free, trained technician. Every run is logged.",
       },
       {
         id: "shift-report",
@@ -149,21 +106,13 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "default",
         src: "/screenshots/shift-report.png",
         alt: "FloorOS automatic shift report showing pieces, worked hours, reported problems, workflow flags and Who worked where breakdown",
-        caption:
-          "Shift reports write themselves 15 minutes after every shift: pieces, hours, reported problems, workflow flags and operator breakdown (demo plant data).",
-        highlights: [
-          "Zero manual end-of-shift typing",
-          "Problems & workflow flags rolled up",
-          "Printable morning huddle & CSV export",
-        ],
+        hint: "Written 15 minutes after each shift: pieces, hours, problems, flags and who worked where.",
       },
     ],
   },
   {
     tag: "4 · Live Dashboard Statistics & Analytics",
     title: "Pinpoint bottlenecks with verified AI root-cause & before/after proof",
-    summary:
-      "Move past gut feel. FloorOS identifies the limiting step over days and weeks, explains why with figures checked against your floor data, and measures before-and-after improvements.",
     tabs: [
       {
         id: "bottlenecks-ai",
@@ -173,13 +122,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "ok",
         src: "/screenshots/bottlenecks-ai.png",
         alt: "FloorOS Bottlenecks report showing Wiring 1/2/3 bottleneck badge, AI Why and what to do causes and 4 Suggested fixes with Start improvement buttons",
-        caption:
-          "Bottlenecks report naming the limiting step with confidence, AI root-cause explanation and concrete Suggested fixes (demo plant data).",
-        highlights: [
-          "Limiting step named with confidence",
-          "Every AI figure checked against floor data",
-          "Start a tracked improvement in 1 click",
-        ],
+        hint: "Names the step that limits output, explains why with checked figures and suggests fixes.",
       },
       {
         id: "bottlenecks-improvements",
@@ -189,21 +132,13 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "default",
         src: "/screenshots/bottlenecks-improvements.png",
         alt: "FloorOS stage metrics table and Measured improvement card comparing before and after queue wait and output",
-        caption:
-          "Compare queue wait time and daily output across your review window to verify whether a staffing, training or method change worked (demo plant data).",
-        highlights: [
-          "Per-stage busy %, wait & idle hours",
-          "Measured before / after review windows",
-          "Printable weekly bottleneck report",
-        ],
+        hint: "Turn a fix into a tracked improvement, then compare queue wait and output before and after.",
       },
     ],
   },
   {
     tag: "5 · AI Assistant & Central Knowledge Base",
     title: "Cited Ask AI, push-to-talk voice notes & human-approved SOPs",
-    summary:
-      "Capture veteran know-how as spoken voice notes, review AI-drafted safety and SOP proposals with human sign-off, and let operators ask cited questions on any screen.",
     tabs: [
       {
         id: "ask-ai",
@@ -213,13 +148,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "ok",
         src: "/screenshots/ask-ai.png",
         alt: "FloorOS Ask AI glass slide-over drawer answering a Weld 1A safety and bottleneck question with clickable SOP source pills",
-        caption:
-          "Floating Ask AI drawer answering from approved company SOPs and live floor state with clickable source links (demo plant data).",
-        highlights: [
-          "Answers from SOPs + live floor state",
-          "Clickable source citations on every reply",
-          "Surfaces unanswered Knowledge Gaps",
-        ],
+        hint: "Answers from your approved articles and the live floor, with a source link on every reply.",
       },
       {
         id: "knowledge-review",
@@ -229,13 +158,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "warn",
         src: "/screenshots/knowledge-review.png",
         alt: "FloorOS Knowledge Review queue showing a red-bordered Safety review proposal with timestamped transcript excerpts and Accept & publish button",
-        caption:
-          "AI proposes versioned SOP edits from floor voice notes with timestamped transcript citations — safety items highlighted red, nothing publishes unapproved (demo plant data).",
-        highlights: [
-          "Safety proposals prioritised in red",
-          "Timestamped transcript evidence",
-          "Version history & one-click rollback",
-        ],
+        hint: "AI drafts article changes from voice notes. Safety items come first; nothing publishes unapproved.",
       },
       {
         id: "voice-note",
@@ -245,13 +168,7 @@ const SHOWCASES: ShowcaseBlock[] = [
         badgeTone: "live",
         src: "/screenshots/voice-note.png",
         alt: "FloorOS Voice note detail showing AI summary, Key points, red safety Watch out for badge and editable timestamped transcript",
-        caption:
-          "Spoken operator notes transcribe automatically into editable timestamped text, AI summaries and safety Watch-Out tags (demo plant data).",
-        highlights: [
-          "Streams from Android to web live",
-          "Inline editable transcript & key points",
-          "Feeds Watch-Out alerts automatically",
-        ],
+        hint: "A spoken note becomes an editable transcript, a summary and Watch-out tags.",
       },
     ],
   },
@@ -263,34 +180,31 @@ function ShowcaseWindow({ block }: { block: ShowcaseBlock }) {
 
   return (
     <article className="case-block reveal">
-      <div className="case-head-row">
-        <div className="case-head">
-          <span className="tag">{block.tag}</span>
-          <h3>{block.title}</h3>
-          <p className="case-summary">{block.summary}</p>
-        </div>
-        {block.tabs.length > 1 ? (
-          <div className="shot-tabs" role="tablist" aria-label={`${block.title} views`}>
-            {block.tabs.map((tab) => {
-              const selected = tab.id === active.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={selected}
-                  className={`shot-tab${selected ? " active" : ""}`}
-                  onClick={() => setActiveId(tab.id)}
-                >
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
-        ) : null}
+      <div className="case-head">
+        <span className="tag">{block.tag}</span>
+        <h3>{block.title}</h3>
       </div>
 
       <div className="app-window screenshot-window">
+        <div className="shot-tabs" role="tablist" aria-label={`${block.title} views`}>
+          {block.tabs.map((tab) => {
+            const selected = tab.id === active.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                className={`shot-tab${selected ? " active" : ""}`}
+                onClick={() => setActiveId(tab.id)}
+              >
+                <span className="shot-tab-label">{tab.label}</span>
+                <span className="shot-tab-hint">{tab.hint}</span>
+              </button>
+            );
+          })}
+        </div>
+
         <div className="app-topbar">
           <div className="window-dots" aria-hidden="true">
             <span />
@@ -315,17 +229,6 @@ function ShowcaseWindow({ block }: { block: ShowcaseBlock }) {
             className="shot-img"
           />
         </div>
-
-        <div className="shot-footer">
-          <p className="shot-caption">{active.caption}</p>
-          <div className="shot-pills">
-            {active.highlights.map((h) => (
-              <span className="chip idle" key={h}>
-                {h}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </article>
   );
@@ -339,8 +242,8 @@ export function UseCases() {
           <p className="eyebrow">Real product screens</p>
           <h2>See FloorOS running real shop-floor workflows.</h2>
           <p className="lead">
-            Captured directly from the live FloorOS dark-glass interface — switch views on any
-            section to explore Command Center, 3D maps, workflows, analytics and AI knowledge.
+            Real screens from FloorOS, showing demo data. Pick a view above each screen to see what
+            it is and what it tells you.
           </p>
         </div>
 
