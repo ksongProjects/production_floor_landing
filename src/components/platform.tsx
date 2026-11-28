@@ -71,7 +71,7 @@ function Diagram() {
       role="img"
       aria-label="FloorOS Executive, Manager and Pro connected over encrypted TLS and WebSockets to the FloorOS Cloud Server and PostgreSQL"
     >
-      <Box x={10} y={10} w={195} title="Executive &amp; Manager" sub="Web · Command Center · 3D Map" />
+      <Box x={10} y={10} w={195} title="Executive &amp; Manager" sub="Web · Command center · Live map" />
       <Box x={235} y={10} w={195} title="FloorOS Pro" sub="Android · QR · Voice · Offline" />
       <Wire d="M107 74 V112 H190 V148" />
       <Wire d="M332 74 V112 H250 V148" />
@@ -83,7 +83,7 @@ function Diagram() {
         y={148}
         w={300}
         title="FloorOS Cloud &amp; Realtime Gateway"
-        sub="API · Automate · OIDC/SAML · AI &amp; Voice"
+        sub="API · Webhooks · Automate · SSO · AI"
         accent
       />
       <Wire d="M220 212 V252" />
@@ -105,27 +105,24 @@ export function Platform() {
         <div className="platform">
           <div className="reveal">
             <p className="eyebrow">Cloud Platform, Security &amp; Governance</p>
-            <h2>100% cloud-native. Zero floor hardware required.</h2>
+            <h2>Cloud-hosted. No floor hardware.</h2>
             <p className="lead">
-              No servers to maintain and no terminals to install — just any modern browser, printed
-              QR codes and your crew&apos;s phones. Load-tested to 1,000 live viewers on a floor and
-              5,000 employees across sites.
+              A browser, printed QR codes and your crew&apos;s phones. Load-tested to 1,000 live
+              viewers on a floor and 5,000 employees across sites.
             </p>
             <div className="deploy">
               <div>
-                <h3>Enterprise Identity &amp; Isolation</h3>
+                <h3>Identity and isolation</h3>
                 <p>
-                  OIDC &amp; SAML 2.0 SSO (Entra ID, Okta, Google), strict tenant isolation,
-                  server-checked role permissions, tamper-evident audit logs and nightly encrypted
-                  backups.
+                  SSO with Entra ID, Okta or Google, tenant isolation, server-checked roles, audit
+                  log and nightly backups.
                 </p>
               </div>
               <div>
-                <h3>AI Governance &amp; Full Data Ownership</h3>
+                <h3>Your systems, your data</h3>
                 <p>
-                  AI stays off until enabled, respects your monthly USD budget cap and never acts
-                  without human approval. Standard PostgreSQL stack with full CSV export so your
-                  data is always yours.
+                  API keys and signed webhooks connect your ERP. AI stays off until enabled and
+                  never acts on its own. Full CSV export.
                 </p>
               </div>
             </div>

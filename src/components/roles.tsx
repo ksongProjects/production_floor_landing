@@ -10,58 +10,52 @@ const SUITES: Suite[] = [
   {
     tag: "C-Level & Directors",
     title: "Executive",
-    sub: "3D Command Center globe, multi-site live flow, executive KPIs and AI-drafted email.",
+    sub: "Every site on one live map, with the numbers and the bottleneck.",
     major: [
       {
-        title: "3D Command Center Globe & Stacked Floors",
-        detail: "Zoom from a live dot-matrix globe of every plant into stacked 3D floor plates and live bays.",
+        title: "Command center",
+        detail: "All plants on one map. Click a site for live numbers and what needs attention.",
       },
       {
-        title: "Multi-Site Company Live View",
-        detail: "Animated 8-department flow, local shift clocks and live status across every plant.",
+        title: "Company and line view",
+        detail: "Units per department and per stage, from supply to shipping, across sites.",
       },
       {
-        title: "Bottleneck Analytics & Measured Improvements",
-        detail: "Pinpoint the step limiting output over weeks and measure before / after gains.",
+        title: "Bottlenecks with proof",
+        detail: "The step that limits output, why, and before / after results of each fix.",
       },
       {
-        title: "AI Email Writer, SSO & Governance",
-        detail: "Draft verified updates to Google or Microsoft mail, plus OIDC/SAML 2.0 SSO and AI budget caps.",
+        title: "Status email, SSO and API",
+        detail: "AI-drafted updates from live figures, single sign-on, API keys and webhooks.",
       },
     ],
     groups: [
       {
-        category: "Command Center & Multi-Site Live View",
+        category: "Command center and company",
         items: [
-          "Interactive 3D dot-matrix globe zooming smoothly through company, region, site and floor layers",
-          "Stacked translucent site floor plates with live zone heat and floor switcher",
-          "Floating glass Details window with 2-second KPIs, 8-hour sparklines and active bottleneck",
-          "AI-drafted email from live on-screen metrics sent via linked Google or Microsoft mailbox",
-          "Live 8-department flow strip with animated unit tokens and late supplier PO alerts",
-          "Virtualised 5,000+ employee live status table (Working, Idle, Break, Moving, Off)",
+          "Every site on one map with state, headcount and attention count",
+          "Site details: output, on-pace share, active stations, current bottleneck",
+          "Company view: units per department, each site on its own clock",
+          "Line view: units per stage and state across floors and sites",
+          "AI-drafted status email, sent from your Google or Microsoft mailbox",
         ],
       },
       {
-        category: "Dashboards, Reports & Schedules",
+        category: "Reports",
         items: [
-          "Executive throughput, utilisation and capacity-gap bottleneck dashboards",
-          "AI bottleneck explanations with every quoted figure verified against floor SQL metrics",
-          "Before / after improvement tracking across agreed review windows",
-          "Automated shift reports 15 minutes after shift end",
-          "Printable morning huddle & daily meeting schedule sheets",
-          "Work, pace, job and unit-flow reports with one-click CSV export",
+          "Bottleneck report with checked causes and suggested fixes",
+          "Before / after tracking for each improvement",
+          "Shift reports 15 minutes after shift end",
+          "Meeting sheets and CSV export of every report",
         ],
       },
       {
-        category: "Security, Identity & AI Governance",
+        category: "Security and integration",
         items: [
-          "Microsoft Entra ID, Okta & Google Workspace SSO (OIDC & SAML 2.0)",
-          "Enforced SSO per email domain with emergency break-glass admin accounts",
-          "Automatic identity-provider group-to-role mapping and just-in-time provisioning",
-          "Per-company AI opt-in switch, monthly USD budget cap and per-feature usage log",
-          "Strict tenant isolation, server-checked RBAC and encrypted OAuth mail tokens",
-          "Tamper-evident audit log for access, role, SSO, training, email and SOP changes",
-          "Nightly encrypted backups with 14-day retention and external health monitoring",
+          "SSO with Microsoft Entra ID, Okta and Google (OIDC and SAML 2.0)",
+          "Roles per site and floor, audit log, nightly backups",
+          "API keys and signed webhooks for your ERP or warehouse system",
+          "AI off until enabled, with a monthly budget cap",
         ],
       },
     ],
@@ -69,59 +63,54 @@ const SUITES: Suite[] = [
   {
     tag: "Managers, Planners & Leads",
     title: "Manager",
-    sub: "Full live visibility, 3D moving-outline floor map, QR workflows, orders & AI advisor.",
+    sub: "The live floor: every unit and station, workflows, orders and reports.",
     major: [
       {
-        title: "Live Station Board & Moving-Outline 3D Map",
-        detail: "Pace bars, Today's numbers and glowing 3D floor outlines; delayed bays float to the top.",
+        title: "Live floor map and Board",
+        detail: "Every unit by state: being worked, ready, waiting, moving or blocked.",
       },
       {
-        title: "QR-Driven Visual Automate Workflows",
-        detail: "Auto-dispatch the first free, clocked-in, trained person when events happen on the floor.",
+        title: "Workflows",
+        detail: "Send a job to the first free, trained person when something happens.",
       },
       {
-        title: "Orders, Templates & Inbound Suppliers",
-        detail: "ERP CSV import with diff preview, multi-step job templates and late supplier PO alerts.",
+        title: "Orders, lines and inventory",
+        detail: "Orders to units to tasks, line stages, and short parts from your ERP.",
       },
       {
-        title: "Central Knowledge Base, Review & Ask AI",
-        detail: "Approve voice-note SOP proposals, track Knowledge Gaps and accept live AI advisor moves.",
+        title: "Knowledge and Ask AI",
+        detail: "Approve SOP changes from voice notes. Ask and get answers with sources.",
       },
     ],
     groups: [
       {
-        category: "Floor Builder, Board & 3D Map",
+        category: "Live floor",
         items: [
-          "Two-layer Glass UI shell with interactive 2D blueprint and 3D isometric floor builder",
-          "Glowing moving-outline 3D live map highlighting full, blocked and bottleneck zones",
-          "Stations, machines, racks, walls, paths, zones and custom polygon shapes",
-          "Printable QR code sheets for every station, machine and zone",
-          "Live Board with station cards, expected-time pace bars and Bottleneck badges",
-          "Ranked Needs Attention queue showing waiting units, delays and blocked bays",
+          "Flat live map with unit and station cards on hover",
+          "Status strip that counts and filters units by state",
+          "Present mode for a wall screen",
+          "Board with pace bars, delayed stations first",
+          "Floor builder with printable station and zone QR codes",
         ],
       },
       {
-        category: "Orders, Shop Flow & Suppliers",
+        category: "Orders, lines and supply",
         items: [
-          "Custom orders → line items → individual units → step-by-step tasks",
-          "CSV order import from ERP with full diff preview before saving",
-          "Reusable job templates with expected time ranges, drawings, photos and step dependencies",
-          "Inbound supplier material tracking (PO, expected date, received, kitted, late alerts)",
-          "Automatic zone-to-zone routing by department, purpose and free capacity",
-          "Material move jobs closed by scanning destination zone QR codes",
+          "Orders, line items, units and step-by-step tasks",
+          "Order import from CSV with a preview before saving",
+          "Line view per floor, with Supply as the first stage",
+          "Inventory mirror by CSV or API: short parts flag the units they hold up",
+          "Inbound supplier lines: expected, received, kitted, late",
         ],
       },
       {
-        category: "Dispatch, Automate, Knowledge & People",
+        category: "Automate, people and knowledge",
         items: [
-          "Dispatch inbox: send jobs & notices to a person, team, trade role or floor",
-          "Visual workflow builder on job, task, unit, zone and team-availability triggers",
-          "First-free routing verifying live clock-in presence, workload and valid training",
-          "Dry-run workflow testing on historical events, step logs and one-click kill switch",
-          "Shift rosters, live Who is Here availability and training sign-off with expiry dates",
-          "Central Knowledge Base with Markdown editor, version rollback and AI safety review queue",
-          "Ask AI assistant (Ctrl + J) with clickable SOP citations and live floor context",
-          "Live AI operational advisor strip with one-click Accept or Dismiss",
+          "Workflow builder with dry-run, run history and a kill switch",
+          "Who is here, shifts and training sign-off with expiry",
+          "Inbox: send jobs and notices to a person, team, role or floor",
+          "Knowledge base with a safety-first review queue",
+          "Advisor suggestions a person accepts or dismisses",
         ],
       },
     ],
@@ -129,56 +118,52 @@ const SUITES: Suite[] = [
   {
     tag: "Floor Workers & Trades Operators",
     title: "Pro",
-    sub: "Android app for skilled trades — QR scans, pace, voice notes, Ask AI & offline sync.",
+    sub: "The Android app for the floor: scan, work, speak, ask. Works offline.",
     major: [
       {
-        title: "One-Scan Station & Zone QR",
-        detail: "Start tasks, log pieces or finish material move jobs in one tap on Android.",
+        title: "One scan to start",
+        detail: "Scan a station or zone QR to start a task or close a move job.",
       },
       {
-        title: "Push-to-Talk Live Voice Notes",
-        detail: "Hold to speak mid-task; audio chunks stream to a live web transcript in seconds.",
+        title: "Hold-to-talk voice notes",
+        detail: "Speak mid-task. The transcript reaches the web in seconds.",
       },
       {
-        title: "Watch-Out Alerts & Cited Ask AI",
-        detail: "See safety and quality reminders on task start, or ask cited SOP questions.",
+        title: "Watch-outs and Ask AI",
+        detail: "Safety and quality reminders at task start, answers with sources.",
       },
       {
-        title: "Offline Dead-Zone Queue",
-        detail: "Keep working with zero Wi-Fi; idempotent queue syncs safely when back in range.",
+        title: "Offline queue",
+        detail: "Keep working without Wi-Fi. Everything syncs once, back in range.",
       },
     ],
     groups: [
       {
-        category: "Station Work & Material Moves",
+        category: "Station work",
         items: [
-          "Instant QR camera scanner for stations, machines and destination zones",
-          "Live session timer with pace indicator against expected step time",
-          "One-tap piece counter, pause / resume, finish and job feedback prompt",
-          "Swipeable job steps carousel with attached drawings, SOP links and photo capture",
-          "Dedicated material handler move-job queue closed by destination zone scan",
-          "Offline command & photo queue with automatic background replay and deduplication",
+          "QR scanner for stations, machines and zones",
+          "Timer with pace against expected time",
+          "Piece counter, pause, resume and finish",
+          "Job steps with drawings and photo capture",
+          "Move-job queue for material handlers",
         ],
       },
       {
-        category: "Voice Notes, Knowledge & AI",
+        category: "Voice, knowledge and AI",
         items: [
-          "Hold-to-record voice notes on any active task or job thread (works offline)",
-          "Live transcript appears under recording and streams to web in real time",
-          "Automatic Watch-Out sheet on work start showing linked safety & quality tips",
-          "Ask AI chat assistant answering from approved company SOPs with source links",
-          "Offline cache of knowledge articles linked to the operator's assigned floor",
+          "Voice notes on any task, also offline",
+          "Watch-out sheet when work starts",
+          "Ask AI from approved SOPs, with sources",
+          "Offline copy of the articles for your floor",
         ],
       },
       {
-        category: "Shifts, Inbox & Mobile Lead Tools",
+        category: "Shifts and lead tools",
         items: [
-          "One-tap shift clock in / out with local floor time and shift-end reminders",
-          "Personal Inbox with push notifications for assigned jobs, replies and notices",
-          "My Shifts schedule, My Training credentials and self-registration with approval",
-          "Mobile Manager mode: floor overview, station cards, Who is Here and quick job dispatch",
-          "Mobile single sign-on (OIDC & SAML) via system browser deep link",
-          "Translucent Glass UI with dark / light theme, haptics and 44px touch targets",
+          "Clock in and out, My shifts, My training",
+          "Inbox with push notifications",
+          "Manager mode: floor overview, live units, Who is here",
+          "Single sign-on on the phone",
         ],
       },
     ],
@@ -193,8 +178,7 @@ export function Roles() {
           <p className="eyebrow">Three suites · One live model</p>
           <h2>Built for the boardroom, the plant office and the bays.</h2>
           <p className="lead">
-            Highlight what matters most to each role — or expand any suite to inspect every shipped
-            capability.
+            What each role gets. Expand a suite for the full list.
           </p>
         </div>
         <div className="roles">
@@ -209,7 +193,7 @@ export function Roles() {
                 </div>
 
                 <div className="major-list" aria-label={`${s.title} major features`}>
-                  <div className="major-head">★ Major highlights</div>
+                  <div className="major-head">★ Highlights</div>
                   {s.major.map((m) => (
                     <div className="major-item" key={m.title}>
                       <strong>{m.title}</strong>
@@ -220,7 +204,7 @@ export function Roles() {
 
                 <details className="suite-expand">
                   <summary>
-                    <span>View complete feature list ({total} features)</span>
+                    <span>Full list ({total} features)</span>
                     <span className="expand-icon" aria-hidden="true">
                       +
                     </span>

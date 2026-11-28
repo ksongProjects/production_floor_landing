@@ -4,9 +4,8 @@ export const SITE = {
   tagline:
     "FloorOS, for all your production, automation, operation, planning, reporting and management needs.",
   description:
-    "FloorOS is the live operating system for manufacturing floors — uniting leadership " +
-    "(FloorOS Executive), plant managers and leads (FloorOS Manager), and skilled trades " +
-    "operators (FloorOS Pro) to spot bottlenecks and cut downtime.",
+    "FloorOS is the live operating system for manufacturing floors: every site, station and " +
+    "unit live, for leadership, plant managers and operators.",
   platformUrl: "https://flooros.dev",
   signInUrl: "https://flooros.dev/login",
   androidAppUrl:
