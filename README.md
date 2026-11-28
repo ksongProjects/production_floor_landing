@@ -12,7 +12,7 @@ contact us.
 
 ## Edit
 
-Links and the contact address live in [`src/site.ts`](src/site.ts). Each section is one file in
+Links and the contact form settings live in [`src/site.ts`](src/site.ts). Each section is one file in
 [`src/components`](src/components); the page order is in [`src/app/page.tsx`](src/app/page.tsx).
 
 ```
@@ -26,12 +26,12 @@ The **Contact us** section posts a plain HTML form to [Web3Forms](https://web3fo
 emails each message to the project inbox and sends the visitor back to `/thanks`. No server and
 no client code on our side.
 
-1. Create a free access key at https://web3forms.com with the inbox address
-   (`SITE.contactEmail` in [`src/site.ts`](src/site.ts)); the key arrives by email.
+1. Create a free access key at https://web3forms.com with the project inbox address; the key
+   arrives by email. The address itself is never written in this repo or on the page.
 2. In Vercel, add `NEXT_PUBLIC_WEB3FORMS_KEY` with that key (Production and Preview) and
    redeploy. The key is public by design: it can only send mail to that inbox.
 
-Without the key the section shows a mailto button instead of the form. On the free plan the
+Without the key the form shows but its Send button is off. On the free plan the
 `/thanks` redirect must stay on the site's own domain, so keep `NEXT_PUBLIC_SITE_URL` (or the
 Vercel production domain) pointing at the domain visitors use.
 
