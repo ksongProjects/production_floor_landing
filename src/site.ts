@@ -1,3 +1,5 @@
+import { siteUrl } from "@/site-url";
+
 /** Links and copy shared across the landing page. Change them here, not in components. */
 export const SITE = {
   name: "FloorOS",
@@ -15,6 +17,20 @@ export const SITE = {
   contactEmail: "ksongprojects@gmail.com",
 } as const;
 
+/** In-page contact form section. */
+export const contactFormHref = "#contact";
+
 export const contactHref = `mailto:${SITE.contactEmail}?subject=${encodeURIComponent(
   `${SITE.name} enquiry`,
 )}`;
+
+/**
+ * Contact form backend (Web3Forms). The access key is public by design: it only lets someone
+ * send mail to the inbox it was created for. Set NEXT_PUBLIC_WEB3FORMS_KEY in Vercel; without
+ * it the contact section shows the mailto link instead of the form.
+ */
+export const CONTACT_FORM = {
+  endpoint: "https://api.web3forms.com/submit",
+  accessKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "",
+  redirectUrl: `${siteUrl}/thanks`,
+} as const;

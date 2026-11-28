@@ -1,4 +1,4 @@
-import { contactHref, SITE } from "@/site";
+import { contactFormHref, SITE } from "@/site";
 import { HeroFloor } from "./hero-floor";
 
 const HERO_WORDS = [
@@ -41,7 +41,7 @@ export function Hero() {
             <a className="btn primary" href={SITE.signInUrl}>
               Sign in to {SITE.name}
             </a>
-            <a className="btn ghost" href={contactHref}>
+            <a className="btn ghost" href={contactFormHref}>
               Book a walkthrough
             </a>
           </div>

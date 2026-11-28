@@ -1,4 +1,5 @@
 import { Cta, Footer } from "@/components/closing";
+import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
 import { Nav } from "@/components/nav";
 import { Platform } from "@/components/platform";
@@ -18,6 +19,7 @@ export default function Home() {
         <UseCases />
         <Platform />
         <Cta />
+        <Contact />
       </main>
       <Footer />
     </>

@@ -20,6 +20,21 @@ pnpm --filter @pf/landing dev      # http://localhost:3400
 pnpm --filter @pf/landing build    # static site in apps/landing/out
 ```
 
+## Contact form
+
+The **Contact us** section posts a plain HTML form to [Web3Forms](https://web3forms.com), which
+emails each message to the project inbox and sends the visitor back to `/thanks`. No server and
+no client code on our side.
+
+1. Create a free access key at https://web3forms.com with the inbox address
+   (`SITE.contactEmail` in [`src/site.ts`](src/site.ts)); the key arrives by email.
+2. In Vercel, add `NEXT_PUBLIC_WEB3FORMS_KEY` with that key (Production and Preview) and
+   redeploy. The key is public by design: it can only send mail to that inbox.
+
+Without the key the section shows a mailto button instead of the form. On the free plan the
+`/thanks` redirect must stay on the site's own domain, so keep `NEXT_PUBLIC_SITE_URL` (or the
+Vercel production domain) pointing at the domain visitors use.
+
 ## Deploy on Vercel (free Hobby plan)
 
 1. In Vercel, **Add New → Project** and import `ksongProjects/production_floor`.
@@ -32,4 +47,4 @@ pnpm --filter @pf/landing build    # static site in apps/landing/out
 security headers. Production deploys follow `main`; other branches get preview URLs.
 
 The page links to the production platform at
-https://flooros.dev; it does not call it.
+https://flooros.dev; it does not call it. The only outside call is the contact form post to Web3Forms.
