@@ -23,152 +23,152 @@ type ShowcaseBlock = {
 
 const SHOWCASES: ShowcaseBlock[] = [
   {
-    tag: "1 · Modern UI & Executive Command Center",
-    title: "Every site, every floor — one live Command Center",
+    tag: "1 · Command center",
+    title: "Every site and department, live",
     tabs: [
       {
-        id: "command-globe",
-        label: "3D Globe Dashboard",
-        crumb: "Executive · Command Center · Northwind Power Systems",
-        badge: "● Live pulse · 2s",
+        id: "command-center",
+        label: "Command center",
+        crumb: "Executive · Command center · Northwind Power Systems",
+        badge: "● Live",
         badgeTone: "live",
-        src: "/screenshots/command-globe.png",
-        alt: "FloorOS Command Center globe with a live ring on each of four plants in Calgary, Reno, Riverside and Mississauga, beside the Details window with company KPIs and the current bottleneck",
-        hint: "Every plant as a live ring, with company KPIs, the current bottleneck and Write email beside it.",
-      },
-      {
-        id: "command-floors",
-        label: "Stacked Site Floors",
-        crumb: "Executive · Riverside Plant · Stacked 3D Floors",
-        badge: "Site layer · 2 floors",
-        badgeTone: "default",
-        src: "/screenshots/command-site-floors.png",
-        alt: "FloorOS Command Center zoomed into Riverside Plant showing stacked glowing 3D floor plates for Fabrication Hall and Assembly & Wiring",
-        hint: "One plant, its floors as stacked live plates. Click a plate to open that floor.",
+        src: "/screenshots/command-center.png",
+        alt: "FloorOS Command center map with four plants and the Riverside Plant details open: people here, output today, on pace, current bottleneck and needs attention",
+        hint: "All plants on one map. Click one for live numbers, the bottleneck and what needs attention.",
       },
       {
         id: "company-live",
-        label: "Company Live View",
-        crumb: "Executive · Company Live Flow · 4 Plants · 8 Departments",
-        badge: "8 departments · Live",
+        label: "Company view",
+        crumb: "Executive · Company · 4 plants · 8 departments",
+        badge: "Updates every 2 s",
         badgeTone: "ok",
         src: "/screenshots/company-live.png",
-        alt: "FloorOS Company Live View showing units per department from Suppliers to Wrap and shipping, AI advisor suggestions, four sites with their local time and headcount, and a ranked Needs attention list with late supplier lines",
-        hint: "Units per department in route order, each plant's local time and headcount, late supplier lines.",
+        alt: "FloorOS Company view with people here, units per department from Suppliers to Wrap and shipping, and the Switchgear line by stage",
+        hint: "People here, units per department in route order, and each line stage by stage.",
       },
     ],
   },
   {
-    tag: "2 · Full Floor Visibility",
-    title: "Every job, task, unit and station — live on Board & 3D Map",
+    tag: "2 · Live floor",
+    title: "See which units move and which wait",
     tabs: [
       {
-        id: "board",
-        label: "Live Station Board",
-        crumb: "Manager · Fab Hall A · Live Board & AI Advisor",
-        badge: "Delayed first · Live",
-        badgeTone: "warn",
-        src: "/screenshots/board.png",
-        alt: "FloorOS live station Board showing expected-time pace bars, delayed stations floated to the top, and AI operational advisor suggestions",
-        hint: "One card per station: who, which task and a pace bar. Delayed and paused stations come first.",
+        id: "map-live",
+        label: "Live floor map",
+        crumb: "Manager · Fab Hall A · Map",
+        badge: "Units by state",
+        badgeTone: "live",
+        src: "/screenshots/map-live.png",
+        alt: "FloorOS live floor map from the top with unit tokens coloured by state, a status strip with counts, a unit hover card and the Needs attention list",
+        hint: "Every unit by state. Point at one to see who is on it and why it waits.",
       },
       {
-        id: "map-outline",
-        label: "3D Moving-Outline Map",
-        crumb: "Manager · Fab Hall A · 3D Isometric Control Room",
-        badge: "Moving outlines · 3D",
-        badgeTone: "live",
-        src: "/screenshots/map-outline.png",
-        alt: "FloorOS 3D isometric moving-outline floor map showing amber full bays, red blocked Bay 5, bottleneck badges, and ranked Needs Attention queue",
-        hint: "Your real layout in 3D. Full bays turn amber, blocked bays red, waiting units are ranked.",
+        id: "line-view",
+        label: "Line view",
+        crumb: "Company · Lines · Switchgear",
+        badge: "Supply → ship",
+        badgeTone: "default",
+        src: "/screenshots/line-view.png",
+        alt: "FloorOS line view of the Switchgear line from Supply through Receive, Fabrication, Assembly and Wiring with units per stage by state and per floor",
+        hint: "One line from supply to shipping: units per stage, by state and by floor.",
+      },
+      {
+        id: "board",
+        label: "Station Board",
+        crumb: "Manager · Fab Hall A · Board",
+        badge: "Delayed first",
+        badgeTone: "warn",
+        src: "/screenshots/board.png",
+        alt: "FloorOS live station Board with pace bars and delayed stations first",
+        hint: "One card per station: who, which task, and a pace bar. Trouble sorts to the top.",
       },
     ],
   },
   {
-    tag: "3 · Live Automated Floor Management",
-    title: "QR code system & visual workflows that close gaps automatically",
+    tag: "3 · Automate",
+    title: "Workflows close the gaps between jobs",
     tabs: [
       {
         id: "automate",
-        label: "Visual Automate Workflows",
+        label: "Workflows",
         crumb: "Manager · Automate · Problem → repair job",
-        badge: "● Auto-dispatched",
+        badge: "● Run history",
         badgeTone: "ok",
         src: "/screenshots/automate.png",
-        alt: "FloorOS visual Automate workflow graph Problem to repair job with live green Run history panel",
-        hint: "A reported problem becomes a repair job for the first free, trained technician. Every run is logged.",
+        alt: "FloorOS Automate workflow Problem to repair job with its run history",
+        hint: "A reported problem becomes a repair job for the first free, trained person. Every run is logged.",
       },
       {
         id: "shift-report",
-        label: "Auto Shift Reports",
-        crumb: "FloorOS Reports · Night Shift Report · Ready 15 min after shift",
-        badge: "Auto-generated",
+        label: "Shift reports",
+        crumb: "Reports · Shift report",
+        badge: "Written for you",
         badgeTone: "default",
         src: "/screenshots/shift-report.png",
-        alt: "FloorOS automatic shift report showing pieces, worked hours, reported problems, workflow flags and Who worked where breakdown",
-        hint: "Written 15 minutes after each shift: pieces, hours, problems, flags and who worked where.",
+        alt: "FloorOS shift report with pieces, worked hours, reported problems and who worked where",
+        hint: "Ready 15 minutes after each shift: pieces, hours, problems and who worked where.",
       },
     ],
   },
   {
-    tag: "4 · Live Dashboard Statistics & Analytics",
-    title: "Pinpoint bottlenecks with verified AI root-cause & before/after proof",
+    tag: "4 · Bottlenecks",
+    title: "The bottleneck, why, and what to do",
     tabs: [
       {
         id: "bottlenecks-ai",
-        label: "Bottleneck & AI Root-Cause",
-        crumb: "FloorOS Analytics · Bottlenecks · Assembly & Wiring",
+        label: "Causes and fixes",
+        crumb: "Reports · Bottlenecks · Assembly & Wiring",
         badge: "Figures checked",
         badgeTone: "ok",
         src: "/screenshots/bottlenecks-ai.png",
-        alt: "FloorOS Bottlenecks report showing Wiring 1/2/3 bottleneck badge, AI Why and what to do causes and 4 Suggested fixes with Start improvement buttons",
-        hint: "Names the step that limits output, explains why with checked figures and suggests fixes.",
+        alt: "FloorOS Bottlenecks report naming the Wiring step as bottleneck, with likely causes and four suggested fixes",
+        hint: "Names the step that limits output, explains why and suggests fixes.",
       },
       {
         id: "bottlenecks-improvements",
-        label: "Measured Improvements",
-        crumb: "FloorOS Analytics · Stage Metrics & Improvement Tracking",
-        badge: "Before vs. After",
+        label: "Measured improvements",
+        crumb: "Reports · Bottlenecks · Improvements",
+        badge: "Before vs. after",
         badgeTone: "default",
         src: "/screenshots/bottlenecks-improvements.png",
         alt: "FloorOS stage metrics table and Measured improvement card comparing before and after queue wait and output",
-        hint: "Turn a fix into a tracked improvement, then compare queue wait and output before and after.",
+        hint: "Turn a fix into a tracked improvement and compare before and after.",
       },
     ],
   },
   {
-    tag: "5 · AI Assistant & Central Knowledge Base",
-    title: "Cited Ask AI, push-to-talk voice notes & human-approved SOPs",
+    tag: "5 · Knowledge & Ask AI",
+    title: "Spoken know-how becomes approved SOPs",
     tabs: [
       {
         id: "ask-ai",
-        label: "Ask AI Assistant",
-        crumb: "FloorOS Ask AI (Ctrl + J) · Cited SOP & Live Floor Answers",
+        label: "Ask AI",
+        crumb: "Ask AI · Answers with sources",
         badge: "Permission-scoped",
         badgeTone: "ok",
         src: "/screenshots/ask-ai.png",
-        alt: "FloorOS Ask AI glass slide-over drawer answering a Weld 1A safety and bottleneck question with clickable SOP source pills",
-        hint: "Answers from your approved articles and the live floor, with a source link on every reply.",
+        alt: "FloorOS Ask AI panel answering a weld station question with clickable SOP sources",
+        hint: "Answers from your approved articles and the live floor, with the sources linked.",
       },
       {
         id: "knowledge-review",
-        label: "Safety & SOP Review",
-        crumb: "FloorOS Knowledge · Review Queue · Human Approval Required",
+        label: "Review queue",
+        crumb: "Knowledge · Review",
         badge: "Safety first",
         badgeTone: "warn",
         src: "/screenshots/knowledge-review.png",
-        alt: "FloorOS Knowledge Review queue showing a red-bordered Safety review proposal with timestamped transcript excerpts and Accept & publish button",
-        hint: "AI drafts article changes from voice notes. Safety items come first; nothing publishes unapproved.",
+        alt: "FloorOS Knowledge Review queue with a safety proposal awaiting approval",
+        hint: "AI drafts SOP changes from voice notes. Nothing publishes without approval.",
       },
       {
         id: "voice-note",
-        label: "Voice Note & Summary",
-        crumb: "FloorOS Notes · Voice Note · Live Transcript & AI Summary",
+        label: "Voice note",
+        crumb: "Notes · Voice note",
         badge: "Gloves-on capture",
         badgeTone: "live",
         src: "/screenshots/voice-note.png",
-        alt: "FloorOS Voice note detail showing AI summary, Key points, red safety Watch out for badge and editable timestamped transcript",
-        hint: "A spoken note becomes an editable transcript, a summary and Watch-out tags.",
+        alt: "FloorOS voice note with its summary, key points, watch-out tags and transcript",
+        hint: "A spoken note becomes a transcript, a summary and watch-out tags.",
       },
     ],
   },
@@ -240,10 +240,9 @@ export function UseCases() {
       <div className="wrap">
         <div className="section-head reveal">
           <p className="eyebrow">Real product screens</p>
-          <h2>See FloorOS running real shop-floor workflows.</h2>
+          <h2>See FloorOS running.</h2>
           <p className="lead">
-            Real screens from FloorOS, showing demo data. Pick a view above each screen to see what
-            it is and what it tells you.
+            Real screens, demo data. Pick a view above each screen.
           </p>
         </div>
 
@@ -255,10 +254,9 @@ export function UseCases() {
           <article className="case-block reveal">
             <div className="case-head">
               <span className="tag">6 · Pro (Android)</span>
-              <h3>One-scan station QR, Watch-Out safety alerts &amp; offline voice notes</h3>
+              <h3>Scan, work, speak, ask. Even offline.</h3>
               <p className="case-summary">
-                Purpose-built for operators and trades on the shop floor — works in Wi-Fi dead zones
-                and syncs automatically when back in range.
+                The phone app for operators. Works without Wi-Fi and syncs when back in range.
               </p>
             </div>
             <div className="app-window">
@@ -281,9 +279,9 @@ export function UseCases() {
                   <div className="ui-card">
                     <div className="ui-row">
                       <div>
-                        <div className="ui-title">1 · Instant Station &amp; Move Scan</div>
+                        <div className="ui-title">1 · Scan to start</div>
                         <div className="ui-muted">
-                          Point camera at bay or destination zone QR to start task or close move job
+                          Scan a station or zone QR to start a task or close a move job
                         </div>
                       </div>
                       <span className="chip">QR Scan</span>
@@ -292,9 +290,9 @@ export function UseCases() {
                   <div className="ui-card">
                     <div className="ui-row">
                       <div>
-                        <div className="ui-title">2 · Watch-Out Safety &amp; Step Drawings</div>
+                        <div className="ui-title">2 · Watch-outs and drawings</div>
                         <div className="ui-muted">
-                          Auto-displays linked safety warnings &amp; drawings before timer starts
+                          Safety reminders and drawings before the timer starts
                         </div>
                       </div>
                       <span className="chip warn">▲ Step 3</span>
@@ -303,9 +301,9 @@ export function UseCases() {
                   <div className="ui-card">
                     <div className="ui-row">
                       <div>
-                        <div className="ui-title">3 · Push-to-Talk Voice &amp; Ask AI</div>
+                        <div className="ui-title">3 · Voice notes and Ask AI</div>
                         <div className="ui-muted">
-                          Speak notes gloves-on or ask cited troubleshooting questions from SOPs
+                          Speak a note gloves-on, or ask and get answers with sources
                         </div>
                       </div>
                       <div className="waveform" aria-label="Animated voice waveform">
@@ -320,9 +318,9 @@ export function UseCases() {
                   <div className="ui-card">
                     <div className="ui-row">
                       <div>
-                        <div className="ui-title">4 · Dead-Zone Offline Sync</div>
+                        <div className="ui-title">4 · Offline queue</div>
                         <div className="ui-muted">
-                          Pieces, pauses, photos and audio chunks queue locally and replay once
+                          Pieces, photos and audio queue locally and sync once
                         </div>
                       </div>
                       <span className="chip ok">Synced</span>

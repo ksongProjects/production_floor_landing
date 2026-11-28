@@ -34,8 +34,8 @@ export function Hero() {
             <span className="hero-line">needs</span>
           </h1>
           <p className="lead">
-            See every site, station and unit live. Spot bottlenecks instantly, automate routine
-            handoffs, and turn spoken floor know-how into shared intelligence.
+            Every site, station and unit, live. Find the bottleneck, automate the handoffs, keep
+            the know-how.
           </p>
           <div className="actions">
             <a className="btn primary" href={SITE.signInUrl}>

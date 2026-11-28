@@ -84,9 +84,7 @@ export function Cta() {
         <p className="eyebrow">Get started</p>
         <h2>Live on your first floor in a day.</h2>
         <p className="lead">
-          100% cloud-hosted with zero hardware required. See a live plant running on{" "}
-          <strong>Executive</strong>, <strong>Manager</strong> and{" "}
-          <strong>FloorOS Pro</strong>, then run a measured 30-day pilot with direct founder
+          See a live plant running, then run a measured 30-day pilot with direct founder
           support.
         </p>
         <div className="actions">
@@ -131,8 +129,7 @@ export function Cta() {
             <StoreQr label="QR code to download FloorOS Pro Android APK" />
           </div>
           <p className="hero-note" style={{ marginTop: 0 }}>
-            Android app available now · iOS app coming soon (web app &amp; Ask AI work in any phone
-            browser).
+            Android app available now. iOS coming soon; the web app works in any phone browser.
           </p>
         </div>
       </div>
