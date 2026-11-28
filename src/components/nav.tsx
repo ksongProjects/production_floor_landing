@@ -1,4 +1,4 @@
-import { contactHref, SITE } from "@/site";
+import { contactFormHref, SITE } from "@/site";
 import { Brand } from "./brand";
 
 const LINKS = [
@@ -20,7 +20,7 @@ export function Nav() {
           ))}
         </nav>
         <div className="nav-cta">
-          <a className="btn ghost small contact-link" href={contactHref}>
+          <a className="btn ghost small contact-link" href={contactFormHref}>
             Contact us
           </a>
           <a className="btn primary small" href={SITE.signInUrl}>

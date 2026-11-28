@@ -1,4 +1,4 @@
-import { contactHref, SITE } from "@/site";
+import { contactFormHref, SITE } from "@/site";
 import { Brand } from "./brand";
 
 function AndroidDownloadBadge() {
@@ -88,7 +88,7 @@ export function Cta() {
           support.
         </p>
         <div className="actions">
-          <a className="btn primary" href={contactHref}>
+          <a className="btn primary" href={contactFormHref}>
             Book a walkthrough
           </a>
           <a className="btn ghost" href={SITE.signInUrl}>
@@ -147,7 +147,7 @@ export function Footer() {
           <a href="#use-cases">Live Screens</a>
           <a href="#platform">Cloud &amp; Security</a>
           <a href={SITE.platformUrl}>Sign in</a>
-          <a href={contactHref}>Contact</a>
+          <a href={contactFormHref}>Contact</a>
         </nav>
         <span>
           © {new Date().getFullYear()} {SITE.name}
