@@ -8,8 +8,8 @@ export const SITE = {
   description:
     "FloorOS is the live operating system for manufacturing floors: every site, station and " +
     "unit live, for leadership, plant managers and operators.",
-  platformUrl: "https://flooros.dev",
-  signInUrl: "https://flooros.dev/login",
+  platformUrl: "https://prod.flooros.dev",
+  signInUrl: "https://prod.flooros.dev/login",
   androidAppUrl:
     "https://github.com/ksongProjects/production_floor_android/releases/latest/download/production-floor.apk",
   /** Public status page (UptimeRobot), outside our own hosting so it loads during outages. */

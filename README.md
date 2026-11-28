@@ -47,4 +47,4 @@ Vercel production domain) pointing at the domain visitors use.
 security headers. Production deploys follow `main`; other branches get preview URLs.
 
 The page links to the production platform at
-https://flooros.dev; it does not call it. The only outside call is the contact form post to Web3Forms.
+https://prod.flooros.dev; it does not call it. The only outside call is the contact form post to Web3Forms.
