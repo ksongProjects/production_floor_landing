@@ -14,20 +14,15 @@ export const SITE = {
     "https://github.com/ksongProjects/production_floor_android/releases/latest/download/production-floor.apk",
   /** Public status page (UptimeRobot), outside our own hosting so it loads during outages. */
   statusUrl: "https://stats.uptimerobot.com/mfL8H7OSSJ",
-  contactEmail: "ksongprojects@gmail.com",
 } as const;
 
 /** In-page contact form section. */
 export const contactFormHref = "#contact";
 
-export const contactHref = `mailto:${SITE.contactEmail}?subject=${encodeURIComponent(
-  `${SITE.name} enquiry`,
-)}`;
-
 /**
  * Contact form backend (Web3Forms). The access key is public by design: it only lets someone
- * send mail to the inbox it was created for. Set NEXT_PUBLIC_WEB3FORMS_KEY in Vercel; without
- * it the contact section shows the mailto link instead of the form.
+ * send mail to the inbox it was created for, and that address is never on the page. Set
+ * NEXT_PUBLIC_WEB3FORMS_KEY in Vercel; without it the form shows but cannot be sent.
  */
 export const CONTACT_FORM = {
   endpoint: "https://api.web3forms.com/submit",

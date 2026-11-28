@@ -1859,6 +1859,12 @@ svg {
   cursor: pointer;
 }
 
+.contact-actions .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
 .contact-note {
   font-size: 0.9rem;
   color: var(--muted);
